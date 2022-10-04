@@ -1,6 +1,6 @@
 #! /bin/bash
 bid=$2
-if [ $bid == "00000100"]
+if [ $bid == "00000100" ]
 then
     echo "The book return has been successfully"
 else
