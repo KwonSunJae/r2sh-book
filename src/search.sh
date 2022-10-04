@@ -1,5 +1,5 @@
 #! /bin/bash
-if [$2 = "sunjae"]
+if ["$2" = "sunjae"]
 then
     echo "Library search results.
 1. bookName: [sunjae is nice], bookAuthor: [sunjae], bookID: [00000000]

@@ -1,5 +1,5 @@
 #! /bin/bash
-if [$2 = "000001"]
+if ["$2" = "000001"]
 then
     echo "User details.
 userName: [sunjae], 

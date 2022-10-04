@@ -1,5 +1,5 @@
 #! /bin/bash
-if [$2 = "00000000"]
+if [ "$2" = "00000000"]
 then
     echo "Book details.
 bookName: [sunjae is nice], 
