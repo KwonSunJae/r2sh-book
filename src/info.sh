@@ -1,5 +1,7 @@
 #! /bin/bash
-if ["$2" = "000001"]
+uid = $2
+
+if [ $uid = "000001"]
 then
     echo "User details.
 userName: [sunjae], 
