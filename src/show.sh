@@ -1,5 +1,5 @@
 #! /bin/bash
-bid = $2
+bid=$2
 
 if [ $bid = "00000000"]
 then

@@ -1,5 +1,5 @@
 #! /bin/bash
-uid = $2
+uid=$2
 
 if [ $uid = "000001"]
 then

@@ -1,5 +1,5 @@
 #! /bin/bash
-keyword = $2
+keyword=$2
 if [ $keyword = "sunjae"]
 then
     echo "Library search results.

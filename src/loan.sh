@@ -1,6 +1,6 @@
 #! /bin/bash
-uid = $2
-bid = $3
+uid=$2
+bid=$3
 if [ $bid = "00000100"]
 then
     echo "The book loan has been successfully"
