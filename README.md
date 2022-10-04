@@ -9,8 +9,8 @@
 ## 작동방법
 
 ```
-$ show  <book-id> : show detail for the book 
-$ search  <keyword> : serach book by keyword and show list 
+$ show  <book-id> : show detail for the book // 해당 책의 상세정보를 보여줍니다
+$ search  <keyword> : serach book by keyword and show list // 
 $ loan <user-id> <book-id> : borrow book by bid 
 $ return <book-id> : return book by bid 
 $ info <user-id> : show list of books borrowed by the user 
