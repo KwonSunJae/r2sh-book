@@ -1,7 +1,7 @@
 #! /bin/bash
 uid=$2
 
-if [ $uid = "000001"]
+if [ $uid == "000001"]
 then
     echo "User details.
 userName: [sunjae], 

@@ -1,7 +1,7 @@
 #! /bin/bash
 bid=$2
 
-if [ $bid = "00000000"]
+if [ $bid == "00000000"]
 then
     echo "Book details.
 bookName: [sunjae is nice], 
