@@ -6,7 +6,7 @@ then
     echo "User details.
 userName: [sunjae], 
 userId: [000001],
-penalty: [X],
+penalty: [2022-10-03],
 loanList: [00000100, 00000200]
 "
 else
