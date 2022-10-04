@@ -7,3 +7,4 @@ then
 3. bookName: [sunjae is bad], bookAuthor: [subin], bookID: [000000200]"
 else
     echo "r2sh-book:: No search results found"
+fi

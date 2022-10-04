@@ -6,3 +6,4 @@ then
 else
     echo "Please check your commands."
     $HOME/r2sh-book/src/help.sh
+fi

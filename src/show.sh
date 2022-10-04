@@ -10,3 +10,4 @@ bookDetails: [This book is about Sunjae's wonderful life. There are wonderful im
 "
 else
     echo "r2sh-book:: No search results found"
+fi
