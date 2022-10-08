@@ -29,7 +29,7 @@ echo "-----Alias Settings-----"
 chmod 777 main.sh
 
 cat << EOF >> ~/.bashrc
-alias r2sh-book= 'bash ~/r2sh-book/main.sh "\$@"'
+alias r2sh-book='bash ~/r2sh-book/main.sh "\$@"'
 EOF
 source ~/.bashrc
 echo "----- BUILD -----"
