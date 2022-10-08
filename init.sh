@@ -19,17 +19,17 @@ trap "kill -9 $SPIN_PID" `seq 0 15`
 echo "-----Initalizing r2sh-book-----"
 echo "-----Install essential packages-----"
 
-sudo apt-get update -y -qq && spinner "apt updating..."
-sudo apt-get install gcc gcc-9 g++-9 -y -qq && spinner "apt install gcc"
+sudo apt-get update -y -qq 
+sudo apt-get install gcc gcc-9 g++-9 -y -qq 
 gcc --version
-sudo apt-get install git -y -qgq spinner " apt install git check"
+sudo apt-get install git -y -qq 
 
 
 echo "-----Alias Settings-----"
 chmod 777 main.sh
 
 cat << EOF >> ~/.bashrc
-alias r2sh-book= 'bash ~/r2sh-book/main.sh "$@"'
+alias r2sh-book= 'bash ~/r2sh-book/main.sh "\$@"'
 EOF
 source ~/.bashrc
 echo "----- BUILD -----"
