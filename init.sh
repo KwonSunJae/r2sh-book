@@ -3,7 +3,7 @@ echo "-----Initalizing r2sh-book-----"
 echo "-----Install essential packages-----"
 
 sudo apt-get update -y -qq
-sudo apt-get install gcc-9.4 g++-9.4 -y -qq
+sudo apt-get install gcc-9 g++-9 -y -qq
 gcc --version
 sudo apt-get install git -y -qq
 
