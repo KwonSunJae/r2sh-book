@@ -1,1304 +1,1217 @@
 {
   "books": [
     {
-      "bName": "Book1 Name",
-      "bId": "10000100",
+      "bName": "Things Fall Apart",
+      "bId": "10000000",
       "bAuthors": [
-        "konkuk1",
-        "univ1"
+        "Chinua"
       ],
       "bCategorys": [
-        "category-1",
-        "category0"
+        "category0",
+        "category50"
       ],
-      "bDetail": "this is detail of the book_1"
+      "bDetail": "language : English , pages : 209 , year : 1958"
     },
     {
-      "bName": "Book2 Name",
-      "bId": "10000200",
+      "bName": "Fairy tales",
+      "bId": "10000100",
       "bAuthors": [
-        "konkuk2",
-        "univ2"
+        "Hans",
+        "Christian"
       ],
       "bCategorys": [
         "category1",
-        "category2"
+        "category51"
       ],
-      "bDetail": "this is detail of the book_2"
+      "bDetail": "language : Danish , pages : 784 , year : 1836"
     },
     {
-      "bName": "Book3 Name",
+      "bName": "The Divine Comedy",
+      "bId": "10000200",
+      "bAuthors": [
+        "Dante"
+      ],
+      "bCategorys": [
+        "category2",
+        "category52"
+      ],
+      "bDetail": "language : Italian , pages : 928 , year : 1315"
+    },
+    {
+      "bName": "The Epic Of Gilgamesh",
       "bId": "10000300",
       "bAuthors": [
-        "konkuk3",
-        "univ3"
+        "Unknown"
       ],
       "bCategorys": [
         "category3",
-        "category4"
+        "category53"
       ],
-      "bDetail": "this is detail of the book_3"
+      "bDetail": "language : Akkadian , pages : 160 , year : -1700"
     },
     {
-      "bName": "Book4 Name",
+      "bName": "The Book Of Job",
       "bId": "10000400",
       "bAuthors": [
-        "konkuk4",
-        "univ4"
+        "Unknown"
+      ],
+      "bCategorys": [
+        "category4",
+        "category54"
+      ],
+      "bDetail": "language : Hebrew , pages : 176 , year : -600"
+    },
+    {
+      "bName": "One Thousand and One Nights",
+      "bId": "10000500",
+      "bAuthors": [
+        "Unknown"
       ],
       "bCategorys": [
         "category5",
-        "category6"
+        "category55"
       ],
-      "bDetail": "this is detail of the book_4"
+      "bDetail": "language : Arabic , pages : 288 , year : 1200"
     },
     {
-      "bName": "Book5 Name",
-      "bId": "10000500",
+      "bName": "Njal's Saga",
+      "bId": "10000600",
       "bAuthors": [
-        "konkuk5",
-        "univ5"
+        "Unknown"
+      ],
+      "bCategorys": [
+        "category6",
+        "category56"
+      ],
+      "bDetail": "language : Old Norse , pages : 384 , year : 1350"
+    },
+    {
+      "bName": "Pride and Prejudice",
+      "bId": "10000700",
+      "bAuthors": [
+        "Jane"
       ],
       "bCategorys": [
         "category7",
-        "category8"
+        "category57"
       ],
-      "bDetail": "this is detail of the book_5"
+      "bDetail": "language : English , pages : 226 , year : 1813"
     },
     {
-      "bName": "Book6 Name",
-      "bId": "10000600",
+      "bName": "Le Pere Goriot",
+      "bId": "10000800",
       "bAuthors": [
-        "konkuk6",
-        "univ6"
+        "Honore",
+        "de"
+      ],
+      "bCategorys": [
+        "category8",
+        "category58"
+      ],
+      "bDetail": "language : French , pages : 443 , year : 1835"
+    },
+    {
+      "bName": "Molloy, Malone Dies, The Unnamable, the trilogy",
+      "bId": "10000900",
+      "bAuthors": [
+        "Samuel"
       ],
       "bCategorys": [
         "category9",
-        "category10"
+        "category59"
       ],
-      "bDetail": "this is detail of the book_6"
+      "bDetail": "language : French, English , pages : 256 , year : 1952"
     },
     {
-      "bName": "Book7 Name",
-      "bId": "10000700",
+      "bName": "The Decameron",
+      "bId": "10001000",
       "bAuthors": [
-        "konkuk7",
-        "univ7"
+        "Giovanni"
+      ],
+      "bCategorys": [
+        "category10",
+        "category60"
+      ],
+      "bDetail": "language : Italian , pages : 1024 , year : 1351"
+    },
+    {
+      "bName": "Ficciones",
+      "bId": "10001100",
+      "bAuthors": [
+        "Jorge",
+        "Luis"
       ],
       "bCategorys": [
         "category11",
-        "category12"
+        "category61"
       ],
-      "bDetail": "this is detail of the book_7"
+      "bDetail": "language : Spanish , pages : 224 , year : 1965"
     },
     {
-      "bName": "Book8 Name",
-      "bId": "10000800",
+      "bName": "Wuthering Heights",
+      "bId": "10001200",
       "bAuthors": [
-        "konkuk8",
-        "univ8"
+        "Emily"
+      ],
+      "bCategorys": [
+        "category12",
+        "category62"
+      ],
+      "bDetail": "language : English , pages : 342 , year : 1847"
+    },
+    {
+      "bName": "The Stranger",
+      "bId": "10001300",
+      "bAuthors": [
+        "Albert"
       ],
       "bCategorys": [
         "category13",
-        "category14"
+        "category63"
       ],
-      "bDetail": "this is detail of the book_8"
+      "bDetail": "language : French , pages : 185 , year : 1942"
     },
     {
-      "bName": "Book9 Name",
-      "bId": "10000900",
+      "bName": "Poems",
+      "bId": "10001400",
       "bAuthors": [
-        "konkuk9",
-        "univ9"
+        "Paul"
+      ],
+      "bCategorys": [
+        "category14",
+        "category64"
+      ],
+      "bDetail": "language : German , pages : 320 , year : 1952"
+    },
+    {
+      "bName": "Journey to the End of the Night",
+      "bId": "10001500",
+      "bAuthors": [
+        "Louis-Ferdinand"
       ],
       "bCategorys": [
         "category15",
-        "category16"
+        "category65"
       ],
-      "bDetail": "this is detail of the book_9"
+      "bDetail": "language : French , pages : 505 , year : 1932"
     },
     {
-      "bName": "Book10 Name",
-      "bId": "10001000",
+      "bName": "Don Quijote De La Mancha",
+      "bId": "10001600",
       "bAuthors": [
-        "konkuk10",
-        "univ10"
+        "Miguel",
+        "de"
+      ],
+      "bCategorys": [
+        "category16",
+        "category66"
+      ],
+      "bDetail": "language : Spanish , pages : 1056 , year : 1610"
+    },
+    {
+      "bName": "The Canterbury Tales",
+      "bId": "10001700",
+      "bAuthors": [
+        "Geoffrey"
       ],
       "bCategorys": [
         "category17",
-        "category18"
+        "category67"
       ],
-      "bDetail": "this is detail of the book_10"
+      "bDetail": "language : English , pages : 544 , year : 1450"
     },
     {
-      "bName": "Book11 Name",
-      "bId": "10001100",
+      "bName": "Stories",
+      "bId": "10001800",
       "bAuthors": [
-        "konkuk11",
-        "univ11"
+        "Anton"
+      ],
+      "bCategorys": [
+        "category18",
+        "category68"
+      ],
+      "bDetail": "language : Russian , pages : 194 , year : 1886"
+    },
+    {
+      "bName": "Nostromo",
+      "bId": "10001900",
+      "bAuthors": [
+        "Joseph"
       ],
       "bCategorys": [
         "category19",
-        "category20"
+        "category69"
       ],
-      "bDetail": "this is detail of the book_11"
+      "bDetail": "language : English , pages : 320 , year : 1904"
     },
     {
-      "bName": "Book12 Name",
-      "bId": "10001200",
+      "bName": "Great Expectations",
+      "bId": "10002000",
       "bAuthors": [
-        "konkuk12",
-        "univ12"
+        "Charles"
+      ],
+      "bCategorys": [
+        "category20",
+        "category70"
+      ],
+      "bDetail": "language : English , pages : 194 , year : 1861"
+    },
+    {
+      "bName": "Jacques the Fatalist",
+      "bId": "10002100",
+      "bAuthors": [
+        "Denis"
       ],
       "bCategorys": [
         "category21",
-        "category22"
+        "category71"
       ],
-      "bDetail": "this is detail of the book_12"
+      "bDetail": "language : French , pages : 596 , year : 1796"
     },
     {
-      "bName": "Book13 Name",
-      "bId": "10001300",
+      "bName": "Berlin Alexanderplatz",
+      "bId": "10002200",
       "bAuthors": [
-        "konkuk13",
-        "univ13"
+        "Alfred"
+      ],
+      "bCategorys": [
+        "category22",
+        "category72"
+      ],
+      "bDetail": "language : German , pages : 600 , year : 1929"
+    },
+    {
+      "bName": "Crime and Punishment",
+      "bId": "10002300",
+      "bAuthors": [
+        "Fyodor"
       ],
       "bCategorys": [
         "category23",
-        "category24"
+        "category73"
       ],
-      "bDetail": "this is detail of the book_13"
+      "bDetail": "language : Russian , pages : 551 , year : 1866"
     },
     {
-      "bName": "Book14 Name",
-      "bId": "10001400",
+      "bName": "The Idiot",
+      "bId": "10002400",
       "bAuthors": [
-        "konkuk14",
-        "univ14"
+        "Fyodor"
+      ],
+      "bCategorys": [
+        "category24",
+        "category74"
+      ],
+      "bDetail": "language : Russian , pages : 656 , year : 1869"
+    },
+    {
+      "bName": "The Possessed",
+      "bId": "10002500",
+      "bAuthors": [
+        "Fyodor"
       ],
       "bCategorys": [
         "category25",
-        "category26"
+        "category75"
       ],
-      "bDetail": "this is detail of the book_14"
+      "bDetail": "language : Russian , pages : 768 , year : 1872"
     },
     {
-      "bName": "Book15 Name",
-      "bId": "10001500",
+      "bName": "The Brothers Karamazov",
+      "bId": "10002600",
       "bAuthors": [
-        "konkuk15",
-        "univ15"
+        "Fyodor"
+      ],
+      "bCategorys": [
+        "category26",
+        "category76"
+      ],
+      "bDetail": "language : Russian , pages : 824 , year : 1880"
+    },
+    {
+      "bName": "Middlemarch",
+      "bId": "10002700",
+      "bAuthors": [
+        "George"
       ],
       "bCategorys": [
         "category27",
-        "category28"
+        "category77"
       ],
-      "bDetail": "this is detail of the book_15"
+      "bDetail": "language : English , pages : 800 , year : 1871"
     },
     {
-      "bName": "Book16 Name",
-      "bId": "10001600",
+      "bName": "Invisible Man",
+      "bId": "10002800",
       "bAuthors": [
-        "konkuk16",
-        "univ16"
+        "Ralph"
+      ],
+      "bCategorys": [
+        "category28",
+        "category78"
+      ],
+      "bDetail": "language : English , pages : 581 , year : 1952"
+    },
+    {
+      "bName": "Medea",
+      "bId": "10002900",
+      "bAuthors": [
+        "Euripides"
       ],
       "bCategorys": [
         "category29",
-        "category30"
+        "category79"
       ],
-      "bDetail": "this is detail of the book_16"
+      "bDetail": "language : Greek , pages : 104 , year : -431"
     },
     {
-      "bName": "Book17 Name",
-      "bId": "10001700",
+      "bName": "Absalom, Absalom!",
+      "bId": "10003000",
       "bAuthors": [
-        "konkuk17",
-        "univ17"
+        "William"
+      ],
+      "bCategorys": [
+        "category30",
+        "category80"
+      ],
+      "bDetail": "language : English , pages : 313 , year : 1936"
+    },
+    {
+      "bName": "The Sound and the Fury",
+      "bId": "10003100",
+      "bAuthors": [
+        "William"
       ],
       "bCategorys": [
         "category31",
-        "category32"
+        "category81"
       ],
-      "bDetail": "this is detail of the book_17"
+      "bDetail": "language : English , pages : 326 , year : 1929"
     },
     {
-      "bName": "Book18 Name",
-      "bId": "10001800",
+      "bName": "Madame Bovary",
+      "bId": "10003200",
       "bAuthors": [
-        "konkuk18",
-        "univ18"
+        "Gustave"
+      ],
+      "bCategorys": [
+        "category32",
+        "category82"
+      ],
+      "bDetail": "language : French , pages : 528 , year : 1857"
+    },
+    {
+      "bName": "Sentimental Education",
+      "bId": "10003300",
+      "bAuthors": [
+        "Gustave"
       ],
       "bCategorys": [
         "category33",
-        "category34"
+        "category83"
       ],
-      "bDetail": "this is detail of the book_18"
+      "bDetail": "language : French , pages : 606 , year : 1869"
     },
     {
-      "bName": "Book19 Name",
-      "bId": "10001900",
+      "bName": "Gypsy Ballads",
+      "bId": "10003400",
       "bAuthors": [
-        "konkuk19",
-        "univ19"
+        "Federico",
+        "Garcea"
+      ],
+      "bCategorys": [
+        "category34",
+        "category84"
+      ],
+      "bDetail": "language : Spanish , pages : 218 , year : 1928"
+    },
+    {
+      "bName": "One Hundred Years of Solitude",
+      "bId": "10003500",
+      "bAuthors": [
+        "Gabriel",
+        "Garcea"
       ],
       "bCategorys": [
         "category35",
-        "category36"
+        "category85"
       ],
-      "bDetail": "this is detail of the book_19"
+      "bDetail": "language : Spanish , pages : 417 , year : 1967"
     },
     {
-      "bName": "Book20 Name",
-      "bId": "10002000",
+      "bName": "Love in the Time of Cholera",
+      "bId": "10003600",
       "bAuthors": [
-        "konkuk20",
-        "univ20"
+        "Gabriel",
+        "Garcea"
+      ],
+      "bCategorys": [
+        "category36",
+        "category86"
+      ],
+      "bDetail": "language : Spanish , pages : 368 , year : 1985"
+    },
+    {
+      "bName": "Faust",
+      "bId": "10003700",
+      "bAuthors": [
+        "Johann",
+        "Wolfgang",
+        "von"
       ],
       "bCategorys": [
         "category37",
-        "category38"
+        "category87"
       ],
-      "bDetail": "this is detail of the book_20"
+      "bDetail": "language : German , pages : 158 , year : 1832"
     },
     {
-      "bName": "Book21 Name",
-      "bId": "10002100",
+      "bName": "Dead Souls",
+      "bId": "10003800",
       "bAuthors": [
-        "konkuk21",
-        "univ21"
+        "Nikolai"
+      ],
+      "bCategorys": [
+        "category38",
+        "category88"
+      ],
+      "bDetail": "language : Russian , pages : 432 , year : 1842"
+    },
+    {
+      "bName": "The Tin Drum",
+      "bId": "10003900",
+      "bAuthors": [
+        "Günter"
       ],
       "bCategorys": [
         "category39",
-        "category40"
+        "category89"
       ],
-      "bDetail": "this is detail of the book_21"
+      "bDetail": "language : German , pages : 600 , year : 1959"
     },
     {
-      "bName": "Book22 Name",
-      "bId": "10002200",
+      "bName": "The Devil to Pay in the Backlands",
+      "bId": "10004000",
       "bAuthors": [
-        "konkuk22",
-        "univ22"
+        "Joeo",
+        "Guimarees"
+      ],
+      "bCategorys": [
+        "category40",
+        "category90"
+      ],
+      "bDetail": "language : Portuguese , pages : 494 , year : 1956"
+    },
+    {
+      "bName": "Hunger",
+      "bId": "10004100",
+      "bAuthors": [
+        "Knut"
       ],
       "bCategorys": [
         "category41",
-        "category42"
+        "category91"
       ],
-      "bDetail": "this is detail of the book_22"
+      "bDetail": "language : Norwegian , pages : 176 , year : 1890"
     },
     {
-      "bName": "Book23 Name",
-      "bId": "10002300",
+      "bName": "The Old Man and the Sea",
+      "bId": "10004200",
       "bAuthors": [
-        "konkuk23",
-        "univ23"
+        "Ernest"
+      ],
+      "bCategorys": [
+        "category42",
+        "category92"
+      ],
+      "bDetail": "language : English , pages : 128 , year : 1952"
+    },
+    {
+      "bName": "Iliad",
+      "bId": "10004300",
+      "bAuthors": [
+        "Homer"
       ],
       "bCategorys": [
         "category43",
-        "category44"
+        "category93"
       ],
-      "bDetail": "this is detail of the book_23"
+      "bDetail": "language : Greek , pages : 608 , year : -735"
     },
     {
-      "bName": "Book24 Name",
-      "bId": "10002400",
+      "bName": "Odyssey",
+      "bId": "10004400",
       "bAuthors": [
-        "konkuk24",
-        "univ24"
+        "Homer"
+      ],
+      "bCategorys": [
+        "category44",
+        "category94"
+      ],
+      "bDetail": "language : Greek , pages : 374 , year : -800"
+    },
+    {
+      "bName": "A Doll's House",
+      "bId": "10004500",
+      "bAuthors": [
+        "Henrik"
       ],
       "bCategorys": [
         "category45",
-        "category46"
+        "category95"
       ],
-      "bDetail": "this is detail of the book_24"
+      "bDetail": "language : Norwegian , pages : 68 , year : 1879"
     },
     {
-      "bName": "Book25 Name",
-      "bId": "10002500",
+      "bName": "Ulysses",
+      "bId": "10004600",
       "bAuthors": [
-        "konkuk25",
-        "univ25"
+        "James"
+      ],
+      "bCategorys": [
+        "category46",
+        "category96"
+      ],
+      "bDetail": "language : English , pages : 228 , year : 1922"
+    },
+    {
+      "bName": "Stories",
+      "bId": "10004700",
+      "bAuthors": [
+        "Franz"
       ],
       "bCategorys": [
         "category47",
-        "category48"
+        "category97"
       ],
-      "bDetail": "this is detail of the book_25"
+      "bDetail": "language : German , pages : 488 , year : 1924"
     },
     {
-      "bName": "Book26 Name",
-      "bId": "10002600",
+      "bName": "The Trial",
+      "bId": "10004800",
       "bAuthors": [
-        "konkuk26",
-        "univ26"
+        "Franz"
+      ],
+      "bCategorys": [
+        "category48",
+        "category98"
+      ],
+      "bDetail": "language : German , pages : 160 , year : 1925"
+    },
+    {
+      "bName": "The Castle",
+      "bId": "10004900",
+      "bAuthors": [
+        "Franz"
       ],
       "bCategorys": [
         "category49",
-        "category50"
+        "category99"
       ],
-      "bDetail": "this is detail of the book_26"
+      "bDetail": "language : German , pages : 352 , year : 1926"
     },
     {
-      "bName": "Book27 Name",
-      "bId": "10002700",
+      "bName": "The recognition of Shakuntala",
+      "bId": "10005000",
       "bAuthors": [
-        "konkuk27",
-        "univ27"
+        "Kālidāsa"
+      ],
+      "bCategorys": [
+        "category50",
+        "category100"
+      ],
+      "bDetail": "language : Sanskrit , pages : 147 , year : 150"
+    },
+    {
+      "bName": "The Sound of the Mountain",
+      "bId": "10005100",
+      "bAuthors": [
+        "Yasunari"
       ],
       "bCategorys": [
         "category51",
-        "category52"
+        "category101"
       ],
-      "bDetail": "this is detail of the book_27"
+      "bDetail": "language : Japanese , pages : 288 , year : 1954"
     },
     {
-      "bName": "Book28 Name",
-      "bId": "10002800",
+      "bName": "Zorba the Greek",
+      "bId": "10005200",
       "bAuthors": [
-        "konkuk28",
-        "univ28"
+        "Nikos"
+      ],
+      "bCategorys": [
+        "category52",
+        "category102"
+      ],
+      "bDetail": "language : Greek , pages : 368 , year : 1946"
+    },
+    {
+      "bName": "Sons and Lovers",
+      "bId": "10005300",
+      "bAuthors": [
+        "D.",
+        "H."
       ],
       "bCategorys": [
         "category53",
-        "category54"
+        "category103"
       ],
-      "bDetail": "this is detail of the book_28"
+      "bDetail": "language : English , pages : 432 , year : 1913"
     },
     {
-      "bName": "Book29 Name",
-      "bId": "10002900",
+      "bName": "Independent People",
+      "bId": "10005400",
       "bAuthors": [
-        "konkuk29",
-        "univ29"
+        "Halldór"
+      ],
+      "bCategorys": [
+        "category54",
+        "category104"
+      ],
+      "bDetail": "language : Icelandic , pages : 470 , year : 1934"
+    },
+    {
+      "bName": "Poems",
+      "bId": "10005500",
+      "bAuthors": [
+        "Giacomo"
       ],
       "bCategorys": [
         "category55",
-        "category56"
+        "category105"
       ],
-      "bDetail": "this is detail of the book_29"
+      "bDetail": "language : Italian , pages : 184 , year : 1818"
     },
     {
-      "bName": "Book30 Name",
-      "bId": "10003000",
+      "bName": "The Golden Notebook",
+      "bId": "10005600",
       "bAuthors": [
-        "konkuk30",
-        "univ30"
+        "Doris"
+      ],
+      "bCategorys": [
+        "category56",
+        "category106"
+      ],
+      "bDetail": "language : English , pages : 688 , year : 1962"
+    },
+    {
+      "bName": "Pippi Longstocking",
+      "bId": "10005700",
+      "bAuthors": [
+        "Astrid"
       ],
       "bCategorys": [
         "category57",
-        "category58"
+        "category107"
       ],
-      "bDetail": "this is detail of the book_30"
+      "bDetail": "language : Swedish , pages : 160 , year : 1945"
     },
     {
-      "bName": "Book31 Name",
-      "bId": "10003100",
+      "bName": "Diary of a Madman",
+      "bId": "10005800",
       "bAuthors": [
-        "konkuk31",
-        "univ31"
+        "Lu"
+      ],
+      "bCategorys": [
+        "category58",
+        "category108"
+      ],
+      "bDetail": "language : Chinese , pages : 389 , year : 1918"
+    },
+    {
+      "bName": "Children of Gebelawi",
+      "bId": "10005900",
+      "bAuthors": [
+        "Naguib"
       ],
       "bCategorys": [
         "category59",
-        "category60"
+        "category109"
       ],
-      "bDetail": "this is detail of the book_31"
+      "bDetail": "language : Arabic , pages : 355 , year : 1959"
     },
     {
-      "bName": "Book32 Name",
-      "bId": "10003200",
+      "bName": "Buddenbrooks",
+      "bId": "10006000",
       "bAuthors": [
-        "konkuk32",
-        "univ32"
+        "Thomas"
+      ],
+      "bCategorys": [
+        "category60",
+        "category110"
+      ],
+      "bDetail": "language : German , pages : 736 , year : 1901"
+    },
+    {
+      "bName": "The Magic Mountain",
+      "bId": "10006100",
+      "bAuthors": [
+        "Thomas"
       ],
       "bCategorys": [
         "category61",
-        "category62"
+        "category111"
       ],
-      "bDetail": "this is detail of the book_32"
+      "bDetail": "language : German , pages : 720 , year : 1924"
     },
     {
-      "bName": "Book33 Name",
-      "bId": "10003300",
+      "bName": "Moby Dick",
+      "bId": "10006200",
       "bAuthors": [
-        "konkuk33",
-        "univ33"
+        "Herman"
+      ],
+      "bCategorys": [
+        "category62",
+        "category112"
+      ],
+      "bDetail": "language : English , pages : 378 , year : 1851"
+    },
+    {
+      "bName": "Essays",
+      "bId": "10006300",
+      "bAuthors": [
+        "Michel",
+        "de"
       ],
       "bCategorys": [
         "category63",
-        "category64"
+        "category113"
       ],
-      "bDetail": "this is detail of the book_33"
+      "bDetail": "language : French , pages : 404 , year : 1595"
     },
     {
-      "bName": "Book34 Name",
-      "bId": "10003400",
+      "bName": "History",
+      "bId": "10006400",
       "bAuthors": [
-        "konkuk34",
-        "univ34"
+        "Elsa"
+      ],
+      "bCategorys": [
+        "category64",
+        "category114"
+      ],
+      "bDetail": "language : Italian , pages : 600 , year : 1974"
+    },
+    {
+      "bName": "Beloved",
+      "bId": "10006500",
+      "bAuthors": [
+        "Toni"
       ],
       "bCategorys": [
         "category65",
-        "category66"
+        "category115"
       ],
-      "bDetail": "this is detail of the book_34"
+      "bDetail": "language : English , pages : 321 , year : 1987"
     },
     {
-      "bName": "Book35 Name",
-      "bId": "10003500",
+      "bName": "The Tale of Genji",
+      "bId": "10006600",
       "bAuthors": [
-        "konkuk35",
-        "univ35"
+        "Murasaki"
+      ],
+      "bCategorys": [
+        "category66",
+        "category116"
+      ],
+      "bDetail": "language : Japanese , pages : 1360 , year : 1006"
+    },
+    {
+      "bName": "The Man Without Qualities",
+      "bId": "10006700",
+      "bAuthors": [
+        "Robert"
       ],
       "bCategorys": [
         "category67",
-        "category68"
+        "category117"
       ],
-      "bDetail": "this is detail of the book_35"
+      "bDetail": "language : German , pages : 365 , year : 1931"
     },
     {
-      "bName": "Book36 Name",
-      "bId": "10003600",
+      "bName": "Lolita",
+      "bId": "10006800",
       "bAuthors": [
-        "konkuk36",
-        "univ36"
+        "Vladimir"
+      ],
+      "bCategorys": [
+        "category68",
+        "category118"
+      ],
+      "bDetail": "language : English , pages : 317 , year : 1955"
+    },
+    {
+      "bName": "Nineteen Eighty-Four",
+      "bId": "10006900",
+      "bAuthors": [
+        "George"
       ],
       "bCategorys": [
         "category69",
-        "category70"
+        "category119"
       ],
-      "bDetail": "this is detail of the book_36"
+      "bDetail": "language : English , pages : 272 , year : 1949"
     },
     {
-      "bName": "Book37 Name",
-      "bId": "10003700",
+      "bName": "Metamorphoses",
+      "bId": "10007000",
       "bAuthors": [
-        "konkuk37",
-        "univ37"
+        "Ovid"
+      ],
+      "bCategorys": [
+        "category70",
+        "category120"
+      ],
+      "bDetail": "language : Classical Latin , pages : 576 , year : 100"
+    },
+    {
+      "bName": "The Book of Disquiet",
+      "bId": "10007100",
+      "bAuthors": [
+        "Fernando"
       ],
       "bCategorys": [
         "category71",
-        "category72"
+        "category121"
       ],
-      "bDetail": "this is detail of the book_37"
+      "bDetail": "language : Portuguese , pages : 272 , year : 1928"
     },
     {
-      "bName": "Book38 Name",
-      "bId": "10003800",
+      "bName": "Tales",
+      "bId": "10007200",
       "bAuthors": [
-        "konkuk38",
-        "univ38"
+        "Edgar",
+        "Allan"
+      ],
+      "bCategorys": [
+        "category72",
+        "category122"
+      ],
+      "bDetail": "language : English , pages : 842 , year : 1950"
+    },
+    {
+      "bName": "In Search of Lost Time",
+      "bId": "10007300",
+      "bAuthors": [
+        "Marcel"
       ],
       "bCategorys": [
         "category73",
-        "category74"
+        "category123"
       ],
-      "bDetail": "this is detail of the book_38"
+      "bDetail": "language : French , pages : 2408 , year : 1920"
     },
     {
-      "bName": "Book39 Name",
-      "bId": "10003900",
+      "bName": "Gargantua and Pantagruel",
+      "bId": "10007400",
       "bAuthors": [
-        "konkuk39",
-        "univ39"
+        "Francois"
+      ],
+      "bCategorys": [
+        "category74",
+        "category124"
+      ],
+      "bDetail": "language : French , pages : 623 , year : 1533"
+    },
+    {
+      "bName": "Pedro Paramo",
+      "bId": "10007500",
+      "bAuthors": [
+        "Juan"
       ],
       "bCategorys": [
         "category75",
-        "category76"
+        "category125"
       ],
-      "bDetail": "this is detail of the book_39"
+      "bDetail": "language : Spanish , pages : 124 , year : 1955"
     },
     {
-      "bName": "Book40 Name",
-      "bId": "10004000",
+      "bName": "The Masnavi",
+      "bId": "10007600",
       "bAuthors": [
-        "konkuk40",
-        "univ40"
+        "Rumi"
+      ],
+      "bCategorys": [
+        "category76",
+        "category126"
+      ],
+      "bDetail": "language : Persian , pages : 438 , year : 1236"
+    },
+    {
+      "bName": "Midnight's Children",
+      "bId": "10007700",
+      "bAuthors": [
+        "Salman"
       ],
       "bCategorys": [
         "category77",
-        "category78"
+        "category127"
       ],
-      "bDetail": "this is detail of the book_40"
+      "bDetail": "language : English , pages : 536 , year : 1981"
     },
     {
-      "bName": "Book41 Name",
-      "bId": "10004100",
+      "bName": "Bostan",
+      "bId": "10007800",
       "bAuthors": [
-        "konkuk41",
-        "univ41"
+        "Saadi"
+      ],
+      "bCategorys": [
+        "category78",
+        "category128"
+      ],
+      "bDetail": "language : Persian , pages : 298 , year : 1257"
+    },
+    {
+      "bName": "Season of Migration to the North",
+      "bId": "10007900",
+      "bAuthors": [
+        "Tayeb"
       ],
       "bCategorys": [
         "category79",
-        "category80"
+        "category129"
       ],
-      "bDetail": "this is detail of the book_41"
+      "bDetail": "language : Arabic , pages : 139 , year : 1966"
     },
     {
-      "bName": "Book42 Name",
-      "bId": "10004200",
+      "bName": "Blindness",
+      "bId": "10008000",
       "bAuthors": [
-        "konkuk42",
-        "univ42"
+        "Jose"
+      ],
+      "bCategorys": [
+        "category80",
+        "category130"
+      ],
+      "bDetail": "language : Portuguese , pages : 352 , year : 1995"
+    },
+    {
+      "bName": "Hamlet",
+      "bId": "10008100",
+      "bAuthors": [
+        "William"
       ],
       "bCategorys": [
         "category81",
-        "category82"
+        "category131"
       ],
-      "bDetail": "this is detail of the book_42"
+      "bDetail": "language : English , pages : 432 , year : 1603"
     },
     {
-      "bName": "Book43 Name",
-      "bId": "10004300",
+      "bName": "King Lear",
+      "bId": "10008200",
       "bAuthors": [
-        "konkuk43",
-        "univ43"
+        "William"
+      ],
+      "bCategorys": [
+        "category82",
+        "category132"
+      ],
+      "bDetail": "language : English , pages : 384 , year : 1608"
+    },
+    {
+      "bName": "Othello",
+      "bId": "10008300",
+      "bAuthors": [
+        "William"
       ],
       "bCategorys": [
         "category83",
-        "category84"
+        "category133"
       ],
-      "bDetail": "this is detail of the book_43"
+      "bDetail": "language : English , pages : 314 , year : 1609"
     },
     {
-      "bName": "Book44 Name",
-      "bId": "10004400",
+      "bName": "Oedipus the King",
+      "bId": "10008400",
       "bAuthors": [
-        "konkuk44",
-        "univ44"
+        "Sophocles"
+      ],
+      "bCategorys": [
+        "category84",
+        "category134"
+      ],
+      "bDetail": "language : Greek , pages : 88 , year : -430"
+    },
+    {
+      "bName": "The Red and the Black",
+      "bId": "10008500",
+      "bAuthors": [
+        "Stendhal"
       ],
       "bCategorys": [
         "category85",
-        "category86"
+        "category135"
       ],
-      "bDetail": "this is detail of the book_44"
+      "bDetail": "language : French , pages : 576 , year : 1830"
     },
     {
-      "bName": "Book45 Name",
-      "bId": "10004500",
+      "bName": "The Life And Opinions of Tristram Shandy",
+      "bId": "10008600",
       "bAuthors": [
-        "konkuk45",
-        "univ45"
+        "Laurence"
+      ],
+      "bCategorys": [
+        "category86",
+        "category136"
+      ],
+      "bDetail": "language : English , pages : 640 , year : 1760"
+    },
+    {
+      "bName": "Confessions of Zeno",
+      "bId": "10008700",
+      "bAuthors": [
+        "Italo"
       ],
       "bCategorys": [
         "category87",
-        "category88"
+        "category137"
       ],
-      "bDetail": "this is detail of the book_45"
+      "bDetail": "language : Italian , pages : 412 , year : 1923"
     },
     {
-      "bName": "Book46 Name",
-      "bId": "10004600",
+      "bName": "Gulliver's Travels",
+      "bId": "10008800",
       "bAuthors": [
-        "konkuk46",
-        "univ46"
+        "Jonathan"
+      ],
+      "bCategorys": [
+        "category88",
+        "category138"
+      ],
+      "bDetail": "language : English , pages : 178 , year : 1726"
+    },
+    {
+      "bName": "War and Peace",
+      "bId": "10008900",
+      "bAuthors": [
+        "Leo"
       ],
       "bCategorys": [
         "category89",
-        "category90"
+        "category139"
       ],
-      "bDetail": "this is detail of the book_46"
+      "bDetail": "language : Russian , pages : 1296 , year : 1867"
     },
     {
-      "bName": "Book47 Name",
-      "bId": "10004700",
+      "bName": "Anna Karenina",
+      "bId": "10009000",
       "bAuthors": [
-        "konkuk47",
-        "univ47"
+        "Leo"
+      ],
+      "bCategorys": [
+        "category90",
+        "category140"
+      ],
+      "bDetail": "language : Russian , pages : 864 , year : 1877"
+    },
+    {
+      "bName": "The Death of Ivan Ilyich",
+      "bId": "10009100",
+      "bAuthors": [
+        "Leo"
       ],
       "bCategorys": [
         "category91",
-        "category92"
+        "category141"
       ],
-      "bDetail": "this is detail of the book_47"
+      "bDetail": "language : Russian , pages : 92 , year : 1886"
     },
     {
-      "bName": "Book48 Name",
-      "bId": "10004800",
+      "bName": "The Adventures of Huckleberry Finn",
+      "bId": "10009200",
       "bAuthors": [
-        "konkuk48",
-        "univ48"
+        "Mark"
+      ],
+      "bCategorys": [
+        "category92",
+        "category142"
+      ],
+      "bDetail": "language : English , pages : 224 , year : 1884"
+    },
+    {
+      "bName": "Ramayana",
+      "bId": "10009300",
+      "bAuthors": [
+        "Valmiki"
       ],
       "bCategorys": [
         "category93",
-        "category94"
+        "category143"
       ],
-      "bDetail": "this is detail of the book_48"
+      "bDetail": "language : Sanskrit , pages : 152 , year : -450"
     },
     {
-      "bName": "Book49 Name",
-      "bId": "10004900",
+      "bName": "The Aeneid",
+      "bId": "10009400",
       "bAuthors": [
-        "konkuk49",
-        "univ49"
+        "Virgil"
+      ],
+      "bCategorys": [
+        "category94",
+        "category144"
+      ],
+      "bDetail": "language : Classical Latin , pages : 442 , year : -23"
+    },
+    {
+      "bName": "Mahabharata",
+      "bId": "10009500",
+      "bAuthors": [
+        "Vyasa"
       ],
       "bCategorys": [
         "category95",
-        "category96"
+        "category145"
       ],
-      "bDetail": "this is detail of the book_49"
+      "bDetail": "language : Sanskrit , pages : 276 , year : -700"
     },
     {
-      "bName": "Book50 Name",
-      "bId": "10005000",
+      "bName": "Leaves of Grass",
+      "bId": "10009600",
       "bAuthors": [
-        "konkuk50",
-        "univ50"
+        "Walt"
+      ],
+      "bCategorys": [
+        "category96",
+        "category146"
+      ],
+      "bDetail": "language : English , pages : 152 , year : 1855"
+    },
+    {
+      "bName": "Mrs Dalloway",
+      "bId": "10009700",
+      "bAuthors": [
+        "Virginia"
       ],
       "bCategorys": [
         "category97",
-        "category98"
+        "category147"
       ],
-      "bDetail": "this is detail of the book_50"
+      "bDetail": "language : English , pages : 216 , year : 1925"
     },
     {
-      "bName": "Book51 Name",
-      "bId": "10005100",
+      "bName": "To the Lighthouse",
+      "bId": "10009800",
       "bAuthors": [
-        "konkuk51",
-        "univ51"
+        "Virginia"
+      ],
+      "bCategorys": [
+        "category98",
+        "category148"
+      ],
+      "bDetail": "language : English , pages : 209 , year : 1927"
+    },
+    {
+      "bName": "Memoirs of Hadrian",
+      "bId": "10009900",
+      "bAuthors": [
+        "Marguerite"
       ],
       "bCategorys": [
         "category99",
-        "category100"
+        "category149"
       ],
-      "bDetail": "this is detail of the book_51"
-    },
-    {
-      "bName": "Book52 Name",
-      "bId": "10005200",
-      "bAuthors": [
-        "konkuk52",
-        "univ52"
-      ],
-      "bCategorys": [
-        "category101",
-        "category102"
-      ],
-      "bDetail": "this is detail of the book_52"
-    },
-    {
-      "bName": "Book53 Name",
-      "bId": "10005300",
-      "bAuthors": [
-        "konkuk53",
-        "univ53"
-      ],
-      "bCategorys": [
-        "category103",
-        "category104"
-      ],
-      "bDetail": "this is detail of the book_53"
-    },
-    {
-      "bName": "Book54 Name",
-      "bId": "10005400",
-      "bAuthors": [
-        "konkuk54",
-        "univ54"
-      ],
-      "bCategorys": [
-        "category105",
-        "category106"
-      ],
-      "bDetail": "this is detail of the book_54"
-    },
-    {
-      "bName": "Book55 Name",
-      "bId": "10005500",
-      "bAuthors": [
-        "konkuk55",
-        "univ55"
-      ],
-      "bCategorys": [
-        "category107",
-        "category108"
-      ],
-      "bDetail": "this is detail of the book_55"
-    },
-    {
-      "bName": "Book56 Name",
-      "bId": "10005600",
-      "bAuthors": [
-        "konkuk56",
-        "univ56"
-      ],
-      "bCategorys": [
-        "category109",
-        "category110"
-      ],
-      "bDetail": "this is detail of the book_56"
-    },
-    {
-      "bName": "Book57 Name",
-      "bId": "10005700",
-      "bAuthors": [
-        "konkuk57",
-        "univ57"
-      ],
-      "bCategorys": [
-        "category111",
-        "category112"
-      ],
-      "bDetail": "this is detail of the book_57"
-    },
-    {
-      "bName": "Book58 Name",
-      "bId": "10005800",
-      "bAuthors": [
-        "konkuk58",
-        "univ58"
-      ],
-      "bCategorys": [
-        "category113",
-        "category114"
-      ],
-      "bDetail": "this is detail of the book_58"
-    },
-    {
-      "bName": "Book59 Name",
-      "bId": "10005900",
-      "bAuthors": [
-        "konkuk59",
-        "univ59"
-      ],
-      "bCategorys": [
-        "category115",
-        "category116"
-      ],
-      "bDetail": "this is detail of the book_59"
-    },
-    {
-      "bName": "Book60 Name",
-      "bId": "10006000",
-      "bAuthors": [
-        "konkuk60",
-        "univ60"
-      ],
-      "bCategorys": [
-        "category117",
-        "category118"
-      ],
-      "bDetail": "this is detail of the book_60"
-    },
-    {
-      "bName": "Book61 Name",
-      "bId": "10006100",
-      "bAuthors": [
-        "konkuk61",
-        "univ61"
-      ],
-      "bCategorys": [
-        "category119",
-        "category120"
-      ],
-      "bDetail": "this is detail of the book_61"
-    },
-    {
-      "bName": "Book62 Name",
-      "bId": "10006200",
-      "bAuthors": [
-        "konkuk62",
-        "univ62"
-      ],
-      "bCategorys": [
-        "category121",
-        "category122"
-      ],
-      "bDetail": "this is detail of the book_62"
-    },
-    {
-      "bName": "Book63 Name",
-      "bId": "10006300",
-      "bAuthors": [
-        "konkuk63",
-        "univ63"
-      ],
-      "bCategorys": [
-        "category123",
-        "category124"
-      ],
-      "bDetail": "this is detail of the book_63"
-    },
-    {
-      "bName": "Book64 Name",
-      "bId": "10006400",
-      "bAuthors": [
-        "konkuk64",
-        "univ64"
-      ],
-      "bCategorys": [
-        "category125",
-        "category126"
-      ],
-      "bDetail": "this is detail of the book_64"
-    },
-    {
-      "bName": "Book65 Name",
-      "bId": "10006500",
-      "bAuthors": [
-        "konkuk65",
-        "univ65"
-      ],
-      "bCategorys": [
-        "category127",
-        "category128"
-      ],
-      "bDetail": "this is detail of the book_65"
-    },
-    {
-      "bName": "Book66 Name",
-      "bId": "10006600",
-      "bAuthors": [
-        "konkuk66",
-        "univ66"
-      ],
-      "bCategorys": [
-        "category129",
-        "category130"
-      ],
-      "bDetail": "this is detail of the book_66"
-    },
-    {
-      "bName": "Book67 Name",
-      "bId": "10006700",
-      "bAuthors": [
-        "konkuk67",
-        "univ67"
-      ],
-      "bCategorys": [
-        "category131",
-        "category132"
-      ],
-      "bDetail": "this is detail of the book_67"
-    },
-    {
-      "bName": "Book68 Name",
-      "bId": "10006800",
-      "bAuthors": [
-        "konkuk68",
-        "univ68"
-      ],
-      "bCategorys": [
-        "category133",
-        "category134"
-      ],
-      "bDetail": "this is detail of the book_68"
-    },
-    {
-      "bName": "Book69 Name",
-      "bId": "10006900",
-      "bAuthors": [
-        "konkuk69",
-        "univ69"
-      ],
-      "bCategorys": [
-        "category135",
-        "category136"
-      ],
-      "bDetail": "this is detail of the book_69"
-    },
-    {
-      "bName": "Book70 Name",
-      "bId": "10007000",
-      "bAuthors": [
-        "konkuk70",
-        "univ70"
-      ],
-      "bCategorys": [
-        "category137",
-        "category138"
-      ],
-      "bDetail": "this is detail of the book_70"
-    },
-    {
-      "bName": "Book71 Name",
-      "bId": "10007100",
-      "bAuthors": [
-        "konkuk71",
-        "univ71"
-      ],
-      "bCategorys": [
-        "category139",
-        "category140"
-      ],
-      "bDetail": "this is detail of the book_71"
-    },
-    {
-      "bName": "Book72 Name",
-      "bId": "10007200",
-      "bAuthors": [
-        "konkuk72",
-        "univ72"
-      ],
-      "bCategorys": [
-        "category141",
-        "category142"
-      ],
-      "bDetail": "this is detail of the book_72"
-    },
-    {
-      "bName": "Book73 Name",
-      "bId": "10007300",
-      "bAuthors": [
-        "konkuk73",
-        "univ73"
-      ],
-      "bCategorys": [
-        "category143",
-        "category144"
-      ],
-      "bDetail": "this is detail of the book_73"
-    },
-    {
-      "bName": "Book74 Name",
-      "bId": "10007400",
-      "bAuthors": [
-        "konkuk74",
-        "univ74"
-      ],
-      "bCategorys": [
-        "category145",
-        "category146"
-      ],
-      "bDetail": "this is detail of the book_74"
-    },
-    {
-      "bName": "Book75 Name",
-      "bId": "10007500",
-      "bAuthors": [
-        "konkuk75",
-        "univ75"
-      ],
-      "bCategorys": [
-        "category147",
-        "category148"
-      ],
-      "bDetail": "this is detail of the book_75"
-    },
-    {
-      "bName": "Book76 Name",
-      "bId": "10007600",
-      "bAuthors": [
-        "konkuk76",
-        "univ76"
-      ],
-      "bCategorys": [
-        "category149",
-        "category150"
-      ],
-      "bDetail": "this is detail of the book_76"
-    },
-    {
-      "bName": "Book77 Name",
-      "bId": "10007700",
-      "bAuthors": [
-        "konkuk77",
-        "univ77"
-      ],
-      "bCategorys": [
-        "category151",
-        "category152"
-      ],
-      "bDetail": "this is detail of the book_77"
-    },
-    {
-      "bName": "Book78 Name",
-      "bId": "10007800",
-      "bAuthors": [
-        "konkuk78",
-        "univ78"
-      ],
-      "bCategorys": [
-        "category153",
-        "category154"
-      ],
-      "bDetail": "this is detail of the book_78"
-    },
-    {
-      "bName": "Book79 Name",
-      "bId": "10007900",
-      "bAuthors": [
-        "konkuk79",
-        "univ79"
-      ],
-      "bCategorys": [
-        "category155",
-        "category156"
-      ],
-      "bDetail": "this is detail of the book_79"
-    },
-    {
-      "bName": "Book80 Name",
-      "bId": "10008000",
-      "bAuthors": [
-        "konkuk80",
-        "univ80"
-      ],
-      "bCategorys": [
-        "category157",
-        "category158"
-      ],
-      "bDetail": "this is detail of the book_80"
-    },
-    {
-      "bName": "Book81 Name",
-      "bId": "10008100",
-      "bAuthors": [
-        "konkuk81",
-        "univ81"
-      ],
-      "bCategorys": [
-        "category159",
-        "category160"
-      ],
-      "bDetail": "this is detail of the book_81"
-    },
-    {
-      "bName": "Book82 Name",
-      "bId": "10008200",
-      "bAuthors": [
-        "konkuk82",
-        "univ82"
-      ],
-      "bCategorys": [
-        "category161",
-        "category162"
-      ],
-      "bDetail": "this is detail of the book_82"
-    },
-    {
-      "bName": "Book83 Name",
-      "bId": "10008300",
-      "bAuthors": [
-        "konkuk83",
-        "univ83"
-      ],
-      "bCategorys": [
-        "category163",
-        "category164"
-      ],
-      "bDetail": "this is detail of the book_83"
-    },
-    {
-      "bName": "Book84 Name",
-      "bId": "10008400",
-      "bAuthors": [
-        "konkuk84",
-        "univ84"
-      ],
-      "bCategorys": [
-        "category165",
-        "category166"
-      ],
-      "bDetail": "this is detail of the book_84"
-    },
-    {
-      "bName": "Book85 Name",
-      "bId": "10008500",
-      "bAuthors": [
-        "konkuk85",
-        "univ85"
-      ],
-      "bCategorys": [
-        "category167",
-        "category168"
-      ],
-      "bDetail": "this is detail of the book_85"
-    },
-    {
-      "bName": "Book86 Name",
-      "bId": "10008600",
-      "bAuthors": [
-        "konkuk86",
-        "univ86"
-      ],
-      "bCategorys": [
-        "category169",
-        "category170"
-      ],
-      "bDetail": "this is detail of the book_86"
-    },
-    {
-      "bName": "Book87 Name",
-      "bId": "10008700",
-      "bAuthors": [
-        "konkuk87",
-        "univ87"
-      ],
-      "bCategorys": [
-        "category171",
-        "category172"
-      ],
-      "bDetail": "this is detail of the book_87"
-    },
-    {
-      "bName": "Book88 Name",
-      "bId": "10008800",
-      "bAuthors": [
-        "konkuk88",
-        "univ88"
-      ],
-      "bCategorys": [
-        "category173",
-        "category174"
-      ],
-      "bDetail": "this is detail of the book_88"
-    },
-    {
-      "bName": "Book89 Name",
-      "bId": "10008900",
-      "bAuthors": [
-        "konkuk89",
-        "univ89"
-      ],
-      "bCategorys": [
-        "category175",
-        "category176"
-      ],
-      "bDetail": "this is detail of the book_89"
-    },
-    {
-      "bName": "Book90 Name",
-      "bId": "10009000",
-      "bAuthors": [
-        "konkuk90",
-        "univ90"
-      ],
-      "bCategorys": [
-        "category177",
-        "category178"
-      ],
-      "bDetail": "this is detail of the book_90"
-    },
-    {
-      "bName": "Book91 Name",
-      "bId": "10009100",
-      "bAuthors": [
-        "konkuk91",
-        "univ91"
-      ],
-      "bCategorys": [
-        "category179",
-        "category180"
-      ],
-      "bDetail": "this is detail of the book_91"
-    },
-    {
-      "bName": "Book92 Name",
-      "bId": "10009200",
-      "bAuthors": [
-        "konkuk92",
-        "univ92"
-      ],
-      "bCategorys": [
-        "category181",
-        "category182"
-      ],
-      "bDetail": "this is detail of the book_92"
-    },
-    {
-      "bName": "Book93 Name",
-      "bId": "10009300",
-      "bAuthors": [
-        "konkuk93",
-        "univ93"
-      ],
-      "bCategorys": [
-        "category183",
-        "category184"
-      ],
-      "bDetail": "this is detail of the book_93"
-    },
-    {
-      "bName": "Book94 Name",
-      "bId": "10009400",
-      "bAuthors": [
-        "konkuk94",
-        "univ94"
-      ],
-      "bCategorys": [
-        "category185",
-        "category186"
-      ],
-      "bDetail": "this is detail of the book_94"
-    },
-    {
-      "bName": "Book95 Name",
-      "bId": "10009500",
-      "bAuthors": [
-        "konkuk95",
-        "univ95"
-      ],
-      "bCategorys": [
-        "category187",
-        "category188"
-      ],
-      "bDetail": "this is detail of the book_95"
-    },
-    {
-      "bName": "Book96 Name",
-      "bId": "10009600",
-      "bAuthors": [
-        "konkuk96",
-        "univ96"
-      ],
-      "bCategorys": [
-        "category189",
-        "category190"
-      ],
-      "bDetail": "this is detail of the book_96"
-    },
-    {
-      "bName": "Book97 Name",
-      "bId": "10009700",
-      "bAuthors": [
-        "konkuk97",
-        "univ97"
-      ],
-      "bCategorys": [
-        "category191",
-        "category192"
-      ],
-      "bDetail": "this is detail of the book_97"
-    },
-    {
-      "bName": "Book98 Name",
-      "bId": "10009800",
-      "bAuthors": [
-        "konkuk98",
-        "univ98"
-      ],
-      "bCategorys": [
-        "category193",
-        "category194"
-      ],
-      "bDetail": "this is detail of the book_98"
-    },
-    {
-      "bName": "Book99 Name",
-      "bId": "10009900",
-      "bAuthors": [
-        "konkuk99",
-        "univ99"
-      ],
-      "bCategorys": [
-        "category195",
-        "category196"
-      ],
-      "bDetail": "this is detail of the book_99"
-    },
-    {
-      "bName": "Book100 Name",
-      "bId": "10010000",
-      "bAuthors": [
-        "konkuk100",
-        "univ100"
-      ],
-      "bCategorys": [
-        "category197",
-        "category198"
-      ],
-      "bDetail": "this is detail of the book_100"
+      "bDetail": "language : French , pages : 408 , year : 1951"
     }
   ]
 }
