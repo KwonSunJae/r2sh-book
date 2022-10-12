@@ -1005,8 +1005,6 @@ var book = [
 for (var i = 0; i < 100; i++) {
     var authors = book[i].author.split(' ');
     var a = '';
-
-    console.log(a);
     a = "[ \"" + authors[0] + "\"";
     for (var j = 1; j < authors.length - 1; j++) {
         a += `,\"${authors[j]}\"`;
