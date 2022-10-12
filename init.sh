@@ -19,11 +19,11 @@ trap "kill -9 $SPIN_PID" `seq 0 15`
 echo "-----Initalizing r2sh-book-----"
 echo "-----Install essential packages-----"
 
-sudo apt-get update -y -qq 
-sudo apt-get install gcc gcc-9 g++-9 -y -qq 
+sudo apt-get update -y -q
+sudo apt-get install gcc gcc-9 g++ -y -q
 gcc --version
-sudo apt-get install git -y -qq 
-
+sudo apt-get install git -y -q
+sudo apt-get install python3 -y -q
 
 echo "-----Alias Settings-----"
 chmod 777 main.sh
@@ -33,6 +33,8 @@ alias r2sh-book='bash ~/r2sh-book/main.sh "\$@"'
 EOF
 source ~/.bashrc
 echo "----- BUILD -----"
+python3 amalgamate.py
+cp -r jsoncpp/dist/* src
 gcc ~/r2sh-book/src/show.cpp -o ~/r2sh-book/build/show.o -lsdtdc++
 gcc ~/r2sh-book/src/search.cpp -o ~/r2sh-book/build/search.o -lsdtdc++
 gcc ~/r2sh-book/src/loan.cpp -o ~/r2sh-book/build/loan.o -lsdtdc++
