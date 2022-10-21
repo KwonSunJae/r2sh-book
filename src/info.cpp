@@ -77,7 +77,9 @@ public:
 	    if (!ok){
             cout<<"Parse Error : Please Check your data File"<<endl;
             exit(EXIT_FAILURE);
-            return ;
+            string ret = "error";
+            return ret;
+            
         }
         Json::Value t= target;
 
@@ -101,12 +103,12 @@ public:
 int main (int argc, char* argv[]){
     if(sizeof(argv[2])/sizeof(char)!=6){
         cout<<"Please Check your ID. ID's length is 6." << endl;
-        return;
+        return -1;
     }
     JsonParser jp;
     string s(argv[2]);
     
     jp.Read(  s );
     
-    return;
+    return 0;
 } 
