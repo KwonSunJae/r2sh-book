@@ -129,7 +129,7 @@ public:
                     if (ssIntd.fail())
                         exit(EXIT_FAILURE);
                     cout<<"checkDate "<<endl;
-                    if (!checkDate(y, m, d))
+                    if (date.compare("0000-00-00")&&!checkDate(y, m, d))
                         exit(EXIT_FAILURE);
 
                     continue;
@@ -328,7 +328,7 @@ public:
                 ssIntd >> d;
                 if (ssIntd.fail())
                     exit(EXIT_FAILURE);
-                if (!checkDate(y, m, d))
+                if (date.compare("0000-00-00")!checkDate(y, m, d))
                     exit(EXIT_FAILURE);
 
 
@@ -363,7 +363,7 @@ public:
                 ssIntds >> d;
                 if (!ssIntds.fail())
                     exit(EXIT_FAILURE);
-                if (!checkDate(y, m, d))
+                if (date.compare("0000-00-00")!checkDate(y, m, d))
                     exit(EXIT_FAILURE);
             }
         }
