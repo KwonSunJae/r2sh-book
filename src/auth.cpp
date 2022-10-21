@@ -89,6 +89,8 @@ public:
             tmp = "0"+tmp;
         }
         user["uId"] = tmp;
+        cout<<uName<<" welcome!" <<endl;
+        cout<<"your id is "<<tmp<<endl;
         user["uName"] = uName;
         
         //속성중에 배열이 있으면 따로 할당해서 해야됨
