@@ -15,12 +15,11 @@ int check(string a, string b){
        for(int i=0;i<6;i++){
          if(isdigit(a.at(i))==0)retrun 0;
        }
-         for(int i=0;i<8;i++){
-            if(isdigit(b.at(i))==0)retrun 0;
-         }
-          return 1;
-            
+       for(int i=0;i<8;i++){
+         if(isdigit(b.at(i))==0)retrun 0;
        }
+          return 1;  
+      }
     }
    return 0;
 }
