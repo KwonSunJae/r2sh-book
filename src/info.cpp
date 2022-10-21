@@ -36,7 +36,7 @@ public:
         int i;
         bool flag=false;
         for( i =0; i<root["users"].size(); i++){ //배열은 이런식으로
-            if(root["r2shs"][i]["rId"]== target){
+            if(root["r2shs"][i]["rId"].asInt() == target){
                 return root["r2shs"][i]["rBid"].asString();
             }
         }   
