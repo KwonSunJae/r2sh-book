@@ -318,32 +318,37 @@ public:
                 if (!checkDate(y, m, d))
                     exit(EXIT_FAILURE);
 
+
+
+
                 if (!root["r2shs"][i]["rDate"].isString())
                     exit(EXIT_FAILURE);
-                string date = root["user"][i]["uPenalty"].asString();
-                string token;
-                int y, m, d;
-                stringstream ss(date);
-                getline(ss, token, '-');
-                stringstream ssInt(token);
+                date = root["r2shs"][i]["rDate"].asString();
+                stringstream ss2(date);
+                getline(ss2, token, '-');
+                stringstream ssInts(token);
                 if (token.length() != 4)
                     exit(EXIT_FAILURE);
-                ssInt >> y;
-                if (ssInt.fail())
+                ssInts >> y;
+                if (ssInts.fail())
                     exit(EXIT_FAILURE);
-                getline(ss, token, '-');
+
+
+                getline(ss2, token, '-');
                 if (token.length() != 2)
                     exit(EXIT_FAILURE);
-                stringstream ssIntm(token);
-                ssIntm >> m;
-                if (!ssIntm.fail())
+                stringstream ssIntms(token);
+                ssIntms >> m;
+                if (!ssIntms.fail())
                     exit(EXIT_FAILURE);
-                getline(ss, token, '-');
+
+                    
+                getline(ss2, token, '-');
                 if (token.length() != 2)
                     exit(EXIT_FAILURE);
-                stringstream ssIntd(token);
-                ssIntd >> d;
-                if (!ssIntd.fail())
+                stringstream ssIntds(token);
+                ssIntd2 >> d;
+                if (!ssIntd2.fail())
                     exit(EXIT_FAILURE);
                 if (!checkDate(y, m, d))
                     exit(EXIT_FAILURE);
