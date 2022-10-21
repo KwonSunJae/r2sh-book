@@ -1,9 +1,9 @@
 #include<iostream>
 #include<fstream>
-#include"json/json.h"
+#include "json/json.h"
 #include<string>
 #include<ctime>
-#pragma comment(lib,"jsoncpp.lib")
+
 using namespace std;
 int search(const Json::Value *v, string type,string key);
 int search(const Json::Value* v,string type,string key){
