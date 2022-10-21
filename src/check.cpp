@@ -241,12 +241,13 @@ public:
     {
         if ((month % 2 == 1)) // odd month
         {
-            if (month <= 7)
+            if (month <= 7){
                 if (day <= 0 || day > 31)
                     return false;
-                else // month > 7
-                    if (day <= 0 || day > 30)
-                        return false;
+            }
+            else // month > 7
+                {if (day <= 0 || day > 30)
+                        return false;}
         }
         else // even month
         {
@@ -271,6 +272,7 @@ public:
                     return false;
             }
         }
+        return 1;
     }
     int Read()
     { // 함수 리턴을 객체로 하고 싶으면 원하는대로 수정하면됨. 파일 읽는 예제 코드임.
