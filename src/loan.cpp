@@ -35,10 +35,10 @@ void loan(char* uid, char*bid) {
    JSONCPP_STRING rerrs2;
    bool ok4 = parseFromStream(builder, ujson, &uvalue, &uerrs);
    int check_uid,check_bid,check_rid;
-   string t;
+   string ti;
 //   if (ok1)if (ok2)if (ok3);
    if ((check_uid=search(&uvalue["users"],"uId",uid))!=-1) {
-      if ((t=uvalue["users"][check_uid].get("uPenalty","").asString()).compare("0000-00-00") != 0) {
+      if ((ti=uvalue["users"][check_uid].get("uPenalty","").asString()).compare("0000-00-00") != 0) {
          if ((check_bid = search(&bvalue["books"], "bId", bid)) != -1) {//bid체크
             if ((check_rid=search(&rvalue["r2shs"],"rBid", bid)) == -1) {//book대여정보확인
                time_t timer;
@@ -87,15 +87,15 @@ void loan(char* uid, char*bid) {
          }
       }
       else {
-         cout << "You can`t borrow a booknow. Penalty dealine: ." << endl;
+         cout << "You can`t borrow a booknow. Penalty dealine: "<<ti<<"." << endl;
       }
    }else{
       cout << "Please check your userID. No search result found." << endl;
    }
 }
 int main(int args, char**argv) {
-   if (args == 3) {
-      loan(argv[1],argv[2]);
+   if (args == 4) {
+      loan(argv[2],argv[3]);
    }
    return 0;
 }
