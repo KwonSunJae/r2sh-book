@@ -26,11 +26,14 @@ fi
 echo $EUID
 cd ~/r2sh-book
 echo "-----Install essential packages-----"
-
+echo "apt updating..."
 sudo apt-get update -y -qq
+echo "apt gcc g++ Installing..."
+
 sudo apt-get install gcc gcc-9 g++ -y -qq
+
 gcc --version
-sudo apt-get install git -y -qq
+
 echo "-----Alias Settings-----"
 chmod 777 main.sh
 
