@@ -35,7 +35,7 @@ public:
         //값을 뽑는 방법
         int i;
         bool flag=false;
-        for( i =0; i<root["users"].size(); i++){ //배열은 이런식으로
+        for( i =0; i<root["r2shs"].size(); i++){ //배열은 이런식으로
             if(root["r2shs"][i]["rId"].asInt() == target){
                 return root["r2shs"][i]["rBid"].asString();
             }
