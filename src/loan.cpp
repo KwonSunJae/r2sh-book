@@ -12,9 +12,9 @@ int check(string a,string b);
 int check(string a, string b){
    if(a.length()==6){
       if(b.length()==8){
-       for(int i=0;i<6;i++){
-         if(isdigit(a.at(i))==0)return 0;
-       }
+         for(int i=0;i<6;i++){
+            if(isdigit(a.at(i))==0)return 0;
+         }
          for(int i=0;i<8;i++){
             if(isdigit(b.at(i))==0)return 0;
          }
@@ -131,9 +131,22 @@ void loan(char* u, char*b) {
    }
 }
 int main(int args, char**argv) {
+   
    if (args == 4) {
-      if(check(argv[2],argv[3]));
-         loan(argv[2],argv[3]);
+      if(strcmp(argv[1],"loan")==0){
+         if(check(argv[2],argv[3])==1){
+            loan(argv[2],argv[3]);
+         }
+         else{
+            cout<<"check your bid or uid."<<endl;
+         }
+      }
+      else{
+      cout<<"check command. "<<endl;
+      }
+   }
+   else{
+      cout<<"check your argument"<<endl;
    }
    return 0;
 }
