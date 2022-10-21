@@ -51,6 +51,7 @@ public:
         urshes.append("1");
         urshes.append("2");
         urshes.append("3");
+        
 
         user["uR2shs"] = urshes;    //배열은 이런식으로 추가
         user["uPenalty"] = "0000-00-00";
