@@ -39,7 +39,8 @@ public:
         for( i =0; i<root["r2shs"].size(); i++){ //배열은 이런식으로
             int a = root["r2shs"][i]["rId"].asInt();
             if(a == target){
-                return root["r2shs"][i]["rBid"].asString();
+                string ret= root["r2shs"][i]["rBid"].asString();
+                return ret ;
             }
         }   
         
