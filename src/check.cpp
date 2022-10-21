@@ -101,7 +101,7 @@ public:
                     cout<<"7 "<<endl;
                     if (!root["users"][i]["uPenalty"].isString())
                         exit(EXIT_FAILURE);
-                    string date = root["user"][i]["uPenalty"].asString();
+                    string date = root["users"][i]["uPenalty"].asString();
                     string token;
                     int y, m, d;
                     stringstream ss(date);
@@ -334,9 +334,9 @@ public:
 
 
 
-                if (!root["r2shs"][i]["rDate"].isString())
+                if (!root["r2shs"][i]["rDeadline"].isString())
                     exit(EXIT_FAILURE);
-                date = root["r2shs"][i]["rDate"].asString();
+                date = root["r2shs"][i]["rDeadline"].asString();
                 stringstream ss2(date);
                 getline(ss2, token, '-');
                 stringstream ssInts(token);
