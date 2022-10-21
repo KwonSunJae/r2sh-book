@@ -330,6 +330,7 @@ public:
                 ssIntd >> d;
                 if (ssIntd.fail())
                     exit(EXIT_FAILURE);
+                cout<<"compare"<<endl;
                 if (date.compare("0000-00-00")&&!checkDate(y, m, d))
                     exit(EXIT_FAILURE);
 
