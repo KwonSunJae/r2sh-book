@@ -70,8 +70,9 @@ void loan(char* u, char*b) {
       int check_time1;
       check_time1=(t->tm_year + 1900)*10000+(t->tm_mon + 1)*100+t->tm_mday;
       ti=uvalue["users"][check_uid].get("uPenalty","").asString();
-      string check_time2=ti.replace(4,1,"");
-      check_time2=check_time2.replace(6,1,"");
+      string check_time2=ti;
+      check_time2.replace(4,1,"");
+      check_time2.replace(6,1,"");
       if (check_time1>=stoi(check_time2)) {
          if ((check_bid = search(&bvalue["books"], "bId", bid)) != -1) {//bid체크
             if ((check_rid=search(&rvalue["r2shs"],"rBid", bid)) == -1) {//book대여정보확인
