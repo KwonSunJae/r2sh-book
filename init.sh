@@ -33,7 +33,8 @@ alias r2sh-book='bash ~/r2sh-book/main.sh "\$@"'
 EOF
 source ~/.bashrc
 echo "----- BUILD -----"
-python3 amalgamate.py
+git clone https://github.com/open-source-parsers/jsoncpp.git
+python3 ~/r2sh-book/jsoncpp/amalgamate.py
 cp -r jsoncpp/dist/* src
 gcc ~/r2sh-book/src/show.cpp -o ~/r2sh-book/build/show.o -lsdtdc++
 gcc ~/r2sh-book/src/search.cpp -o ~/r2sh-book/build/search.o -lsdtdc++
