@@ -107,7 +107,7 @@ public:
                     stringstream ss(date);
                     getline(ss, token, '-');
                     stringstream ssInt(token);
-                    cout<< token <<endl;
+                    cout<<date << token <<endl;
                     if (token.length() != 4)
                         exit(EXIT_FAILURE);
                     ssInt >> y;
