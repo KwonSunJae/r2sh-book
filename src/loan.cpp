@@ -6,6 +6,19 @@
 
 using namespace std;
 int search(const Json::Value *v, string type,string key);
+int check(string a,string b);
+int check(string a, string b){
+   if(strlen(a)==6){
+      if(strlen(b)==8){
+         if(isdigit(a)){
+            if(isdigit(b)){
+               return 1;
+            }
+         }
+      }
+   }
+   else return 0;
+}
 int search(const Json::Value* v,string type,string key){
    int j = 0;
    Json::Value value = *v;
@@ -22,6 +35,12 @@ void loan(char* uid, char*bid) {
    ifstream ujson("../data/Users.json");
    Json::CharReaderBuilder builder;
    builder["collectComments"] = false;
+   Json::CharReaderBuilder builder1;
+   builder1["collectComments"] = false;
+   Json::CharReaderBuilder builder2;
+   builder2["collectComments"] = false;
+   Json::CharReaderBuilder builder3;
+   builder3["collectComments"] = false;
    Json::Value bvalue;
    Json::Value rvalue;
    Json::Value uvalue;
@@ -29,11 +48,11 @@ void loan(char* uid, char*bid) {
    JSONCPP_STRING berrs;
    bool ok1 = parseFromStream(builder, bjson, &bvalue, &berrs);
    JSONCPP_STRING rerrs;
-   bool ok2 = parseFromStream(builder, rjson, &rvalue, &rerrs);
+   bool ok2 = parseFromStream(builder1, rjson, &rvalue, &rerrs);
    JSONCPP_STRING uerrs;
-   bool ok3 = parseFromStream(builder, ujson, &uvalue, &uerrs);
+   bool ok3 = parseFromStream(builder2, ujson, &uvalue, &uerrs);
    JSONCPP_STRING rerrs2;
-   bool ok4 = parseFromStream(builder, ujson, &uvalue, &uerrs);
+   bool ok4 = parseFromStream(builder3, ujson, &uvalue, &uerrs);
    int check_uid,check_bid,check_rid;
    string ti;
 //   if (ok1)if (ok2)if (ok3);
@@ -70,9 +89,9 @@ void loan(char* uid, char*bid) {
                rvalue2["rDate"] = date;//시간
                rvalue2["rDeadline"] = date2;//시간+7
                rvalue["r2shs"].append(rvalue2);
-               Json::StreamWriterBuilder builder;
-               builder["commentStyle"] = "None";
-               builder["indentation"] = "    ";  // Tab
+               Json::StreamWriterBuilder builder4;
+               builder4["commentStyle"] = "None";
+               builder4["indentation"] = "    ";  // Tab
                unique_ptr<Json::StreamWriter> writer(builder.newStreamWriter());
                writer->write(rvalue, &rjson2);
                cout << endl;  // add lf and flush
@@ -95,7 +114,8 @@ void loan(char* uid, char*bid) {
 }
 int main(int args, char**argv) {
    if (args == 4) {
-      loan(argv[2],argv[3]);
+      if(check(argv[2],argv[3]));
+         loan(argv[2],argv[3]);
    }
    return 0;
 }
