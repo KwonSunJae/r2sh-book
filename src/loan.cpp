@@ -10,7 +10,7 @@ using namespace std;
 int search(const Json::Value *v, string type,string key);
 int check(string a,string b);
 int check(string a, string b){
-   if(a.length()==6){
+  if(a.length()==6){
       if(b.length()==8){
        for(int i=0;i<6;i++){
          if(isdigit(a.at(i))==0)retrun 0;
@@ -18,12 +18,12 @@ int check(string a, string b){
          for(int i=0;i<8;i++){
             if(isdigit(b.at(i))==0)retrun 0;
          }
-            return 1;
+          return 1;
             
        }
-      }
-    else return 0;
-   }
+    }
+   return 0;
+}
   
 
 int search(const Json::Value* v,string type,string key){
