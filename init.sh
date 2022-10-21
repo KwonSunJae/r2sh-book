@@ -49,6 +49,5 @@ g++ -o ../build/check check.cpp jsoncpp.cpp -I. -DJSON_IS_AMALGAMATION
 g++ -o ../build/show show.cpp jsoncpp.cpp -I. -DJSON_IS_AMALGAMATION
 
 cd ~/r2sh-book
-chmod 777 build/*
 echo "----COMPLETE-----"
 kill -9 $SPIN_PID
