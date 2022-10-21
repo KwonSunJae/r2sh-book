@@ -31,14 +31,17 @@ class Book {
         cout << "Book details\n";
         cout << "bookName : [" << name << "],\n";
         cout << "bookAuthor : [";
-        for (string author : authors) {
-            cout << author << ",";
+        for (size_t i = 0; i < authors.size(); i++){
+            if(i==authors.size()-1) cout <<authors.at(i);
+            else cout << authors.at(i) << ",";
         }
+    
         cout << "],\n";
         cout << "bookID : [" << id << "],\n";
         cout << "bookCategory : [";
-        for (string category : categorys) {
-            cout << category << " ";
+        for (size_t i = 0; i < categorys.size(); i++){
+            if(i==categorys.size()-1) cout <<categorys.at(i);
+            else cout << categorys.at(i) << ",";
         }
         cout << "],\n";
         cout << "bookDetails : " << detail << endl;
@@ -50,7 +53,10 @@ class Book {
         for (string author : authors) {
             cout << author << ",";
         }
-        cout<<"], ";
+        cout << "], ";
         cout << "bookID : [" << id << "]\n";
     }
+
+    string getId() { return id; }
+    string getName() { return name; }
 };

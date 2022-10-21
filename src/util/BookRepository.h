@@ -30,4 +30,21 @@ class BookRepository {
         }
         return res;
     }
+
+    static int findOneByBookId(vector<Book>* list, string bookId) {
+        for (int i = 0; i < list->size(); i++){
+            if(bookId.compare(list->at(i).getId())==0) return i;
+        }
+        return -1;
+    }
+
+    static vector<int> findAllByBookName(vector<Book>* list, string bookName) {
+        vector<int> res;
+        for (int i = 0; i < list->size(); i++){
+            if(list->at(i).getName().find(bookName)!=string::npos){
+                res.push_back(i);
+            }
+        }
+        return res;
+    }
 };
