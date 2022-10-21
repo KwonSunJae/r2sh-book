@@ -50,8 +50,7 @@ public:
         //속성중에 배열이 있으면 따로 할당해서 해야됨
         Json::Value urshes;
         urshes.append("1");
-        urshes.append("2");
-        urshes.append("3");
+        urshes.removeIndex(0,nullptr);
         
 
         user["uR2shs"] = urshes;    //배열은 이런식으로 추가
@@ -132,11 +131,7 @@ public:
         }
 
 
-        //값을 뽑는 방법
-        cout<<" User Name list"<<endl;
-        for(int i =0; i<root["users"].size(); i++){ //배열은 이런식으로
-            cout<<" name: "<<root["users"][i]["uName"]<<endl;
-        }   
+        
 
         return root["users"].size();
     }
