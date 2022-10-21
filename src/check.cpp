@@ -73,23 +73,32 @@ public:
         {
             for (int i = 0; i < root["users"].size(); i++)
             {
+                cout<<"big "<<endl;
                 if ((root["users"][i].isMember("uId")) && (root["users"][i].isMember("uName")) && (root["users"][i].isMember("uPenalty")) && (root["users"][i].isMember("uR2shs")))
                 {
+                    cout<<"1 "<<endl;
                     if (!root["users"][i]["uId"].isString())
                         exit(EXIT_FAILURE);
+                    cout<<"2 "<<endl;    
                     if (root["users"][i]["uId"].asString().length() != 6)
                         exit(EXIT_FAILURE);
+                    cout<<"3 "<<endl;
                     if (!root["users"][i]["uName"].isString())
                         exit(EXIT_FAILURE);
+                    cout<<"4 "<<endl;
                     if (root["users"][i]["uName"].asString().length() > 20)
                         exit(EXIT_FAILURE);
+                    cout<<"5 "<<endl;
                     if (root["users"][i]["uR2shs"].size() > 5)
                         exit(EXIT_FAILURE);
+                    cout<<"6 "<<endl;    
                     for (int su = 0; su < root["users"][i]["uR2shs"].size(); su++)
                     {
                         if (!root["users"][i]["uR2shs"][su].isInt())
                             exit(EXIT_FAILURE);
                     }
+
+                    cout<<"7 "<<endl;
                     if (!root["users"][i]["uPenalty"].isString())
                         exit(EXIT_FAILURE);
                     string date = root["user"][i]["uPenalty"].asString();
@@ -98,9 +107,11 @@ public:
                     stringstream ss(date);
                     getline(ss, token, '-');
                     stringstream ssInt(token);
+                    cout<< token <<endl;
                     if (token.length() != 4)
                         exit(EXIT_FAILURE);
                     ssInt >> y;
+                    cout<<"big "<<endl;
                     if (ssInt.fail())
                         exit(EXIT_FAILURE);
                     getline(ss, token, '-');
@@ -117,6 +128,7 @@ public:
                     ssIntd >> d;
                     if (ssIntd.fail())
                         exit(EXIT_FAILURE);
+                    cout<<"checkDate "<<endl;
                     if (!checkDate(y, m, d))
                         exit(EXIT_FAILURE);
 
