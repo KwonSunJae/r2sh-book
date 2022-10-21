@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+
 #include "json/json.h"
 
 using namespace std;
@@ -26,16 +27,30 @@ class Book {
         }
         detail = data["bDetail"].asString();
     }
-    void print() {
-        cout << "[" << id << "] " << name << endl;
-        cout << "Authros : ";
+    void printOne() {
+        cout << "Book details\n";
+        cout << "bookName : [" << name << "],\n";
+        cout << "bookAuthor : [";
         for (string author : authors) {
-            cout << author << " ";
+            cout << author << ",";
         }
-        cout << "\nCategorys : ";
+        cout << "],\n";
+        cout << "bookID : [" << id << "],\n";
+        cout << "bookCategory : [";
         for (string category : categorys) {
             cout << category << " ";
         }
-        cout << "\nDetail : " << detail << endl;
+        cout << "],\n";
+        cout << "bookDetails : " << detail << endl;
+    }
+
+    void printLine() {
+        cout << "bookName : [" << name << "], ";
+        cout << "bookAuthor : [";
+        for (string author : authors) {
+            cout << author << ",";
+        }
+        cout<<"], ";
+        cout << "bookID : [" << id << "]\n";
     }
 };
