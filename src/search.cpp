@@ -13,9 +13,6 @@ const string CMD = "search";
 const int ARGV_CMD = 1;
 const int ARGV_BNAME = 2;
 
-int searchById() {
-}
-
 int main(int argc, char **argv) {
     if (argc != 3) {
         cout << "Invalid Number of Argument\n";
