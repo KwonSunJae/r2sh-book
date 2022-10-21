@@ -22,9 +22,10 @@ int check(string a, string b){
             
        }
       }
+    else return 0;
    }
-   else return 0;
-}
+  
+
 int search(const Json::Value* v,string type,string key){
    int j = 0;
    Json::Value value = *v;
