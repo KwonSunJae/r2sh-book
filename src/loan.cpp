@@ -2,7 +2,9 @@
 #include<fstream>
 #include "json/json.h"
 #include<string>
+#include<cstring>
 #include<ctime>
+#include<cctype>
 
 using namespace std;
 int search(const Json::Value *v, string type,string key);
