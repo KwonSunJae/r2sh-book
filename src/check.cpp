@@ -73,32 +73,32 @@ public:
         {
             for (int i = 0; i < root["users"].size(); i++)
             {
-                cout<<"big "<<endl;
+                //cout<<"big "<<endl;
                 if ((root["users"][i].isMember("uId")) && (root["users"][i].isMember("uName")) && (root["users"][i].isMember("uPenalty")) && (root["users"][i].isMember("uR2shs")))
                 {
-                    cout<<"1 "<<endl;
+                    //cout<<"1 "<<endl;
                     if (!root["users"][i]["uId"].isString())
                         exit(EXIT_FAILURE);
-                    cout<<"2 "<<endl;    
+                    //cout<<"2 "<<endl;    
                     if (root["users"][i]["uId"].asString().length() != 6)
                         exit(EXIT_FAILURE);
-                    cout<<"3 "<<endl;
+                    //cout<<"3 "<<endl;
                     if (!root["users"][i]["uName"].isString())
                         exit(EXIT_FAILURE);
-                    cout<<"4 "<<endl;
+                    //cout<<"4 "<<endl;
                     if (root["users"][i]["uName"].asString().length() > 20)
                         exit(EXIT_FAILURE);
-                    cout<<"5 "<<endl;
+                    //cout<<"5 "<<endl;
                     if (root["users"][i]["uR2shs"].size() > 5)
                         exit(EXIT_FAILURE);
-                    cout<<"6 "<<endl;    
+                    //cout<<"6 "<<endl;    
                     for (int su = 0; su < root["users"][i]["uR2shs"].size(); su++)
                     {
                         if (!root["users"][i]["uR2shs"][su].isInt())
                             exit(EXIT_FAILURE);
                     }
 
-                    cout<<"7 "<<endl;
+                    //cout<<"7 "<<endl;
                     if (!root["users"][i]["uPenalty"].isString())
                         exit(EXIT_FAILURE);
                     string date = root["users"][i]["uPenalty"].asString();
@@ -107,11 +107,11 @@ public:
                     stringstream ss(date);
                     getline(ss, token, '-');
                     stringstream ssInt(token);
-                    cout<<date << token <<endl;
+                    //cout<<date << token <<endl;
                     if (token.length() != 4)
                         exit(EXIT_FAILURE);
                     ssInt >> y;
-                    cout<<"big "<<endl;
+                    //cout<<"big "<<endl;
                     if (ssInt.fail())
                         exit(EXIT_FAILURE);
                     getline(ss, token, '-');
@@ -128,7 +128,7 @@ public:
                     ssIntd >> d;
                     if (ssIntd.fail())
                         exit(EXIT_FAILURE);
-                    cout<<"checkDate "<<endl;
+                    //cout<<"checkDate "<<endl;
                     if (date.compare("0000-00-00")&&!checkDate(y, m, d))
                         exit(EXIT_FAILURE);
 
@@ -291,16 +291,18 @@ public:
             for (int i = 0; i < root["r2shs"].size(); i++)
             {
                 //사이즈 확인
-
+                cout<<"1 "<<endl;
                 if ((root["r2shs"][i].isMember("rId")) && (root["r2shs"][i].isMember("rUid")) && (root["r2shs"][i].isMember("rBid")) && (root["r2shs"][i].isMember("rDate")) && (root["r2shs"][i].isMember("rDeadLine")))
                 {
                     continue;
                 }
                 else
                     exit(EXIT_FAILURE);
+                cout<<"2 "<<endl;
                 if (!(root["r2shs"][i]["rId"]).isInt() || !(0 <= root["r2shs"][i]["rId"].asInt() && root["r2shs"][i]["rId"].asInt() <= INT_MAX) || !((root["r2shs"][i]["rUid"]).asString().length() == 6) || !((root["r2shs"][i]["rBid"]).asString().length() == 8))
                     exit(EXIT_FAILURE);
 
+                cout<<"Date "<<endl;
                 if (!root["r2shs"][i]["rDate"].isString())
                     exit(EXIT_FAILURE);
                 string date = root["r2shs"][i]["rDate"].asString();
@@ -333,7 +335,7 @@ public:
 
 
 
-
+                cout<<"deadlin "<<endl;
                 if (!root["r2shs"][i]["rDeadline"].isString())
                     exit(EXIT_FAILURE);
                 date = root["r2shs"][i]["rDeadline"].asString();
@@ -382,11 +384,11 @@ int main()
 
     if ((access(filePath1.c_str(), F_OK) == 0) && (access(filePath2.c_str(), F_OK) == 0) && (access(filePath3.c_str(), F_OK) == 0)) //
     {
-        std::cout << "FILE EXIST" << std::endl;
+        //std::cout << "FILE EXIST" << std::endl;
         JPuser.Read();
-        cout<<"jaemin"<<endl;
+        //cout<<"jaemin"<<endl;
         JPbook.Read();
-        cout<<"subin"<<endl;
+        //cout<<"subin"<<endl;
         JPr2sh.Read();
     }
     else
