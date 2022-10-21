@@ -37,7 +37,7 @@ public:
         int i;
         bool flag=false;
         for( i =0; i<root["r2shs"].size(); i++){ //배열은 이런식으로
-            cout<<"root["r2shs"][i]["rId"].asInt():"<<root["r2shs"][i]["rId"].asInt()<<endl;
+            cout<<".asInt():"<<root["r2shs"][i]["rId"].asInt()<<endl;
             if(root["r2shs"][i]["rId"].asInt() == target){
                 return root["r2shs"][i]["rBid"].asString();
             }
