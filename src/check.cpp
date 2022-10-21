@@ -148,7 +148,7 @@ public:
     ofstream ofs;          // 파일 쓰기
     JsonParserBook()
     {
-        filedata = "../data/Books2.json"; //대상 파일임
+        filedata = "../data/Books.json"; //대상 파일임
     }
 
     void nameChecker(Json::Value data)
