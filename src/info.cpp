@@ -101,12 +101,13 @@ public:
 };
 
 int main (int argc, char* argv[]){
-    if(sizeof(argv[2])/sizeof(char)!=6){
+    string s(argv[2]);
+    if(s.length()!=6){
         cout<<"Please Check your ID. ID's length is 6." << endl;
         return -1;
     }
     JsonParser jp;
-    string s(argv[2]);
+    
     
     jp.Read(  s );
     
