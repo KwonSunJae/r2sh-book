@@ -40,6 +40,8 @@ public:
             int a = root["r2shs"][i]["rId"].asInt();
             if(a == target){
                 string ret= root["r2shs"][i]["rBid"].asString();
+                cout<<ret;
+                ret="";
                 return ret ;
             }
         }   
@@ -77,7 +79,7 @@ public:
         int i;
         bool flag=false;
         for( i =0; i<root["users"].size(); i++){ //배열은 이런식으로
-            if(root["users"][i]["uId"].compare(t)){
+            if(!root["users"][i]["uId"].compare(t)){
                 flag = true;
                 break;
             }
