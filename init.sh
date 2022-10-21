@@ -34,15 +34,20 @@ EOF
 source ~/.bashrc
 echo "----- BUILD -----"
 git clone https://github.com/open-source-parsers/jsoncpp.git
+
+cd jsoncpp
+
 python3 ~/r2sh-book/jsoncpp/amalgamate.py
+cd ~/r2sh-book
 cp -r jsoncpp/dist/* src
-gcc ~/r2sh-book/src/show.cpp -o ~/r2sh-book/build/show.o -lsdtdc++
-gcc ~/r2sh-book/src/search.cpp -o ~/r2sh-book/build/search.o -lsdtdc++
-gcc ~/r2sh-book/src/loan.cpp -o ~/r2sh-book/build/loan.o -lsdtdc++
-gcc ~/r2sh-book/src/return.cpp -o ~/r2sh-book/build/return.o -lsdtdc++
-gcc ~/r2sh-book/src/info.cpp -o ~/r2sh-book/build/info.o -lsdtdc++
-gcc ~/r2sh-book/src/auth.cpp -o ~/r2sh-book/build/auth.o -lsdtdc++
-gcc ~/r2sh-book/src/check.cpp -o ~/r2sh-book/build/check.o -lsdtdc++
+cd src
+g++ -o ../build/info info.cpp jsoncpp.cpp -I. -DJSON_IS_AMALGAMATION
+g++ -o ../build/search search.cpp jsoncpp.cpp -I. -DJSON_IS_AMALGAMATION
+g++ -o ../build/loan loan.cpp jsoncpp.cpp -I. -DJSON_IS_AMALGAMATION
+g++ -o ../build/return return.cpp jsoncpp.cpp -I. -DJSON_IS_AMALGAMATION
+g++ -o ../build/info info.cpp jsoncpp.cpp -I. -DJSON_IS_AMALGAMATION
+g++ -o ../build/info info.cpp jsoncpp.cpp -I. -DJSON_IS_AMALGAMATION
+g++ -o ../build/check check.cpp jsoncpp.cpp -I. -DJSON_IS_AMALGAMATION
 
 chmod 777 build/*
 echo "----COMPLETE-----"
