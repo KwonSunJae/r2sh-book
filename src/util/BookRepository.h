@@ -35,6 +35,7 @@ class BookRepository {
         for (int i = 0; i < list->size(); i++){
             if(bookId.compare(list->at(i).getId())==0) return i;
         }
+        cout << "For complete";
         return -1;
     }
 

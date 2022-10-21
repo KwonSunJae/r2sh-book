@@ -29,6 +29,9 @@ int main(int argc, char **argv) {
 
     vector<Book> list = BookRepository::getBookList("../data/Books.json");
     int result = BookRepository::findOneByBookId(&list, bookId);
-    if (result == -1) cout << "r2sh-book : No search result found\n";
+    if (result == -1){
+        cout << "r2sh-book : No search result found\n";
+        exit(EXIT_FAILURE);
+    } 
     list.at(result).printOne();
 }
