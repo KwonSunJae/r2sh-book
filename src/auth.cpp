@@ -175,10 +175,10 @@ public:
 int main (int argc, char* argv[]){
     if(sizeof(argv[2])/sizeof(char)>20){
         cout<<"Please Check your Name. Too LONG!" << endl;
-        return;
+        return -1;
     }
     userService us;
     us.addUser(argv[2]);
 
-    return;
+    return 0;
 }   
