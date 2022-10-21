@@ -345,13 +345,14 @@ public:
                 stringstream ss2(date);
                 getline(ss2, token, '-');
                 stringstream ssInts(token);
+                cout<<"1 "<<endl;
                 if (token.length() != 4)
                     exit(EXIT_FAILURE);
                 ssInts >> y;
                 if (ssInts.fail())
                     exit(EXIT_FAILURE);
 
-
+                cout<<token <<endl;
                 getline(ss2, token, '-');
                 if (token.length() != 2)
                     exit(EXIT_FAILURE);
@@ -360,7 +361,7 @@ public:
                 if (!ssIntms.fail())
                     exit(EXIT_FAILURE);
 
-                    
+                cout<<token <<endl;
                 getline(ss2, token, '-');
                 if (token.length() != 2)
                     exit(EXIT_FAILURE);
