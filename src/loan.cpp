@@ -42,9 +42,9 @@ void loan(char* uid, char*bid) {
          if ((check_bid = search(&bvalue["books"], "bId", bid)) != -1) {//bid체크
             if ((check_rid=search(&rvalue["r2shs"],"rBid", bid)) == -1) {//book대여정보확인
                time_t timer;
-               struct tm t;
+               struct tm*t;
                timer = time(NULL);
-               localtime_s(&t, &timer);
+               t=localtime(&timer);
                string date = to_string(t.tm_year + 1900);
                date += "-";
                date.append(to_string(t.tm_mon + 1));
@@ -58,7 +58,7 @@ void loan(char* uid, char*bid) {
                cout << "-------------------------" << endl;
                cout << "The book laon has been successfully" << endl;
                cout << "The return deadline is " << date2<< "." << endl;
-               ofstream rjson2("d:\\JSON_DATA.json");
+               ofstream rjson2("../data/R2shs.json");
                Json::Value rvalue2;
                int j=0;
                for (const auto a : rvalue["r2shs"]) {
