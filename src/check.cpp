@@ -293,18 +293,18 @@ public:
             for (int i = 0; i < root["r2shs"].size(); i++)
             {
                 //사이즈 확인
-                cout<<"1 "<<endl;
+                //cout<<"1 "<<endl;
                 if ((root["r2shs"][i].isMember("rId")) && (root["r2shs"][i].isMember("rUid")) && (root["r2shs"][i].isMember("rBid")) && (root["r2shs"][i].isMember("rDate")) && (root["r2shs"][i].isMember("rDeadline")))
                 {
                     
                 }
                 else
                     exit(EXIT_FAILURE);
-                cout<<"2 "<<endl;
+                //cout<<"2 "<<endl;
                 if (!(root["r2shs"][i]["rId"]).isInt() || !(0 <= root["r2shs"][i]["rId"].asInt() && root["r2shs"][i]["rId"].asInt() <= INT_MAX) || !((root["r2shs"][i]["rUid"]).asString().length() == 6) || !((root["r2shs"][i]["rBid"]).asString().length() == 8))
                     exit(EXIT_FAILURE);
 
-                cout<<"Date "<<endl;
+                //cout<<"Date "<<endl;
                 if (!root["r2shs"][i]["rDate"].isString())
                     exit(EXIT_FAILURE);
                 string date = root["r2shs"][i]["rDate"].asString();
@@ -338,38 +338,38 @@ public:
 
 
 
-                cout<<"deadlin "<<endl;
+                //cout<<"deadlin "<<endl;
                 if (!root["r2shs"][i]["rDeadline"].isString())
                     exit(EXIT_FAILURE);
                 date = root["r2shs"][i]["rDeadline"].asString();
                 stringstream ss2(date);
                 getline(ss2, token, '-');
                 stringstream ssInts(token);
-                cout<<"1 "<<endl;
+                //cout<<"1 "<<endl;
                 if (token.length() != 4)
                     exit(EXIT_FAILURE);
                 ssInts >> y;
                 if (ssInts.fail())
                     exit(EXIT_FAILURE);
 
-                cout<<token <<endl;
+                //cout<<token <<endl;
                 getline(ss2, token, '-');
                 if (token.length() != 2)
                     exit(EXIT_FAILURE);
                 stringstream ssIntms(token);
                 ssIntms >> m;
-                if (!ssIntms.fail())
+                if (ssIntms.fail())
                     exit(EXIT_FAILURE);
 
-                cout<<token <<endl;
+                //cout<<token <<endl;
                 getline(ss2, token, '-');
                 if (token.length() != 2)
                     exit(EXIT_FAILURE);
                 stringstream ssIntds(token);
                 ssIntds >> d;
-                if (!ssIntds.fail())
+                if (ssIntds.fail())
                     exit(EXIT_FAILURE);
-                cout<<date <<"compare"<<y<<m<<d<<checkDate(y,m,d)<<endl;
+                //cout<<date <<"compare"<<y<<m<<d<<checkDate(y,m,d)<<endl;
                 if (date.compare("0000-00-00")!=0&&!checkDate(y, m, d))
                     exit(EXIT_FAILURE);
             }
