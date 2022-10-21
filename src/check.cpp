@@ -3,6 +3,7 @@
 #include <string>
 #include <sstream>
 #include <unistd.h>
+#include <limits.h>
 #include "json/json.h" //라이브러리 헤더파일
 using namespace std;
 
@@ -100,7 +101,7 @@ public:
                     if (token.length() != 4)
                         exit(EXIT_FAILURE);
                     ssInt >> y;
-                    if (ssInty.fail())
+                    if (ssInt.fail())
                         exit(EXIT_FAILURE);
                     getline(ss, token, '-');
                     if (token.length() != 2)
@@ -347,8 +348,8 @@ public:
                 if (token.length() != 2)
                     exit(EXIT_FAILURE);
                 stringstream ssIntds(token);
-                ssIntd2 >> d;
-                if (!ssIntd2.fail())
+                ssIntds >> d;
+                if (!ssIntds.fail())
                     exit(EXIT_FAILURE);
                 if (!checkDate(y, m, d))
                     exit(EXIT_FAILURE);
@@ -369,15 +370,15 @@ int main()
 
     if ((access(filePath1.c_str(), F_OK) == 0) && (access(filePath2.c_str(), F_OK) == 0) && (access(filePath3.c_str(), F_OK) == 0)) //
     {
-        std::cout << "FILE EXIST" << std::endl;
+        //std::cout << "FILE EXIST" << std::endl;
         JPuser.Read();
         JPbook.Read();
         JPr2sh.Read();
     }
     else
     {
-        std::cout << "INTEGRITY CHECK FAILED" << std::endl;
-
+       // std::cout << "INTEGRITY CHECK FAILED" << std::endl;
+        exit(EXIT_FAILURE);
         // exit(1);
     }
     // 파일 파싱
