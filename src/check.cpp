@@ -382,9 +382,11 @@ int main()
 
     if ((access(filePath1.c_str(), F_OK) == 0) && (access(filePath2.c_str(), F_OK) == 0) && (access(filePath3.c_str(), F_OK) == 0)) //
     {
-        //std::cout << "FILE EXIST" << std::endl;
+        std::cout << "FILE EXIST" << std::endl;
         JPuser.Read();
+        cout<<"jaemin"<<endl;
         JPbook.Read();
+        cout<<"subin"<<endl;
         JPr2sh.Read();
     }
     else
