@@ -10,21 +10,21 @@ using namespace std;
 int search(const Json::Value *v, string type,string key);
 int check(string a,string b);
 int check(string a, string b){
-  if(a.length()==6){
+   if(a.length()==6){
       if(b.length()==8){
        for(int i=0;i<6;i++){
-         if(isdigit(a.at(i))==0)retrun 0;
+         if(isdigit(a.at(i))==0)return 0;
        }
-       for(int i=0;i<8;i++){
-         if(isdigit(b.at(i))==0)retrun 0;
+         for(int i=0;i<8;i++){
+            if(isdigit(b.at(i))==0)return 0;
+         }
+          return 1;
+            
        }
-          return 1;  
-      }
     }
    return 0;
 }
-  
-
+   
 int search(const Json::Value* v,string type,string key){
    int j = 0;
    Json::Value value = *v;
@@ -35,7 +35,7 @@ int search(const Json::Value* v,string type,string key){
    }
    return -1;
 }
-void loan(char* uid, char*bid) {
+void loan(char* u, char*b) {
    ifstream bjson("../data/Books.json");
    ifstream rjson("../data/R2shs.json");
    ifstream ujson("../data/Users.json");
@@ -61,15 +61,25 @@ void loan(char* uid, char*bid) {
    bool ok4 = parseFromStream(builder3, ujson, &uvalue, &uerrs);
    int check_uid,check_bid,check_rid;
    string ti;
+   string bid(b);
+   string uid(u);
 //   if (ok1)if (ok2)if (ok3);
+  
    if ((check_uid=search(&uvalue["users"],"uId",uid))!=-1) {
-      if ((ti=uvalue["users"][check_uid].get("uPenalty","").asString()).compare("0000-00-00") != 0) {
+      time_t timer;
+      struct tm*t;
+      timer = time(NULL);
+      t=localtime(&timer);
+      int check_time1;
+      check_time1=(t->tm_year + 1900)*10000+(t->tm_mon + 1)*100+t->tm_mday;
+      ti=uvalue["users"][check_uid].get("uPenalty","").asString();
+      string check_time2=ti.replace(4,1,"");
+      check_time2=check_time2.replace(6,1,"");
+
+      if (check_time1>stoi(check_time2)) {
          if ((check_bid = search(&bvalue["books"], "bId", bid)) != -1) {//bid체크
             if ((check_rid=search(&rvalue["r2shs"],"rBid", bid)) == -1) {//book대여정보확인
-               time_t timer;
-               struct tm*t;
-               timer = time(NULL);
-               t=localtime(&timer);
+              
                string date = to_string(t->tm_year + 1900);
                date += "-";
                date.append(to_string(t->tm_mon + 1));
@@ -85,10 +95,13 @@ void loan(char* uid, char*bid) {
                cout << "The return deadline is " << date2<< "." << endl;
                ofstream rjson2("../data/R2shs.json");
                Json::Value rvalue2;
+               ofstream ujson2("../Users.json");
+               Json::Value uvalue2;
                int j=0;
                for (const auto a : rvalue["r2shs"]) {
                   j++;
                }
+               uvalue2["users"][check_uid]["uPenalty"]="0000-00-00";
                rvalue2["rId"] = to_string(j);
                rvalue2["rUid"] = uvalue["users"][check_uid]["uId"].asString();
                rvalue2["rBid"] = bvalue["books"][check_bid]["bId"].asString();
@@ -102,6 +115,7 @@ void loan(char* uid, char*bid) {
                writer->write(rvalue, &rjson2);
                cout << endl;  // add lf and flush
                rjson2.close();
+               ujson2.close();
             }
             else {
                cout << "This book was aleady loaned!. you can`t loan this book.." << endl;
@@ -112,7 +126,7 @@ void loan(char* uid, char*bid) {
          }
       }
       else {
-         cout << "You can`t borrow a booknow. Penalty deadline: ." <<ti<< endl;
+         cout << "You can`t borrow a booknow. Penalty deadline:" <<ti<<"."<< endl;
       }
    }else{
       cout << "Please check your userID. No search result found." << endl;
