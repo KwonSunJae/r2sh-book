@@ -106,7 +106,7 @@ void loan(char* uid, char*bid) {
          }
       }
       else {
-         cout << "You can`t borrow a booknow. Penalty deadline: ." << endl;
+         cout << "You can`t borrow a booknow. Penalty deadline: ." <<ti<< endl;
       }
    }else{
       cout << "Please check your userID. No search result found." << endl;
