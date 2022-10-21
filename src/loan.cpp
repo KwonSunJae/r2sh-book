@@ -45,8 +45,6 @@ void loan(char* u, char*b) {
    builder1["collectComments"] = false;
    Json::CharReaderBuilder builder2;
    builder2["collectComments"] = false;
-   Json::CharReaderBuilder builder3;
-   builder3["collectComments"] = false;
    Json::Value bvalue;
    Json::Value rvalue;
    Json::Value uvalue;
@@ -58,7 +56,6 @@ void loan(char* u, char*b) {
    JSONCPP_STRING uerrs;
    bool ok3 = parseFromStream(builder2, ujson, &uvalue, &uerrs);
    JSONCPP_STRING rerrs2;
-   bool ok4 = parseFromStream(builder3, ujson, &uvalue, &uerrs);
    int check_uid,check_bid,check_rid;
    string ti;
    string bid(b);
@@ -75,8 +72,7 @@ void loan(char* u, char*b) {
       ti=uvalue["users"][check_uid].get("uPenalty","").asString();
       string check_time2=ti.replace(4,1,"");
       check_time2=check_time2.replace(6,1,"");
-
-      if (check_time1>stoi(check_time2)) {
+      if (check_time1>=stoi(check_time2)) {
          if ((check_bid = search(&bvalue["books"], "bId", bid)) != -1) {//bid체크
             if ((check_rid=search(&rvalue["r2shs"],"rBid", bid)) == -1) {//book대여정보확인
               
@@ -95,13 +91,13 @@ void loan(char* u, char*b) {
                cout << "The return deadline is " << date2<< "." << endl;
                ofstream rjson2("../data/R2shs.json");
                Json::Value rvalue2;
-               ofstream ujson2("../Users.json");
-               Json::Value uvalue2;
+               ofstream ujson2("../data/Users.json");
+
                int j=0;
                for (const auto a : rvalue["r2shs"]) {
                   j++;
                }
-               uvalue2["users"][check_uid]["uPenalty"]="0000-00-00";
+               uvalue["users"][check_uid]["uPenalty"]="0000-00-00";
                rvalue2["rId"] = to_string(j);
                rvalue2["rUid"] = uvalue["users"][check_uid]["uId"].asString();
                rvalue2["rBid"] = bvalue["books"][check_bid]["bId"].asString();
@@ -113,9 +109,10 @@ void loan(char* u, char*b) {
                builder4["indentation"] = "    ";  // Tab
                unique_ptr<Json::StreamWriter> writer(builder4.newStreamWriter());
                writer->write(rvalue, &rjson2);
+               writer->write(uvalue, &ujson2);
                cout << endl;  // add lf and flush
                rjson2.close();
-               ujson2.close();
+              
             }
             else {
                cout << "This book was aleady loaned!. you can`t loan this book.." << endl;
