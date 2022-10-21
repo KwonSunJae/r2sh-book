@@ -18,7 +18,7 @@ public:
     }
 
     string Read(int target ){ // 함수 리턴을 객체로 하고 싶으면 원하는대로 수정하면됨. 파일 읽는 예제 코드임. 
-        cout<<"this is example test print R2shParser Read argument is" << taget<<endl;
+        //cout<<"this is example test print R2shParser Read argument is" << target<<endl;
         ifs = ifstream(filedata);
         Json::CharReaderBuilder builder;
 	    builder["collectComments"] = false;
@@ -37,8 +37,8 @@ public:
         int i;
         bool flag=false;
         for( i =0; i<root["r2shs"].size(); i++){ //배열은 이런식으로
-            cout<<".asInt():"<<root["r2shs"][i]["rId"].asInt()<<endl;
-            if(root["r2shs"][i]["rId"].asInt() == target){
+            int a = root["r2shs"][i]["rId"].asInt();
+            if(a == target){
                 return root["r2shs"][i]["rBid"].asString();
             }
         }   
