@@ -292,7 +292,7 @@ public:
             {
                 //사이즈 확인
                 cout<<"1 "<<endl;
-                if ((root["r2shs"][i].isMember("rId")) && (root["r2shs"][i].isMember("rUid")) && (root["r2shs"][i].isMember("rBid")) && (root["r2shs"][i].isMember("rDate")) && (root["r2shs"][i].isMember("rDeadLine")))
+                if ((root["r2shs"][i].isMember("rId")) && (root["r2shs"][i].isMember("rUid")) && (root["r2shs"][i].isMember("rBid")) && (root["r2shs"][i].isMember("rDate")) && (root["r2shs"][i].isMember("rDeadline")))
                 {
                     continue;
                 }
