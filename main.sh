@@ -1,5 +1,6 @@
 #! /bin/bash
-
+NOW_DIR=$(pwd)
+cd ~/r2sh-book/src
 case "$1" in
                 show)
                         ~/r2sh-book/build/show "$@";
@@ -29,3 +30,5 @@ case "$1" in
                            ~/r2sh-book/build/help  "$@";
                         ;;
 esac
+
+cd $NOW_DIR
