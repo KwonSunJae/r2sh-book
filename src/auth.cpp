@@ -88,8 +88,8 @@ public:
             tmp = "0"+tmp;
         }
         user["uId"] = tmp;
-        cout<<uName<<" welcome!" <<endl;
-        cout<<"your id is "<<tmp<<endl;
+        cout<<uName<<" Welcome!" <<endl;
+        cout<<"Your library membership number is ["<<tmp<<"]."<<endl;
         user["uName"] = uName;
         
         //속성중에 배열이 있으면 따로 할당해서 해야됨
@@ -173,8 +173,12 @@ public:
     }
 };
 int main (int argc, char* argv[]){
-
+    if(sizeof(argv[2])/sizeof(char)>20){
+        cout<<"Please Check your Name. Too LONG!" << endl;
+        return;
+    }
     userService us;
-    us.addUser(argv[1]);
+    us.addUser(argv[2]);
 
-}
+    return;
+}   
