@@ -92,7 +92,7 @@ void loan(char* uid, char*bid) {
                Json::StreamWriterBuilder builder4;
                builder4["commentStyle"] = "None";
                builder4["indentation"] = "    ";  // Tab
-               unique_ptr<Json::StreamWriter> writer(builder.newStreamWriter());
+               unique_ptr<Json::StreamWriter> writer(builder4.newStreamWriter());
                writer->write(rvalue, &rjson2);
                cout << endl;  // add lf and flush
                rjson2.close();
