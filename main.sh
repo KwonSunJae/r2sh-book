@@ -2,30 +2,30 @@
 
 case "$1" in
                 show)
-                        bash /home/ubuntu/r2sh-book/src/show.sh "$@";
+                        bash ~/r2sh-book/build/show "$@";
                         ;;
                 search)
-                        bash /home/ubuntu/r2sh-book/src/search.sh "$@";
+                        bash ~/r2sh-book/build/search  "$@";
                         ;;
                 loan)
-                        bash /home/ubuntu/r2sh-book/src/loan.sh "$@";
+                        bash ~/r2sh-book/build/loan  "$@";
                         ;;
                 return)
-                        bash /home/ubuntu/r2sh-book/src/return.sh "$@";
+                        bash ~/r2sh-book/build/return  "$@";
                         ;;
                 info)
-                        bash /home/ubuntu/r2sh-book/src/info.sh "$@";
+                        bash ~/r2sh-book/build/info  "$@";
                         ;;
 
                 auth)
-                        bash /home/ubuntu/r2sh-book/src/auth.sh "$@";
+                        bash ~/r2sh-book/build/auth  "$@";
 
                         ;;
                 help)
-                        bash /home/ubuntu/r2sh-book/src/help.sh "$@";
+                        bash ~/r2sh-book/build/help  "$@";
                         ;;
                 *)
                         echo "$@" "is wrong commands!";
-                        bash /home/ubuntu/r2sh-book/src/help.sh "$@";
+                        bash ~/r2sh-book/build/help  "$@";
                         ;;
 esac
