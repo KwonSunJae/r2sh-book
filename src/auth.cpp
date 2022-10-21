@@ -178,6 +178,6 @@ public:
 int main (int argc, char* argv[]){
 
     userService us;
-    us.addUser(argv[2]);
+    us.addUser(argv[1]);
 
 }
