@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <sstream>
 #include <unistd.h>
 #include "json/json.h" //라이브러리 헤더파일
 using namespace std;
@@ -19,9 +20,44 @@ public:
         filedata = "../data/Users.json"; //대상 파일임
     }
 
+    int checkDate(int year, int month, int day)
+    {
+        if ((month % 2 == 1)) // odd month
+        {
+            if (month <= 7)
+                if (day <= 0 || day > 31)
+                    return false;
+                else // month > 7
+                    if (day <= 0 || day > 30)
+                        return false;
+        }
+        else // even month
+        {
+            if (month <= 6)
+            {
+                if (month == 2)
+                {
+                    if (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0)) // leap year
+                    {
+                        if (day <= 0 || day > 30)
+                            return false;
+                    }
+                    else if (day <= 0 || day > 28)
+                        return false;
+                }
+                if (day <= 0 || day > 30)
+                    return false;
+            }
+            else
+            { // month > 6
+                if (day <= 0 || day > 31)
+                    return false;
+            }
+        }
+    }
     int Read()
     { // 함수 리턴을 객체로 하고 싶으면 원하는대로 수정하면됨. 파일 읽는 예제 코드임.
-        std::cout << "read 실행" << std::endl;
+        // std::cout << "read 실행" << std::endl;
         ifsUserJson = ifstream(filedata);
         Json::CharReaderBuilder builder;
         builder["collectComments"] = false;
@@ -30,23 +66,62 @@ public:
         if (!ok)
         {
             cout << "Parse Error : Please Check your data File" << endl;
-            return -1;
+            exit(EXIT_FAILURE);
         }
         else
         {
             for (int i = 0; i < root["users"].size(); i++)
             {
-                std::cout << "uid: " << root["users"][i]["uId"] << std::endl;
-                std::cout << "uName: " << root["users"][i]["uName"] << std::endl;
-                std::cout << "uPenalty: " << root["users"][i]["uPenalty"] << std::endl;
-                std::cout << "uR2shs: " << root["users"][i]["uR2shs"] << std::endl;
-                if ((root["users"][i].isMember("uId")) && (root["users"][i]["uName"]) && (root["users"][i]["uPenalty"]) && (root["users"][i]["uR2shs"]))
+                if ((root["users"][i].isMember("uId")) && (root["users"][i].isMember("uName")) && (root["users"][i].isMember("uPenalty")) && (root["users"][i].isMember("uR2shs")))
                 {
-                    std::cout << "있어용~" << std::endl;
-                    return 0;
+                    if (!root["users"][i]["uId"].isString())
+                        exit(EXIT_FAILURE);
+                    if (root["users"][i]["uId"].asString().length() != 6)
+                        exit(EXIT_FAILURE);
+                    if (!root["users"][i]["uName"].isString())
+                        exit(EXIT_FAILURE);
+                    if (root["users"][i]["uName"].asString().length() > 20)
+                        exit(EXIT_FAILURE);
+                    if (root["users"][i]["uR2shs"].size() > 5)
+                        exit(EXIT_FAILURE);
+                    for (int su = 0; su < root["users"][i]["uR2shs"].size(); su++)
+                    {
+                        if (!root["users"][i]["uR2shs"][su].isInt())
+                            exit(EXIT_FAILURE);
+                    }
+                    if (!root["users"][i]["uPenalty"].isString())
+                        exit(EXIT_FAILURE);
+                    string date = root["user"][i]["uPenalty"].asString();
+                    string token;
+                    int y, m, d;
+                    stringstream ss(date);
+                    getline(ss, token, '-');
+                    stringstream ssInt(token);
+                    if (token.length() != 4)
+                        exit(EXIT_FAILURE);
+                    ssInt >> y;
+                    if (ssInty.fail())
+                        exit(EXIT_FAILURE);
+                    getline(ss, token, '-');
+                    if (token.length() != 2)
+                        exit(EXIT_FAILURE);
+                    stringstream ssIntm(token);
+                    ssIntm >> m;
+                    if (ssIntm.fail())
+                        exit(EXIT_FAILURE);
+                    getline(ss, token, '-');
+                    if (token.length() != 2)
+                        exit(EXIT_FAILURE);
+                    stringstream ssIntd(token);
+                    ssIntd >> d;
+                    if (ssIntd.fail())
+                        exit(EXIT_FAILURE);
+                    if (!checkDate(y, m, d))
+                        exit(EXIT_FAILURE);
+
+                    continue;
                 }
-                else
-                    return -1;
+                exit(EXIT_FAILURE);
             }
         }
     }
@@ -60,7 +135,57 @@ public:
     ofstream ofs;          // 파일 쓰기
     JsonParserBook()
     {
-        filedata = "../data/Books.json"; //대상 파일임
+        filedata = "../data/Books2.json"; //대상 파일임
+    }
+
+    void nameChecker(Json::Value data)
+    {
+        string name = data.asString();
+        if (name.length() < 1 || name.length() > 50)
+            exit(EXIT_FAILURE);
+    }
+
+    void idChecker(Json::Value data)
+    {
+        string id = data.asString();
+        if (id.length() != 8)
+            exit(EXIT_FAILURE);
+        for (char c : id)
+        {
+            if (c < '0' || c > '9')
+                exit(EXIT_FAILURE);
+        }
+    }
+
+    void authorsChecker(Json::Value data)
+    {
+        if (data.size() == 0)
+            exit(EXIT_FAILURE);
+        for (int i = 0; i < data.size(); i++)
+        {
+            string author = data[i].asString();
+            if (author.length() < 1 || author.length() > 50)
+                exit(EXIT_FAILURE);
+        }
+    }
+
+    void categorysChecker(Json::Value data)
+    {
+        if (data.size() == 0)
+            exit(EXIT_FAILURE);
+        for (int i = 0; i < data.size(); i++)
+        {
+            string category = data[i].asString();
+            if (category.length() < 1 || category.length() > 50)
+                exit(EXIT_FAILURE);
+        }
+    }
+
+    void detailChecker(Json::Value data)
+    {
+        string detail = data.asString();
+        if (detail.length() < 0 || detail.length() > 255)
+            exit(EXIT_FAILURE);
     }
 
     int Read()
@@ -74,26 +199,16 @@ public:
         if (!ok)
         {
             cout << "Parse Error : Please Check your data File" << endl;
-
-            return -1;
+            exit(EXIT_FAILURE);
         }
-        else
+
+        for (int i = 0; i < root["books"].size(); i++)
         {
-            for (int i = 0; i < root["books"].size(); i++)
-            {
-                std::cout << "bName: " << root["books"][i]["bName"] << std::endl;
-                std::cout << "bId: " << root["books"][i]["bId"] << std::endl;
-                std::cout << "bAuthors: " << root["books"][i]["bAuthors"] << std::endl;
-                std::cout << "bCategorys: " << root["books"][i]["bCategorys"] << std::endl;
-                std::cout << "bDetail: " << root["books"][i]["bDetail"] << std::endl;
-                if ((root["books"][i].isMember("bName")) && (root["books"][i]["bId"]) && (root["books"][i]["bAuthors"]) && (root["books"][i]["bCategory"]) && (root["books"][i]["bDetail"]))
-                {
-                    std::cout << "있어용~" << std::endl;
-                    return 0;
-                }
-                else
-                    return -1;
-            }
+            nameChecker(root["books"][i]["bName"]);
+            idChecker(root["books"][i]["bId"]);
+            authorsChecker(root["books"][i]["bAuthors"]);
+            categorysChecker(root["books"][i]["bCategorys"]);
+            detailChecker(root["books"][i]["bDetail"]);
         }
     }
 };
@@ -107,9 +222,43 @@ public:
     ofstream ofs;          // 파일 쓰기
     JsonParserR2sh()
     {
-        filedata = "../data/R2sh.json"; //대상 파일임
+        filedata = "../data/R2shs.json"; //대상 파일임
     }
-
+    int checkDate(int year, int month, int day)
+    {
+        if ((month % 2 == 1)) // odd month
+        {
+            if (month <= 7)
+                if (day <= 0 || day > 31)
+                    return false;
+                else // month > 7
+                    if (day <= 0 || day > 30)
+                        return false;
+        }
+        else // even month
+        {
+            if (month <= 6)
+            {
+                if (month == 2)
+                {
+                    if (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0)) // leap year
+                    {
+                        if (day <= 0 || day > 30)
+                            return false;
+                    }
+                    else if (day <= 0 || day > 28)
+                        return false;
+                }
+                if (day <= 0 || day > 30)
+                    return false;
+            }
+            else
+            { // month > 6
+                if (day <= 0 || day > 31)
+                    return false;
+            }
+        }
+    }
     int Read()
     { // 함수 리턴을 객체로 하고 싶으면 원하는대로 수정하면됨. 파일 읽는 예제 코드임.
 
@@ -122,24 +271,82 @@ public:
         {
             cout << "Parse Error : Please Check your data File" << endl;
 
-            return -1;
+            exit(EXIT_FAILURE);
         }
         else
         {
             for (int i = 0; i < root["r2shs"].size(); i++)
             {
-                std::cout << "rId: " << root["r2shs"][i]["rId"] << std::endl;
-                std::cout << "rUid: " << root["r2shs"][i]["rUid"] << std::endl;
-                std::cout << "rBld: " << root["r2shs"][i]["rBld"] << std::endl;
-                std::cout << "rDate: " << root["r2shs"][i]["rDate"] << std::endl;
-                std::cout << "rDeadLine: " << root["r2shs"][i]["rDeadline"] << std::endl;
-                if ((root["r2shs"][i].isMember("rId")) && (root["r2shs"][i]["rUid"]) && (root["r2shs"][i]["rBld"]) && (root["r2shs"][i]["rDate"]) && (root["r2shs"][i]["rDeadLine"]))
+                //사이즈 확인
+
+                if ((root["r2shs"][i].isMember("rId")) && (root["r2shs"][i].isMember("rUid")) && (root["r2shs"][i].isMember("rBid")) && (root["r2shs"][i].isMember("rDate")) && (root["r2shs"][i].isMember("rDeadLine")))
                 {
-                    std::cout << "있어용~" << std::endl;
-                    return 0;
+                    continue;
                 }
                 else
-                    return -1;
+                    exit(EXIT_FAILURE);
+                if (!(root["r2shs"][i]["rId"]).isInt() || !(0 <= root["r2shs"][i]["rId"].asInt() && root["r2shs"][i]["rId"].asInt() <= INT_MAX) || !((root["r2shs"][i]["rUid"]).asString().length() == 6) || !((root["r2shs"][i]["rBid"]).asString().length() == 8))
+                    exit(EXIT_FAILURE);
+
+                if (!root["r2shs"][i]["rDate"].isString())
+                    exit(EXIT_FAILURE);
+                string date = root["r2shs"][i]["rDate"].asString();
+                string token;
+                int y, m, d;
+                stringstream ss(date);
+                getline(ss, token, '-');
+                stringstream ssInt(token);
+                if (token.length() != 4)
+                    exit(EXIT_FAILURE);
+                ssInt >> y;
+                if (ssInt.fail())
+                    exit(EXIT_FAILURE);
+                getline(ss, token, '-');
+                if (token.length() != 2)
+                    exit(EXIT_FAILURE);
+                stringstream ssIntm(token);
+                ssIntm >> m;
+                if (ssIntm.fail())
+                    exit(EXIT_FAILURE);
+                getline(ss, token, '-');
+                if (token.length() != 2)
+                    exit(EXIT_FAILURE);
+                stringstream ssIntd(token);
+                ssIntd >> d;
+                if (ssIntd.fail())
+                    exit(EXIT_FAILURE);
+                if (!checkDate(y, m, d))
+                    exit(EXIT_FAILURE);
+
+                if (!root["r2shs"][i]["rDate"].isString())
+                    exit(EXIT_FAILURE);
+                string date = root["user"][i]["uPenalty"].asString();
+                string token;
+                int y, m, d;
+                stringstream ss(date);
+                getline(ss, token, '-');
+                stringstream ssInt(token);
+                if (token.length() != 4)
+                    exit(EXIT_FAILURE);
+                ssInt >> y;
+                if (ssInt.fail())
+                    exit(EXIT_FAILURE);
+                getline(ss, token, '-');
+                if (token.length() != 2)
+                    exit(EXIT_FAILURE);
+                stringstream ssIntm(token);
+                ssIntm >> m;
+                if (!ssIntm.fail())
+                    exit(EXIT_FAILURE);
+                getline(ss, token, '-');
+                if (token.length() != 2)
+                    exit(EXIT_FAILURE);
+                stringstream ssIntd(token);
+                ssIntd >> d;
+                if (!ssIntd.fail())
+                    exit(EXIT_FAILURE);
+                if (!checkDate(y, m, d))
+                    exit(EXIT_FAILURE);
             }
         }
     }
@@ -155,7 +362,7 @@ int main()
     std::string filePath2 = "../data/Books.json";
     std::string filePath3 = "../data/R2shs.json";
 
-    if ((access(filePath1.c_str(), F_OK) == 0) && (access(filePath2.c_str(), F_OK) == 0)) //&& (access(filePath3.c_str(), F_OK) == 0))
+    if ((access(filePath1.c_str(), F_OK) == 0) && (access(filePath2.c_str(), F_OK) == 0) && (access(filePath3.c_str(), F_OK) == 0)) //
     {
         std::cout << "FILE EXIST" << std::endl;
         JPuser.Read();
