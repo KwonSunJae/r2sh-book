@@ -45,13 +45,13 @@ void loan(char* uid, char*bid) {
                struct tm*t;
                timer = time(NULL);
                t=localtime(&timer);
-               string date = to_string(t.tm_year + 1900);
+               string date = to_string(t->tm_year + 1900);
                date += "-";
-               date.append(to_string(t.tm_mon + 1));
+               date.append(to_string(t->tm_mon + 1));
                date += "-";
                string date2 = date;
-               date.append(to_string(t.tm_mday));
-               date2.append(to_string(t.tm_mday + 7));
+               date.append(to_string(t->tm_mday));
+               date2.append(to_string(t->tm_mday + 7));
                cout << "---------Loan Info---------" << endl;
                cout << "booKName: [" << bvalue["books"][check_bid].get("bName","").asString() << "]" << endl;
                cout << "loanUser: [" << uvalue["users"][check_uid].get("uName", "").asString() << "]" << endl;
