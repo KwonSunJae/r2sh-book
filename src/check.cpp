@@ -75,6 +75,7 @@ public:
                     return false;
             }
         }
+        return true;
     }
     int Read()
     { // 함수 리턴을 객체로 하고 싶으면 원하는대로 수정하면됨. 파일 읽는 예제 코드임.
