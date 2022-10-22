@@ -155,7 +155,7 @@ public:
                     if (ssIntd.fail())
                         exit(EXIT_FAILURE);
                     // cout<<"checkDate "<<endl;
-                    if (date.compare("0000-00-00") != 0 && checkDate(y, m, d))
+                    if (date.compare("0000-00-00") != 0 && !checkDate(y, m, d))
                         exit(EXIT_FAILURE);
 
                     continue;
@@ -440,7 +440,7 @@ public:
                 if (ssIntd.fail())
                     exit(EXIT_FAILURE);
 
-                if (date.compare("0000-00-00") != 0 && checkDate(y, m, d))
+                if (date.compare("0000-00-00") != 0 && !checkDate(y, m, d))
                     exit(EXIT_FAILURE);
 
                 // cout<<"deadlin "<<endl;
@@ -475,7 +475,7 @@ public:
                 if (ssIntds.fail())
                     exit(EXIT_FAILURE);
                 // cout<<date <<"compare"<<y<<m<<d<<checkDate(y,m,d)<<endl;
-                if (date.compare("0000-00-00") != 0 && checkDate(y, m, d))
+                if (date.compare("0000-00-00") != 0 && !checkDate(y, m, d))
                     exit(EXIT_FAILURE);
             }
         }
