@@ -7,8 +7,124 @@
 #include<cctype>
 
 using namespace std;
+string make_time(int y,int m,int d);
+string make_time2(int y,int m,int d);
 int search(const Json::Value *v, string type,string key);
 int check(string a,string b);
+string make_time2(int y,int m,int d){
+   switch(m){
+      case 1:
+      if(d>31){
+         d-=31;
+         m++;
+         break;
+      }
+      case 2:
+      if(y%4==0){
+         if(d>29){
+            d-=29;
+            m++;
+            break;
+         }
+      }else{
+          if(d>28){
+            d-=28;
+            m++;
+            break;
+         }
+      }
+      case 3:
+      if(d>31){
+         d-=31;
+         m++;
+         break;
+      }
+      case 4:
+      if(d>30){
+         d-=30;
+         m++;
+         break;
+      }
+      case 5:if(d>31){
+         d-=31;
+         m++;
+         break;
+      }
+      case 6:
+      if(d>30){
+         d-=30;
+         m++;
+         break;
+      }
+      case 7:
+      if(d>31){
+         d-=31;
+         m++;
+         break;
+      }
+      case 8:
+      if(d>31){
+         d-=31;
+         m++;
+         break;
+      }
+      case 9:
+      if(d>30){
+         d-=30;
+         m++;
+         break;
+      }
+      case 10:
+      if(d>31){
+         d-=31;
+         m++;
+         break;
+      }
+      case 11:
+      if(d>30){
+         d-=30;
+         m++;
+         break;
+      }
+      case 12:
+      if(d>31){
+         d-=31;
+         m++;
+         break;
+      }
+   }
+   if(m>12){
+      m-=12;
+      y++;
+   }
+
+   string date=to_string(y);
+    date.append("-");
+   if(m<10){
+      date.append("0");
+   }
+    date.append(to_string(m));
+     date.append("-");
+   if(d<10){
+     date.append("0");
+   }
+    date.append(to_string(d));
+   return date;
+}
+string make_time(int y,int m,int d){
+   string date=to_string(y);
+   date.append("-");
+   if(m<10){
+      date.append("0");
+   }
+    date.append(to_string(m));
+   date.append("-");
+   if(d<10){
+     date.append("0");
+   }
+    date.append(to_string(d));
+   return date;
+}
 int check(string a, string b){
    if(a.length()==6){
       if(b.length()==8){
@@ -77,13 +193,9 @@ void loan(char* u, char*b) {
          if ((check_bid = search(&bvalue["books"], "bId", bid)) != -1) {//bid체크
             if ((check_rid=search(&rvalue["r2shs"],"rBid", bid)) == -1) {//book대여정보확인
               
-               string date = to_string(t->tm_year + 1900);
-               date += "-";
-               date.append(to_string(t->tm_mon + 1));
-               date += "-";
-               string date2 = date;
-               date.append(to_string(t->tm_mday));
-               date2.append(to_string(t->tm_mday + 7));
+               string date = make_time(t->tm_year + 1900,t->tm_mon + 1,t->tm_mday);               
+               string date2 = make_time2(t->tm_year + 1900,t->tm_mon + 1,t->tm_mday+7);
+
                cout << "---------Loan Info---------" << endl;
                cout << "booKName: [" << bvalue["books"][check_bid].get("bName","").asString() << "]" << endl;
                cout << "loanUser: [" << uvalue["users"][check_uid].get("uName", "").asString() << "]" << endl;
@@ -99,10 +211,11 @@ void loan(char* u, char*b) {
                   j++;
                }
                uvalue["users"][check_uid]["uPenalty"]="0000-00-00";
-               rvalue2["rId"] = to_string(j);
+               uvalue["users"][check_uid]["uR2shs"].append(j);
+               rvalue2["rId"]=j;
                rvalue2["rUid"] = uvalue["users"][check_uid]["uId"].asString();
                rvalue2["rBid"] = bvalue["books"][check_bid]["bId"].asString();
-               rvalue2["rDate"] = date;//시간
+               rvalue2["rDate"] = "0000-00-00";//시간
                rvalue2["rDeadline"] = date2;//시간+7
                rvalue["r2shs"].append(rvalue2);
                Json::StreamWriterBuilder builder4;
@@ -116,7 +229,7 @@ void loan(char* u, char*b) {
               
             }
             else {
-               cout << "This book was already loaned!. you can`t loan this book.." << endl;
+               cout << "This book was aleady loaned!. you can`t loan this book.." << endl;
             }
          }
          else {
