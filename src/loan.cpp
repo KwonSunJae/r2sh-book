@@ -197,7 +197,7 @@ void loan(char* u, char*b) {
       check_time2.replace(6,1,"");
       if (check_time1>=stoi(check_time2)) {
          if ((check_bid = search(&bvalue["books"], "bId", bid)) != -1) {//bid체크
-            if (search(&rvalue["r2shs"],"rBid", bid)) == -1) {//book대여정보확인
+            if (search(&rvalue["r2shs"],"rBid", bid) == -1) {//book대여정보확인
             int k=0;
                for (const auto a : uvalue["users"][check_uid]["uR2shs"]) {
                   k++;
