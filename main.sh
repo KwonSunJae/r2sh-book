@@ -1,7 +1,8 @@
 #! /bin/bash
 NOW_DIR=$(pwd)
+cd ~/r2sh-book/src
 ~/r2sh-book/build/check
-if ["$?" == "1"]; 
+if [ "$?" == 1 ]; 
     then 
         echo "Please Check your Data File."
         exit
