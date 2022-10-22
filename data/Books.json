@@ -1,0 +1,1217 @@
+{
+  "books": [
+    {
+      "bName": "Things Fall Apart",
+      "bId": "10000000",
+      "bAuthors": [
+        "Chinua"
+      ],
+      "bCategorys": [
+        "category0",
+        "category50"
+      ],
+      "bDetail": "language : English , pages : 209 , year : 1958"
+    },
+    {
+      "bName": "Fairy tales",
+      "bId": "10000100",
+      "bAuthors": [
+        "Hans",
+        "Christian"
+      ],
+      "bCategorys": [
+        "category1",
+        "category51"
+      ],
+      "bDetail": "language : Danish , pages : 784 , year : 1836"
+    },
+    {
+      "bName": "The Divine Comedy",
+      "bId": "10000200",
+      "bAuthors": [
+        "Dante"
+      ],
+      "bCategorys": [
+        "category2",
+        "category52"
+      ],
+      "bDetail": "language : Italian , pages : 928 , year : 1315"
+    },
+    {
+      "bName": "The Epic Of Gilgamesh",
+      "bId": "10000300",
+      "bAuthors": [
+        "Unknown"
+      ],
+      "bCategorys": [
+        "category3",
+        "category53"
+      ],
+      "bDetail": "language : Akkadian , pages : 160 , year : -1700"
+    },
+    {
+      "bName": "The Book Of Job",
+      "bId": "10000400",
+      "bAuthors": [
+        "Unknown"
+      ],
+      "bCategorys": [
+        "category4",
+        "category54"
+      ],
+      "bDetail": "language : Hebrew , pages : 176 , year : -600"
+    },
+    {
+      "bName": "One Thousand and One Nights",
+      "bId": "10000500",
+      "bAuthors": [
+        "Unknown"
+      ],
+      "bCategorys": [
+        "category5",
+        "category55"
+      ],
+      "bDetail": "language : Arabic , pages : 288 , year : 1200"
+    },
+    {
+      "bName": "Njal's Saga",
+      "bId": "10000600",
+      "bAuthors": [
+        "Unknown"
+      ],
+      "bCategorys": [
+        "category6",
+        "category56"
+      ],
+      "bDetail": "language : Old Norse , pages : 384 , year : 1350"
+    },
+    {
+      "bName": "Pride and Prejudice",
+      "bId": "10000700",
+      "bAuthors": [
+        "Jane"
+      ],
+      "bCategorys": [
+        "category7",
+        "category57"
+      ],
+      "bDetail": "language : English , pages : 226 , year : 1813"
+    },
+    {
+      "bName": "Le Pere Goriot",
+      "bId": "10000800",
+      "bAuthors": [
+        "Honore",
+        "de"
+      ],
+      "bCategorys": [
+        "category8",
+        "category58"
+      ],
+      "bDetail": "language : French , pages : 443 , year : 1835"
+    },
+    {
+      "bName": "Molloy, Malone Dies, The Unnamable, the trilogy",
+      "bId": "10000900",
+      "bAuthors": [
+        "Samuel"
+      ],
+      "bCategorys": [
+        "category9",
+        "category59"
+      ],
+      "bDetail": "language : French, English , pages : 256 , year : 1952"
+    },
+    {
+      "bName": "The Decameron",
+      "bId": "10001000",
+      "bAuthors": [
+        "Giovanni"
+      ],
+      "bCategorys": [
+        "category10",
+        "category60"
+      ],
+      "bDetail": "language : Italian , pages : 1024 , year : 1351"
+    },
+    {
+      "bName": "Ficciones",
+      "bId": "10001100",
+      "bAuthors": [
+        "Jorge",
+        "Luis"
+      ],
+      "bCategorys": [
+        "category11",
+        "category61"
+      ],
+      "bDetail": "language : Spanish , pages : 224 , year : 1965"
+    },
+    {
+      "bName": "Wuthering Heights",
+      "bId": "10001200",
+      "bAuthors": [
+        "Emily"
+      ],
+      "bCategorys": [
+        "category12",
+        "category62"
+      ],
+      "bDetail": "language : English , pages : 342 , year : 1847"
+    },
+    {
+      "bName": "The Stranger",
+      "bId": "10001300",
+      "bAuthors": [
+        "Albert"
+      ],
+      "bCategorys": [
+        "category13",
+        "category63"
+      ],
+      "bDetail": "language : French , pages : 185 , year : 1942"
+    },
+    {
+      "bName": "Poems",
+      "bId": "10001400",
+      "bAuthors": [
+        "Paul"
+      ],
+      "bCategorys": [
+        "category14",
+        "category64"
+      ],
+      "bDetail": "language : German , pages : 320 , year : 1952"
+    },
+    {
+      "bName": "Journey to the End of the Night",
+      "bId": "10001500",
+      "bAuthors": [
+        "Louis-Ferdinand"
+      ],
+      "bCategorys": [
+        "category15",
+        "category65"
+      ],
+      "bDetail": "language : French , pages : 505 , year : 1932"
+    },
+    {
+      "bName": "Don Quijote De La Mancha",
+      "bId": "10001600",
+      "bAuthors": [
+        "Miguel",
+        "de"
+      ],
+      "bCategorys": [
+        "category16",
+        "category66"
+      ],
+      "bDetail": "language : Spanish , pages : 1056 , year : 1610"
+    },
+    {
+      "bName": "The Canterbury Tales",
+      "bId": "10001700",
+      "bAuthors": [
+        "Geoffrey"
+      ],
+      "bCategorys": [
+        "category17",
+        "category67"
+      ],
+      "bDetail": "language : English , pages : 544 , year : 1450"
+    },
+    {
+      "bName": "Stories",
+      "bId": "10001800",
+      "bAuthors": [
+        "Anton"
+      ],
+      "bCategorys": [
+        "category18",
+        "category68"
+      ],
+      "bDetail": "language : Russian , pages : 194 , year : 1886"
+    },
+    {
+      "bName": "Nostromo",
+      "bId": "10001900",
+      "bAuthors": [
+        "Joseph"
+      ],
+      "bCategorys": [
+        "category19",
+        "category69"
+      ],
+      "bDetail": "language : English , pages : 320 , year : 1904"
+    },
+    {
+      "bName": "Great Expectations",
+      "bId": "10002000",
+      "bAuthors": [
+        "Charles"
+      ],
+      "bCategorys": [
+        "category20",
+        "category70"
+      ],
+      "bDetail": "language : English , pages : 194 , year : 1861"
+    },
+    {
+      "bName": "Jacques the Fatalist",
+      "bId": "10002100",
+      "bAuthors": [
+        "Denis"
+      ],
+      "bCategorys": [
+        "category21",
+        "category71"
+      ],
+      "bDetail": "language : French , pages : 596 , year : 1796"
+    },
+    {
+      "bName": "Berlin Alexanderplatz",
+      "bId": "10002200",
+      "bAuthors": [
+        "Alfred"
+      ],
+      "bCategorys": [
+        "category22",
+        "category72"
+      ],
+      "bDetail": "language : German , pages : 600 , year : 1929"
+    },
+    {
+      "bName": "Crime and Punishment",
+      "bId": "10002300",
+      "bAuthors": [
+        "Fyodor"
+      ],
+      "bCategorys": [
+        "category23",
+        "category73"
+      ],
+      "bDetail": "language : Russian , pages : 551 , year : 1866"
+    },
+    {
+      "bName": "The Idiot",
+      "bId": "10002400",
+      "bAuthors": [
+        "Fyodor"
+      ],
+      "bCategorys": [
+        "category24",
+        "category74"
+      ],
+      "bDetail": "language : Russian , pages : 656 , year : 1869"
+    },
+    {
+      "bName": "The Possessed",
+      "bId": "10002500",
+      "bAuthors": [
+        "Fyodor"
+      ],
+      "bCategorys": [
+        "category25",
+        "category75"
+      ],
+      "bDetail": "language : Russian , pages : 768 , year : 1872"
+    },
+    {
+      "bName": "The Brothers Karamazov",
+      "bId": "10002600",
+      "bAuthors": [
+        "Fyodor"
+      ],
+      "bCategorys": [
+        "category26",
+        "category76"
+      ],
+      "bDetail": "language : Russian , pages : 824 , year : 1880"
+    },
+    {
+      "bName": "Middlemarch",
+      "bId": "10002700",
+      "bAuthors": [
+        "George"
+      ],
+      "bCategorys": [
+        "category27",
+        "category77"
+      ],
+      "bDetail": "language : English , pages : 800 , year : 1871"
+    },
+    {
+      "bName": "Invisible Man",
+      "bId": "10002800",
+      "bAuthors": [
+        "Ralph"
+      ],
+      "bCategorys": [
+        "category28",
+        "category78"
+      ],
+      "bDetail": "language : English , pages : 581 , year : 1952"
+    },
+    {
+      "bName": "Medea",
+      "bId": "10002900",
+      "bAuthors": [
+        "Euripides"
+      ],
+      "bCategorys": [
+        "category29",
+        "category79"
+      ],
+      "bDetail": "language : Greek , pages : 104 , year : -431"
+    },
+    {
+      "bName": "Absalom, Absalom!",
+      "bId": "10003000",
+      "bAuthors": [
+        "William"
+      ],
+      "bCategorys": [
+        "category30",
+        "category80"
+      ],
+      "bDetail": "language : English , pages : 313 , year : 1936"
+    },
+    {
+      "bName": "The Sound and the Fury",
+      "bId": "10003100",
+      "bAuthors": [
+        "William"
+      ],
+      "bCategorys": [
+        "category31",
+        "category81"
+      ],
+      "bDetail": "language : English , pages : 326 , year : 1929"
+    },
+    {
+      "bName": "Madame Bovary",
+      "bId": "10003200",
+      "bAuthors": [
+        "Gustave"
+      ],
+      "bCategorys": [
+        "category32",
+        "category82"
+      ],
+      "bDetail": "language : French , pages : 528 , year : 1857"
+    },
+    {
+      "bName": "Sentimental Education",
+      "bId": "10003300",
+      "bAuthors": [
+        "Gustave"
+      ],
+      "bCategorys": [
+        "category33",
+        "category83"
+      ],
+      "bDetail": "language : French , pages : 606 , year : 1869"
+    },
+    {
+      "bName": "Gypsy Ballads",
+      "bId": "10003400",
+      "bAuthors": [
+        "Federico",
+        "Garcea"
+      ],
+      "bCategorys": [
+        "category34",
+        "category84"
+      ],
+      "bDetail": "language : Spanish , pages : 218 , year : 1928"
+    },
+    {
+      "bName": "One Hundred Years of Solitude",
+      "bId": "10003500",
+      "bAuthors": [
+        "Gabriel",
+        "Garcea"
+      ],
+      "bCategorys": [
+        "category35",
+        "category85"
+      ],
+      "bDetail": "language : Spanish , pages : 417 , year : 1967"
+    },
+    {
+      "bName": "Love in the Time of Cholera",
+      "bId": "10003600",
+      "bAuthors": [
+        "Gabriel",
+        "Garcea"
+      ],
+      "bCategorys": [
+        "category36",
+        "category86"
+      ],
+      "bDetail": "language : Spanish , pages : 368 , year : 1985"
+    },
+    {
+      "bName": "Faust",
+      "bId": "10003700",
+      "bAuthors": [
+        "Johann",
+        "Wolfgang",
+        "von"
+      ],
+      "bCategorys": [
+        "category37",
+        "category87"
+      ],
+      "bDetail": "language : German , pages : 158 , year : 1832"
+    },
+    {
+      "bName": "Dead Souls",
+      "bId": "10003800",
+      "bAuthors": [
+        "Nikolai"
+      ],
+      "bCategorys": [
+        "category38",
+        "category88"
+      ],
+      "bDetail": "language : Russian , pages : 432 , year : 1842"
+    },
+    {
+      "bName": "The Tin Drum",
+      "bId": "10003900",
+      "bAuthors": [
+        "Günter"
+      ],
+      "bCategorys": [
+        "category39",
+        "category89"
+      ],
+      "bDetail": "language : German , pages : 600 , year : 1959"
+    },
+    {
+      "bName": "The Devil to Pay in the Backlands",
+      "bId": "10004000",
+      "bAuthors": [
+        "Joeo",
+        "Guimarees"
+      ],
+      "bCategorys": [
+        "category40",
+        "category90"
+      ],
+      "bDetail": "language : Portuguese , pages : 494 , year : 1956"
+    },
+    {
+      "bName": "Hunger",
+      "bId": "10004100",
+      "bAuthors": [
+        "Knut"
+      ],
+      "bCategorys": [
+        "category41",
+        "category91"
+      ],
+      "bDetail": "language : Norwegian , pages : 176 , year : 1890"
+    },
+    {
+      "bName": "The Old Man and the Sea",
+      "bId": "10004200",
+      "bAuthors": [
+        "Ernest"
+      ],
+      "bCategorys": [
+        "category42",
+        "category92"
+      ],
+      "bDetail": "language : English , pages : 128 , year : 1952"
+    },
+    {
+      "bName": "Iliad",
+      "bId": "10004300",
+      "bAuthors": [
+        "Homer"
+      ],
+      "bCategorys": [
+        "category43",
+        "category93"
+      ],
+      "bDetail": "language : Greek , pages : 608 , year : -735"
+    },
+    {
+      "bName": "Odyssey",
+      "bId": "10004400",
+      "bAuthors": [
+        "Homer"
+      ],
+      "bCategorys": [
+        "category44",
+        "category94"
+      ],
+      "bDetail": "language : Greek , pages : 374 , year : -800"
+    },
+    {
+      "bName": "A Doll's House",
+      "bId": "10004500",
+      "bAuthors": [
+        "Henrik"
+      ],
+      "bCategorys": [
+        "category45",
+        "category95"
+      ],
+      "bDetail": "language : Norwegian , pages : 68 , year : 1879"
+    },
+    {
+      "bName": "Ulysses",
+      "bId": "10004600",
+      "bAuthors": [
+        "James"
+      ],
+      "bCategorys": [
+        "category46",
+        "category96"
+      ],
+      "bDetail": "language : English , pages : 228 , year : 1922"
+    },
+    {
+      "bName": "Stories",
+      "bId": "10004700",
+      "bAuthors": [
+        "Franz"
+      ],
+      "bCategorys": [
+        "category47",
+        "category97"
+      ],
+      "bDetail": "language : German , pages : 488 , year : 1924"
+    },
+    {
+      "bName": "The Trial",
+      "bId": "10004800",
+      "bAuthors": [
+        "Franz"
+      ],
+      "bCategorys": [
+        "category48",
+        "category98"
+      ],
+      "bDetail": "language : German , pages : 160 , year : 1925"
+    },
+    {
+      "bName": "The Castle",
+      "bId": "10004900",
+      "bAuthors": [
+        "Franz"
+      ],
+      "bCategorys": [
+        "category49",
+        "category99"
+      ],
+      "bDetail": "language : German , pages : 352 , year : 1926"
+    },
+    {
+      "bName": "The recognition of Shakuntala",
+      "bId": "10005000",
+      "bAuthors": [
+        "Kālidāsa"
+      ],
+      "bCategorys": [
+        "category50",
+        "category100"
+      ],
+      "bDetail": "language : Sanskrit , pages : 147 , year : 150"
+    },
+    {
+      "bName": "The Sound of the Mountain",
+      "bId": "10005100",
+      "bAuthors": [
+        "Yasunari"
+      ],
+      "bCategorys": [
+        "category51",
+        "category101"
+      ],
+      "bDetail": "language : Japanese , pages : 288 , year : 1954"
+    },
+    {
+      "bName": "Zorba the Greek",
+      "bId": "10005200",
+      "bAuthors": [
+        "Nikos"
+      ],
+      "bCategorys": [
+        "category52",
+        "category102"
+      ],
+      "bDetail": "language : Greek , pages : 368 , year : 1946"
+    },
+    {
+      "bName": "Sons and Lovers",
+      "bId": "10005300",
+      "bAuthors": [
+        "D.",
+        "H."
+      ],
+      "bCategorys": [
+        "category53",
+        "category103"
+      ],
+      "bDetail": "language : English , pages : 432 , year : 1913"
+    },
+    {
+      "bName": "Independent People",
+      "bId": "10005400",
+      "bAuthors": [
+        "Halldór"
+      ],
+      "bCategorys": [
+        "category54",
+        "category104"
+      ],
+      "bDetail": "language : Icelandic , pages : 470 , year : 1934"
+    },
+    {
+      "bName": "Poems",
+      "bId": "10005500",
+      "bAuthors": [
+        "Giacomo"
+      ],
+      "bCategorys": [
+        "category55",
+        "category105"
+      ],
+      "bDetail": "language : Italian , pages : 184 , year : 1818"
+    },
+    {
+      "bName": "The Golden Notebook",
+      "bId": "10005600",
+      "bAuthors": [
+        "Doris"
+      ],
+      "bCategorys": [
+        "category56",
+        "category106"
+      ],
+      "bDetail": "language : English , pages : 688 , year : 1962"
+    },
+    {
+      "bName": "Pippi Longstocking",
+      "bId": "10005700",
+      "bAuthors": [
+        "Astrid"
+      ],
+      "bCategorys": [
+        "category57",
+        "category107"
+      ],
+      "bDetail": "language : Swedish , pages : 160 , year : 1945"
+    },
+    {
+      "bName": "Diary of a Madman",
+      "bId": "10005800",
+      "bAuthors": [
+        "Lu"
+      ],
+      "bCategorys": [
+        "category58",
+        "category108"
+      ],
+      "bDetail": "language : Chinese , pages : 389 , year : 1918"
+    },
+    {
+      "bName": "Children of Gebelawi",
+      "bId": "10005900",
+      "bAuthors": [
+        "Naguib"
+      ],
+      "bCategorys": [
+        "category59",
+        "category109"
+      ],
+      "bDetail": "language : Arabic , pages : 355 , year : 1959"
+    },
+    {
+      "bName": "Buddenbrooks",
+      "bId": "10006000",
+      "bAuthors": [
+        "Thomas"
+      ],
+      "bCategorys": [
+        "category60",
+        "category110"
+      ],
+      "bDetail": "language : German , pages : 736 , year : 1901"
+    },
+    {
+      "bName": "The Magic Mountain",
+      "bId": "10006100",
+      "bAuthors": [
+        "Thomas"
+      ],
+      "bCategorys": [
+        "category61",
+        "category111"
+      ],
+      "bDetail": "language : German , pages : 720 , year : 1924"
+    },
+    {
+      "bName": "Moby Dick",
+      "bId": "10006200",
+      "bAuthors": [
+        "Herman"
+      ],
+      "bCategorys": [
+        "category62",
+        "category112"
+      ],
+      "bDetail": "language : English , pages : 378 , year : 1851"
+    },
+    {
+      "bName": "Essays",
+      "bId": "10006300",
+      "bAuthors": [
+        "Michel",
+        "de"
+      ],
+      "bCategorys": [
+        "category63",
+        "category113"
+      ],
+      "bDetail": "language : French , pages : 404 , year : 1595"
+    },
+    {
+      "bName": "History",
+      "bId": "10006400",
+      "bAuthors": [
+        "Elsa"
+      ],
+      "bCategorys": [
+        "category64",
+        "category114"
+      ],
+      "bDetail": "language : Italian , pages : 600 , year : 1974"
+    },
+    {
+      "bName": "Beloved",
+      "bId": "10006500",
+      "bAuthors": [
+        "Toni"
+      ],
+      "bCategorys": [
+        "category65",
+        "category115"
+      ],
+      "bDetail": "language : English , pages : 321 , year : 1987"
+    },
+    {
+      "bName": "The Tale of Genji",
+      "bId": "10006600",
+      "bAuthors": [
+        "Murasaki"
+      ],
+      "bCategorys": [
+        "category66",
+        "category116"
+      ],
+      "bDetail": "language : Japanese , pages : 1360 , year : 1006"
+    },
+    {
+      "bName": "The Man Without Qualities",
+      "bId": "10006700",
+      "bAuthors": [
+        "Robert"
+      ],
+      "bCategorys": [
+        "category67",
+        "category117"
+      ],
+      "bDetail": "language : German , pages : 365 , year : 1931"
+    },
+    {
+      "bName": "Lolita",
+      "bId": "10006800",
+      "bAuthors": [
+        "Vladimir"
+      ],
+      "bCategorys": [
+        "category68",
+        "category118"
+      ],
+      "bDetail": "language : English , pages : 317 , year : 1955"
+    },
+    {
+      "bName": "Nineteen Eighty-Four",
+      "bId": "10006900",
+      "bAuthors": [
+        "George"
+      ],
+      "bCategorys": [
+        "category69",
+        "category119"
+      ],
+      "bDetail": "language : English , pages : 272 , year : 1949"
+    },
+    {
+      "bName": "Metamorphoses",
+      "bId": "10007000",
+      "bAuthors": [
+        "Ovid"
+      ],
+      "bCategorys": [
+        "category70",
+        "category120"
+      ],
+      "bDetail": "language : Classical Latin , pages : 576 , year : 100"
+    },
+    {
+      "bName": "The Book of Disquiet",
+      "bId": "10007100",
+      "bAuthors": [
+        "Fernando"
+      ],
+      "bCategorys": [
+        "category71",
+        "category121"
+      ],
+      "bDetail": "language : Portuguese , pages : 272 , year : 1928"
+    },
+    {
+      "bName": "Tales",
+      "bId": "10007200",
+      "bAuthors": [
+        "Edgar",
+        "Allan"
+      ],
+      "bCategorys": [
+        "category72",
+        "category122"
+      ],
+      "bDetail": "language : English , pages : 842 , year : 1950"
+    },
+    {
+      "bName": "In Search of Lost Time",
+      "bId": "10007300",
+      "bAuthors": [
+        "Marcel"
+      ],
+      "bCategorys": [
+        "category73",
+        "category123"
+      ],
+      "bDetail": "language : French , pages : 2408 , year : 1920"
+    },
+    {
+      "bName": "Gargantua and Pantagruel",
+      "bId": "10007400",
+      "bAuthors": [
+        "Francois"
+      ],
+      "bCategorys": [
+        "category74",
+        "category124"
+      ],
+      "bDetail": "language : French , pages : 623 , year : 1533"
+    },
+    {
+      "bName": "Pedro Paramo",
+      "bId": "10007500",
+      "bAuthors": [
+        "Juan"
+      ],
+      "bCategorys": [
+        "category75",
+        "category125"
+      ],
+      "bDetail": "language : Spanish , pages : 124 , year : 1955"
+    },
+    {
+      "bName": "The Masnavi",
+      "bId": "10007600",
+      "bAuthors": [
+        "Rumi"
+      ],
+      "bCategorys": [
+        "category76",
+        "category126"
+      ],
+      "bDetail": "language : Persian , pages : 438 , year : 1236"
+    },
+    {
+      "bName": "Midnight's Children",
+      "bId": "10007700",
+      "bAuthors": [
+        "Salman"
+      ],
+      "bCategorys": [
+        "category77",
+        "category127"
+      ],
+      "bDetail": "language : English , pages : 536 , year : 1981"
+    },
+    {
+      "bName": "Bostan",
+      "bId": "10007800",
+      "bAuthors": [
+        "Saadi"
+      ],
+      "bCategorys": [
+        "category78",
+        "category128"
+      ],
+      "bDetail": "language : Persian , pages : 298 , year : 1257"
+    },
+    {
+      "bName": "Season of Migration to the North",
+      "bId": "10007900",
+      "bAuthors": [
+        "Tayeb"
+      ],
+      "bCategorys": [
+        "category79",
+        "category129"
+      ],
+      "bDetail": "language : Arabic , pages : 139 , year : 1966"
+    },
+    {
+      "bName": "Blindness",
+      "bId": "10008000",
+      "bAuthors": [
+        "Jose"
+      ],
+      "bCategorys": [
+        "category80",
+        "category130"
+      ],
+      "bDetail": "language : Portuguese , pages : 352 , year : 1995"
+    },
+    {
+      "bName": "Hamlet",
+      "bId": "10008100",
+      "bAuthors": [
+        "William"
+      ],
+      "bCategorys": [
+        "category81",
+        "category131"
+      ],
+      "bDetail": "language : English , pages : 432 , year : 1603"
+    },
+    {
+      "bName": "King Lear",
+      "bId": "10008200",
+      "bAuthors": [
+        "William"
+      ],
+      "bCategorys": [
+        "category82",
+        "category132"
+      ],
+      "bDetail": "language : English , pages : 384 , year : 1608"
+    },
+    {
+      "bName": "Othello",
+      "bId": "10008300",
+      "bAuthors": [
+        "William"
+      ],
+      "bCategorys": [
+        "category83",
+        "category133"
+      ],
+      "bDetail": "language : English , pages : 314 , year : 1609"
+    },
+    {
+      "bName": "Oedipus the King",
+      "bId": "10008400",
+      "bAuthors": [
+        "Sophocles"
+      ],
+      "bCategorys": [
+        "category84",
+        "category134"
+      ],
+      "bDetail": "language : Greek , pages : 88 , year : -430"
+    },
+    {
+      "bName": "The Red and the Black",
+      "bId": "10008500",
+      "bAuthors": [
+        "Stendhal"
+      ],
+      "bCategorys": [
+        "category85",
+        "category135"
+      ],
+      "bDetail": "language : French , pages : 576 , year : 1830"
+    },
+    {
+      "bName": "The Life And Opinions of Tristram Shandy",
+      "bId": "10008600",
+      "bAuthors": [
+        "Laurence"
+      ],
+      "bCategorys": [
+        "category86",
+        "category136"
+      ],
+      "bDetail": "language : English , pages : 640 , year : 1760"
+    },
+    {
+      "bName": "Confessions of Zeno",
+      "bId": "10008700",
+      "bAuthors": [
+        "Italo"
+      ],
+      "bCategorys": [
+        "category87",
+        "category137"
+      ],
+      "bDetail": "language : Italian , pages : 412 , year : 1923"
+    },
+    {
+      "bName": "Gulliver's Travels",
+      "bId": "10008800",
+      "bAuthors": [
+        "Jonathan"
+      ],
+      "bCategorys": [
+        "category88",
+        "category138"
+      ],
+      "bDetail": "language : English , pages : 178 , year : 1726"
+    },
+    {
+      "bName": "War and Peace",
+      "bId": "10008900",
+      "bAuthors": [
+        "Leo"
+      ],
+      "bCategorys": [
+        "category89",
+        "category139"
+      ],
+      "bDetail": "language : Russian , pages : 1296 , year : 1867"
+    },
+    {
+      "bName": "Anna Karenina",
+      "bId": "10009000",
+      "bAuthors": [
+        "Leo"
+      ],
+      "bCategorys": [
+        "category90",
+        "category140"
+      ],
+      "bDetail": "language : Russian , pages : 864 , year : 1877"
+    },
+    {
+      "bName": "The Death of Ivan Ilyich",
+      "bId": "10009100",
+      "bAuthors": [
+        "Leo"
+      ],
+      "bCategorys": [
+        "category91",
+        "category141"
+      ],
+      "bDetail": "language : Russian , pages : 92 , year : 1886"
+    },
+    {
+      "bName": "The Adventures of Huckleberry Finn",
+      "bId": "10009200",
+      "bAuthors": [
+        "Mark"
+      ],
+      "bCategorys": [
+        "category92",
+        "category142"
+      ],
+      "bDetail": "language : English , pages : 224 , year : 1884"
+    },
+    {
+      "bName": "Ramayana",
+      "bId": "10009300",
+      "bAuthors": [
+        "Valmiki"
+      ],
+      "bCategorys": [
+        "category93",
+        "category143"
+      ],
+      "bDetail": "language : Sanskrit , pages : 152 , year : -450"
+    },
+    {
+      "bName": "The Aeneid",
+      "bId": "10009400",
+      "bAuthors": [
+        "Virgil"
+      ],
+      "bCategorys": [
+        "category94",
+        "category144"
+      ],
+      "bDetail": "language : Classical Latin , pages : 442 , year : -23"
+    },
+    {
+      "bName": "Mahabharata",
+      "bId": "10009500",
+      "bAuthors": [
+        "Vyasa"
+      ],
+      "bCategorys": [
+        "category95",
+        "category145"
+      ],
+      "bDetail": "language : Sanskrit , pages : 276 , year : -700"
+    },
+    {
+      "bName": "Leaves of Grass",
+      "bId": "10009600",
+      "bAuthors": [
+        "Walt"
+      ],
+      "bCategorys": [
+        "category96",
+        "category146"
+      ],
+      "bDetail": "language : English , pages : 152 , year : 1855"
+    },
+    {
+      "bName": "Mrs Dalloway",
+      "bId": "10009700",
+      "bAuthors": [
+        "Virginia"
+      ],
+      "bCategorys": [
+        "category97",
+        "category147"
+      ],
+      "bDetail": "language : English , pages : 216 , year : 1925"
+    },
+    {
+      "bName": "To the Lighthouse",
+      "bId": "10009800",
+      "bAuthors": [
+        "Virginia"
+      ],
+      "bCategorys": [
+        "category98",
+        "category148"
+      ],
+      "bDetail": "language : English , pages : 209 , year : 1927"
+    },
+    {
+      "bName": "Memoirs of Hadrian",
+      "bId": "10009900",
+      "bAuthors": [
+        "Marguerite"
+      ],
+      "bCategorys": [
+        "category99",
+        "category149"
+      ],
+      "bDetail": "language : French , pages : 408 , year : 1951"
+    }
+  ]
+}
