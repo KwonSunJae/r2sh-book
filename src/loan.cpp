@@ -148,6 +148,7 @@ int search(const Json::Value* v,string type,string key){
       if (a.get(type, "Empty").asString().compare(key) ==0){
          if(type.compare("rBid")==0){
             if(value.get("rDate","Empty").asString().compare("0000-00-00")!=0)
+            j++;
             continue;
          }
             return j;
