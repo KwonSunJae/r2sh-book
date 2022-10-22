@@ -35,3 +35,6 @@
 .vscode/
 .vscode/settings.json
 .vscode/settings.json
+data/Users.json
+data/R2shs.json
+data/Books.json
