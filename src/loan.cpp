@@ -99,10 +99,12 @@ string make_time2(int y,int m,int d){
    }
 
    string date=to_string(y);
+    date.append("-");
    if(m<10){
       date.append("0");
    }
     date.append(to_string(m));
+     date.append("-");
    if(d<10){
      date.append("0");
    }
@@ -111,10 +113,12 @@ string make_time2(int y,int m,int d){
 }
 string make_time(int y,int m,int d){
    string date=to_string(y);
+   date.append("-");
    if(m<10){
       date.append("0");
    }
     date.append(to_string(m));
+   date.append("-");
    if(d<10){
      date.append("0");
    }
