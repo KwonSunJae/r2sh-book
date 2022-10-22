@@ -108,6 +108,10 @@ public:
 
 int main (int argc, char* argv[]){
     string s(argv[2]);
+    if(argc != 3) {
+        cout<<"Pleas Check your Commands."<<endl;
+        return -1;
+    }
     if(s.length()!=6){
         cout<<"Please Check your ID. ID's length is 6." << endl;
         return -1;

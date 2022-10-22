@@ -35,7 +35,7 @@ case "$1" in
                         ;;
                 *)
                         echo "$@" "is wrong commands!";
-                           ~/r2sh-book/build/help.sh  "$@";
+                           ~/r2sh-book/src/help.sh  "$@";
                         ;;
 esac
 

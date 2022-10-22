@@ -175,6 +175,7 @@ public:
 int main (int argc, char* argv[]){
     if(argc != 3){
         cout<< "r2sh-book:: Please check your command."<<endl;
+        retun -1;
     }
     if(sizeof(argv[2])/sizeof(char)>20){
         cout<<"Please Check your Name. Too LONG!" << endl;
