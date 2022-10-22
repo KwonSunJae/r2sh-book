@@ -3,7 +3,18 @@
     "filesystem": "cpp",
     "string": "cpp",
     "ostream": "cpp",
-    "iosfwd": "cpp"
+    "iosfwd": "cpp",
+    "bitset": "cpp",
+    "__split_buffer": "cpp",
+    "__tree": "cpp",
+    "array": "cpp",
+    "deque": "cpp",
+    "initializer_list": "cpp",
+    "map": "cpp",
+    "stack": "cpp",
+    "string_view": "cpp",
+    "vector": "cpp",
+    "typeinfo": "cpp"
   },
   "C_Cpp.errorSquiggles": "Disabled"
 }
