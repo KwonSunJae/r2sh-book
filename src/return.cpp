@@ -38,11 +38,11 @@ public:
         return root[key];
     }
 
-    void Write(Json::Value r2shs)
+    void Write(Json::Value data, string key)
     {
         ofs.open(filedata);
         // cout << r2shs << endl;
-        root["r2shs"] = r2shs; // 여기서 마무리~
+        root[key] = data; // 여기서 마무리~
         //  파일 쓸때 형식임 건들 ㄴㄴ
         Json::StreamWriterBuilder builder;
         builder["commentStyle"] = "None";
@@ -75,7 +75,7 @@ int find_book(string rBId, Json::Value r2shs)
 {
     for (int i = 0; i < r2shs.size(); i++)
     {
-        if (r2shs[i]["rBId"] == rBId && r2shs[i]["rDate"] == "0000-00-00") // bid 가 존재하며, 반납되지 않은책 찾음.
+        if (r2shs[i]["rBid"] == rBId && r2shs[i]["rDate"] == "0000-00-00") // bid 가 존재하며, 반납되지 않은책 찾음.
         {
             return i;
         }
@@ -85,33 +85,32 @@ int find_book(string rBId, Json::Value r2shs)
 string get_penalty_date(string deadline)
 {
     time_t timer;
-    struct tm *time_dead;
-    struct tm *time_now;
+    struct tm time_dead;
 
-    timer = time(NULL);
-    time_dead->tm_year = stoi(deadline.substr(0, 4)) - 1900;
-    cout << time_dead->tm_year << endl;
-    time_dead->tm_mon = stoi(deadline.substr(5, 2)) - 1;
-    cout << time_dead->tm_mon << endl;
-    time_dead->tm_mday = stoi(deadline.substr(8, 2));
-    cout << time_dead->tm_mday << endl;
+    time_dead.tm_year = stoi(deadline.substr(0, 4)) - 1900;
+    time_dead.tm_mon = stoi(deadline.substr(5, 2)) - 1;
+    time_dead.tm_mday = stoi(deadline.substr(8, 2));
+    time_dead.tm_hour = 0;
+    time_dead.tm_min = 0;
+    time_dead.tm_sec = 0;
 
-    time_now = localtime(&timer);
-    cout << deadline << endl;
-    time_t t1 = mktime(time_dead);
-    time_t t2 = mktime(time_now);
-    double diff = difftime(t1, t2); // If positive, then tm1 > tm2
-    if (diff > 0)
+    time_t dead_t = mktime(&time_dead);
+    time_t now_t = time(NULL);
+
+    if (now_t > dead_t)
     {
-        cout << diff << endl;
-        return "0000-00-00";
+        cout << now_t - dead_t << endl;
+
+        int penalty = (now_t - dead_t) / (60 * 60 * 24);
+        cout << penalty << endl;
+        now_t = now_t + now_t - dead_t;
+        struct tm *penaltyDate = localtime(&now_t);
+        return to_string(penaltyDate->tm_year + 1900) + "-" + to_string(penaltyDate->tm_mon + 1) + "-" + to_string(penaltyDate->tm_mday);
     }
     else
     {
-        string res = to_string(time_dead->tm_year + 1900) + "-" + to_string(time_dead->tm_mon + 1) + "-" + to_string(time_dead->tm_mday);
-        return res;
+        return "0000-00-00";
     }
-    return "";
 }
 void return_book(string rBId, Json::Value r2shs)
 {
@@ -123,38 +122,51 @@ void return_book(string rBId, Json::Value r2shs)
     }
     else
     {
-        if (r2shs[index]["rDeadline"].asString() < get_today())
+
+        cout << "book found" << endl;
+        Json::Value users = JsonParser("../data/Users.json").Read("users");
+        int userIndex = -1;
+        for (int i = 0; i < users.size(); i++)
         {
-            cout << "penalty occured" << endl;
-            Json::Value users = JsonParser("../data/Users.json").Read("users");
-            int userIndex = -1;
-            for (int i = 0; i < users.size(); i++)
+            if (users[i]["uId"] == r2shs[index]["rUid"])
             {
-                if (users[i]["uId"] == r2shs[index]["rUid"])
-                {
-                    userIndex = i;
-                    cout << i << endl;
-                }
+                userIndex = i;
+                cout << i << endl;
             }
-            if (userIndex != -1)
+        }
+
+        cout << userIndex << endl;
+        cout << users[userIndex] << endl;
+        if (userIndex != -1)
+        {
+            string res = get_penalty_date(r2shs[index]["rDeadline"].asString());
+            cout << res << endl;
+            if (res != "0000-00-00")
             {
-                users[userIndex]["uPenalty"] = get_penalty_date(r2shs[index]["rDeadline"].asString());
-                cout << users << endl;
-                // JsonParser("../data/Users.json").Write(users);
+                cout << "penalty occured" << endl;
+                users[userIndex]["uPenalty"] = res;
+                JsonParser("../data/Users.json").Write(users, "users");
             }
             else
             {
-                cout << "user not found" << endl;
+                cout << "penalty not occured" << endl;
             }
-            // user 에 정보 저장 (penalty)
+
+            // JsonParser("../data/Users.json").Write(users);
         }
+        else
+        {
+            cout << "user not found" << endl;
+        }
+        // user 에 정보 저장 (penalty)
+
         cout << "return book" << endl;
         r2shs[index]["rDate"] = get_today();
         //연체여부판단.
         cout << "book returned" << endl;
         cout << "book name: " << r2shs[index]["rUid"] << "rDate:" << r2shs[index]["rDate"] << endl;
 
-        JsonParser("../data/R2shs.json").Write(r2shs);
+        JsonParser("../data/R2shs.json").Write(r2shs, "r2shs");
     }
     // cout << r2shs[0]["rBId"] << endl;
 }
