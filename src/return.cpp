@@ -128,21 +128,22 @@ void return_book(string rBid, Json::Value r2shs, vector<Book> bookList)
     // check rBid's length is 8
     if (rBid.length() != 8)
     {
+        cout << "Invalid Argument\n";
+        ExceptionManager::printHelp();
 
-        cout << "r2sh-book : invalid bId\n";
         exit(EXIT_FAILURE);
     }
     int index = find_book(rBid, r2shs);
     if (index == -1)
     {
-        cout << "r2sh-book : no R2sh found\n";
+        cout << "Please check ur bookID. No search result found\n";
         exit(EXIT_FAILURE);
     }
 
     int bookIndex = BookRepository::findOneByBookId(&bookList, rBid);
     if (bookIndex == -1)
     {
-        cout << "r2sh-book : Book is not exist" << endl;
+        cout << "Please check ur bookID. No search result found" << endl;
         exit(EXIT_FAILURE);
     }
 
@@ -159,7 +160,7 @@ void return_book(string rBid, Json::Value r2shs, vector<Book> bookList)
     }
     if (userIndex == -1)
     {
-        cout << "r2sh-book : User is not exist" << endl;
+        cout << "User is not exist" << endl;
         exit(EXIT_FAILURE);
     }
 
