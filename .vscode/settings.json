@@ -13,7 +13,8 @@
     "map": "cpp",
     "stack": "cpp",
     "string_view": "cpp",
-    "vector": "cpp"
+    "vector": "cpp",
+    "typeinfo": "cpp"
   },
   "C_Cpp.errorSquiggles": "Disabled"
 }

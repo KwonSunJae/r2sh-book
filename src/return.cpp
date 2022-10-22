@@ -124,6 +124,7 @@ string get_penalty_date(string deadline)
 }
 void return_book(string rBid, Json::Value r2shs, vector<Book> bookList)
 {
+
     // check rBid's length is 8
     if (rBid.length() != 8)
     {
@@ -138,14 +139,14 @@ void return_book(string rBid, Json::Value r2shs, vector<Book> bookList)
         exit(EXIT_FAILURE);
     }
 
-    int result = BookRepository::findOneByBookId(&bookList, rBid);
-    if (result == -1)
+    int bookIndex = BookRepository::findOneByBookId(&bookList, rBid);
+    if (bookIndex == -1)
     {
         cout << "r2sh-book : Book is not exist" << endl;
         exit(EXIT_FAILURE);
     }
 
-    bookList.at(result).printOne();
+    Book book = bookList.at(bookIndex);
 
     Json::Value users = JsonParser("../data/Users.json").Read("users");
     int userIndex = -1;
@@ -156,38 +157,43 @@ void return_book(string rBid, Json::Value r2shs, vector<Book> bookList)
             userIndex = i;
         }
     }
-    if (userIndex != -1)
+    if (userIndex == -1)
     {
-        string res = get_penalty_date(r2shs[index]["rDeadline"].asString());
-        if (res != "0000-00-00")
-        {
-            cout << "penalty occured. penalty date : ~" << res << endl;
-            users[userIndex]["uPenalty"] = res;
-            JsonParser("../data/Users.json").Write(users, "users");
-        }
-        else
-        {
-            cout << "penalty not occured" << endl;
-        }
-    }
-    else
-    {
-        cout << "user not found" << endl;
+        cout << "r2sh-book : User is not exist" << endl;
         exit(EXIT_FAILURE);
     }
+
+    string res = get_penalty_date(r2shs[index]["rDeadline"].asString());
+    if (res != "0000-00-00")
+    {
+        cout << "penalty occured.\n"
+             << "loanUser: " << users[userIndex]["uName"] << "penalty date : ~" << res << endl;
+        users[userIndex]["uPenalty"] = res;
+        JsonParser("../data/Users.json").Write(users, "users");
+    }
+
     // user 에 정보 저장 (penalty)
 
     cout << "return book" << endl;
+    cout << "---------------Loan Info---------------\n";
+    cout << "bookName : [" << book.getName() << "]\n";
+    cout << "loanUser : [" << users[userIndex]["uName"] << "]\n";
+    cout << "---------------------------------------\n";
+
     r2shs[index]["rDate"] = get_today();
     //연체여부판단.
-    cout << "book returned" << endl;
+    cout << "The book return has been successfully" << endl;
     JsonParser("../data/R2shs.json").Write(r2shs, "r2shs");
 }
 
 int main(int argc, char **argv)
 {
-
-    string bookR2shId = argv[1];
+    if (argv[1] != "return")
+    {
+        cout << "r2sh-book : invalid command" << endl;
+        exit(EXIT_FAILURE);
+    }
+    string bookR2shId = argv[2];
 
     Json::Value r2shs = JsonParser("../data/R2shs.json").Read("r2shs");
     vector<Book> bookList = BookRepository::getBookList("../data/Books.json");
