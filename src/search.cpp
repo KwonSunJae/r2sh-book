@@ -30,7 +30,7 @@ int main(int argc, char **argv) {
     vector<Book> list = BookRepository::getBookList("../data/Books.json");
     vector<int> result = BookRepository::findAllByBookName(&list, bookName);
     if (result.empty()) {
-        cout << "r2sh-book : No search result found\n"
+        cout << "r2sh-book : No search result found\n";
         exit(EXIT_FAILURE);
     };
     for (int i = 0; i < result.size(); i++){
