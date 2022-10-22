@@ -1,5 +1,12 @@
 #! /bin/bash
 NOW_DIR=$(pwd)
+~/r2sh-book/build/check
+if ["$?" == "1"]; 
+    then 
+        echo "Please Check your Data File."
+        exit
+fi
+
 cd ~/r2sh-book/src
 case "$1" in
                 show)
@@ -23,11 +30,11 @@ case "$1" in
 
                         ;;
                 help)
-                           ~/r2sh-book/build/help  "$@";
+                           ~/r2sh-book/build/help.sh;
                         ;;
                 *)
                         echo "$@" "is wrong commands!";
-                           ~/r2sh-book/build/help  "$@";
+                           ~/r2sh-book/build/help.sh  "$@";
                         ;;
 esac
 
