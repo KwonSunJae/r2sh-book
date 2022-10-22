@@ -73,7 +73,7 @@ string get_today()
 
     return to_string(t->tm_year + 1900) + "-" + to_string(t->tm_mon + 1) + "-" + to_string(t->tm_mday);
 }
-int find_book(string rBId, Json::Value r2shs)
+int find_r2sh(string rBId, Json::Value r2shs)
 {
     for (int i = 0; i < r2shs.size(); i++)
     {
@@ -133,8 +133,8 @@ void return_book(string rBid, Json::Value r2shs, vector<Book> bookList)
 
         exit(EXIT_FAILURE);
     }
-    int index = find_book(rBid, r2shs);
-    if (index == -1)
+    int r2shIndex = find_r2sh(rBid, r2shs);
+    if (r2shIndex == -1)
     {
         cout << "Please check ur bookID. No search result found\n";
         exit(EXIT_FAILURE);
@@ -153,7 +153,7 @@ void return_book(string rBid, Json::Value r2shs, vector<Book> bookList)
     int userIndex = -1;
     for (int i = 0; i < users.size(); i++)
     {
-        if (users[i]["uId"] == r2shs[index]["rUid"])
+        if (users[i]["uId"] == r2shs[r2shIndex]["rUid"])
         {
             userIndex = i;
         }
@@ -164,26 +164,46 @@ void return_book(string rBid, Json::Value r2shs, vector<Book> bookList)
         exit(EXIT_FAILURE);
     }
 
-    string res = get_penalty_date(r2shs[index]["rDeadline"].asString());
+    string res = get_penalty_date(r2shs[r2shIndex]["rDeadline"].asString());
     if (res != "0000-00-00")
     {
+        if (users[userIndex]["uPenalty"].asString() == "0000-00-00")
+        {
+            users[userIndex]["uPenalty"] = res;
+        }
+        else
+        {
+            users[userIndex]["uPenalty"] = max(users[userIndex]["uPenalty"].asString(), res);
+        }
         cout << "penalty occured.\n"
-             << "loanUser: " << users[userIndex]["uName"] << "penalty date : ~" << res << endl;
-        users[userIndex]["uPenalty"] = res;
-        JsonParser("../data/Users.json").Write(users, "users");
+             << "loanUser: " << users[userIndex]["uName"] << "penalty date : ~" << users[userIndex]["uPenalty"] << endl;
+    }
+
+    vector<Json::Value> temp;
+    for (int i = 0; i < users[userIndex]["uR2shs"].size(); i++)
+    {
+        if (users[userIndex]["uR2shs"][i] != r2shs[r2shIndex]["rId"].asInt())
+        {
+            temp.push_back(users[userIndex]["uR2shs"][i]);
+        }
+    }
+    users[userIndex]["uR2shs"].clear();
+    for (int i = 0; i < temp.size(); i++)
+    {
+        users[userIndex]["uR2shs"].append(temp[i]);
     }
 
     // user 에 정보 저장 (penalty)
 
-    cout << "return book" << endl;
     cout << "---------------Loan Info---------------\n";
     cout << "bookName : [" << book.getName() << "]\n";
     cout << "loanUser : [" << users[userIndex]["uName"] << "]\n";
     cout << "---------------------------------------\n";
 
-    r2shs[index]["rDate"] = get_today();
+    r2shs[r2shIndex]["rDate"] = get_today();
     //연체여부판단.
     cout << "The book return has been successfully" << endl;
+    JsonParser("../data/Users.json").Write(users, "users");
     JsonParser("../data/R2shs.json").Write(r2shs, "r2shs");
 }
 
