@@ -116,7 +116,7 @@ void loan(char* u, char*b) {
               
             }
             else {
-               cout << "This book was aleady loaned!. you can`t loan this book.." << endl;
+               cout << "This book was already loaned!. you can`t loan this book.." << endl;
             }
          }
          else {
