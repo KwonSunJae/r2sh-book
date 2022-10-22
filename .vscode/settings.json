@@ -14,7 +14,9 @@
     "stack": "cpp",
     "string_view": "cpp",
     "vector": "cpp",
-    "typeinfo": "cpp"
+    "typeinfo": "cpp",
+    "iostream": "cpp",
+    "__locale": "cpp"
   },
   "C_Cpp.errorSquiggles": "Disabled"
 }
