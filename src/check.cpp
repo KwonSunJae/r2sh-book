@@ -42,7 +42,7 @@ public:
 
     int checkDate(int year, int month, int day)
     {
-        if (month >=13) return false;
+        if (month >=13 && month < 0 ) return false;
         if ((month % 2 == 1)) // odd month
         {
             if (month <= 7)
@@ -336,7 +336,7 @@ public:
     }
     int checkDate(int year, int month, int day)
     {
-        if (month >=13) return false;
+        if (month >=13 && month < 0) return false;
         if ((month % 2 == 1)) // odd month
         {
             if (month <= 7)
