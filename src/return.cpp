@@ -188,7 +188,14 @@ void return_book(string rBid, Json::Value r2shs, vector<Book> bookList)
 
 int main(int argc, char **argv)
 {
-    if (argv[1] != "return")
+    string CMD = "return";
+    if (argc != 3)
+    {
+        cout << "Invalid Number of Argument\n";
+        ExceptionManager::printHelp();
+        exit(EXIT_FAILURE);
+    };
+    if (CMD.compare(argv[1]) != 0)
     {
         cout << "r2sh-book : invalid command" << endl;
         exit(EXIT_FAILURE);
