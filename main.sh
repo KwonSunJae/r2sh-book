@@ -31,7 +31,7 @@ case "$1" in
 
                         ;;
                 help)
-                           ~/r2sh-book/build/help.sh;
+                           ~/r2sh-book/src/help.sh;
                         ;;
                 *)
                         echo "$@" "is wrong commands!";

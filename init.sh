@@ -36,7 +36,7 @@ gcc --version
 
 echo "-----Alias Settings-----"
 chmod 777 main.sh
-chmod 777 build/help.sh
+chmod 777 src/help.sh
 cat << EOF >> ~/.bashrc
 alias r2sh-book='bash ~/r2sh-book/main.sh "\$@"'
 EOF
