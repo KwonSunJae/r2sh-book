@@ -112,6 +112,12 @@ int main (int argc, char* argv[]){
         cout<<"Pleas Check your Commands."<<endl;
         return -1;
     }
+    for(int i=0; i<s.length(); i++){
+        if(s[i]>'9' && s[i]<'0'){
+            cout<<"Please Check Your Data file."<<endl;
+            return -1;
+        }
+    }
     if(s.length()!=6){
         cout<<"Please Check your ID. ID's length is 6." << endl;
         return -1;
