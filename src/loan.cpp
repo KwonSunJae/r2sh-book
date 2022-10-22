@@ -192,41 +192,50 @@ void loan(char* u, char*b) {
       if (check_time1>=stoi(check_time2)) {
          if ((check_bid = search(&bvalue["books"], "bId", bid)) != -1) {//bid체크
             if ((check_rid=search(&rvalue["r2shs"],"rBid", bid)) == -1) {//book대여정보확인
-              
-               string date = make_time(t->tm_year + 1900,t->tm_mon + 1,t->tm_mday);               
-               string date2 = make_time2(t->tm_year + 1900,t->tm_mon + 1,t->tm_mday+7);
-
-               cout << "---------Loan Info---------" << endl;
-               cout << "booKName: [" << bvalue["books"][check_bid].get("bName","").asString() << "]" << endl;
-               cout << "loanUser: [" << uvalue["users"][check_uid].get("uName", "").asString() << "]" << endl;
-               cout << "-------------------------" << endl;
-               cout << "The book laon has been successfully" << endl;
-               cout << "The return deadline is " << date2<< "." << endl;
-               ofstream rjson2("../data/R2shs.json");
-               Json::Value rvalue2;
-               ofstream ujson2("../data/Users.json");
-
-               int j=0;
-               for (const auto a : rvalue["r2shs"]) {
-                  j++;
+            int k=0;
+               for (const auto a : uvalue["users"][check_uid]["uR2shs"]) {
+                  k++;
                }
-               uvalue["users"][check_uid]["uPenalty"]="0000-00-00";
-               uvalue["users"][check_uid]["uR2shs"].append(j);
-               rvalue2["rId"]=j;
-               rvalue2["rUid"] = uvalue["users"][check_uid]["uId"].asString();
-               rvalue2["rBid"] = bvalue["books"][check_bid]["bId"].asString();
-               rvalue2["rDate"] = "0000-00-00";//시간
-               rvalue2["rDeadline"] = date2;//시간+7
-               rvalue["r2shs"].append(rvalue2);
-               Json::StreamWriterBuilder builder4;
-               builder4["commentStyle"] = "None";
-               builder4["indentation"] = "    ";  // Tab
-               unique_ptr<Json::StreamWriter> writer(builder4.newStreamWriter());
-               writer->write(rvalue, &rjson2);
-               writer->write(uvalue, &ujson2);
-               cout << endl;  // add lf and flush
-               rjson2.close();
+               
+               if(k<5){
+                  string date = make_time(t->tm_year + 1900,t->tm_mon + 1,t->tm_mday);               
+                  string date2 = make_time2(t->tm_year + 1900,t->tm_mon + 1,t->tm_mday+7);
+
+                  cout << "---------Loan Info---------" << endl;
+                  cout << "booKName: [" << bvalue["books"][check_bid].get("bName","").asString() << "]" << endl;
+                  cout << "loanUser: [" << uvalue["users"][check_uid].get("uName", "").asString() << "]" << endl;
+                  cout << "-------------------------" << endl;
+                  cout << "The book laon has been successfully" << endl;
+                  cout << "The return deadline is " << date2<< "." << endl;
+                  ofstream rjson2("../data/R2shs.json");
+                  Json::Value rvalue2;
+                  ofstream ujson2("../data/Users.json");
+
+                  int j=0;
+                  for (const auto a : rvalue["r2shs"]) {
+                     j++;
+                  }
+                  
               
+                  uvalue["users"][check_uid]["uPenalty"]="0000-00-00";
+                  uvalue["users"][check_uid]["uR2shs"].append(j);
+               
+                  rvalue2["rId"]=j;
+                  rvalue2["rUid"] = uvalue["users"][check_uid]["uId"].asString();
+                  rvalue2["rBid"] = bvalue["books"][check_bid]["bId"].asString();
+                  rvalue2["rDate"] = "0000-00-00";//시간
+                  rvalue2["rDeadline"] = date2;//시간+7
+                  rvalue["r2shs"].append(rvalue2);
+                   Json::StreamWriterBuilder builder4;
+                  builder4["commentStyle"] = "None";
+                  builder4["indentation"] = "    ";  // Tab
+                  unique_ptr<Json::StreamWriter> writer(builder4.newStreamWriter());
+                  writer->write(rvalue, &rjson2);
+                  writer->write(uvalue, &ujson2);
+                  cout << endl;  // add lf and flush
+                  rjson2.close();
+               }else cout<<"you already loaned 5books"<<endl;
+                
             }
             else {
                cout << "This book was aleady loaned!. you can`t loan this book.." << endl;
