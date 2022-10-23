@@ -1,14 +1,11 @@
 {
-    "users": [
+    "users" : 
+    [
         {
-            "uId": "000000",
-            "uName": "sunjae",
-            "uPenalty": "0000-00-00",
-            "uR2shs": [
-                1,
-                2,
-                3
-            ]
+            "uId" : "000000",
+            "uName" : "1",
+            "uPenalty" : "0000-00-00",
+            "uR2shs" : []
         }
     ]
 }

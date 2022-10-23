@@ -147,11 +147,12 @@ int search(const Json::Value* v,string type,string key){
    for (const auto a : value) {
       if (a.get(type, "Empty").asString().compare(key) ==0){
          if(type.compare("rBid")==0){
-            if(a.get("rDate","Empty").asString().compare("0000-00-00")!=0)
-            j++;
-            continue;
+            if(a.get("rDate","Empty").asString().compare("0000-00-00")!=0){
+               j++;
+             continue;
+            }
          }
-            return j;
+         return j;
       }
       j++;
       
@@ -160,6 +161,7 @@ int search(const Json::Value* v,string type,string key){
 }
 void loan(char* u, char*b) {
    ifstream bjson("../data/Books.json");
+
    ifstream rjson("../data/R2shs.json");
    ifstream ujson("../data/Users.json");
    Json::CharReaderBuilder builder;
