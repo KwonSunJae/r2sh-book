@@ -70,12 +70,12 @@ bool search_book_present(string rBId, Json::Value r2shs);
 string get_today()
 {
     time_t timer;
-    struct tm *t;
+    struct tm t;
     timer = time(NULL);
-    t = localtime(&timer);
-    time_t time = mktime(t);
+    localtime_r(&timer,&t);
+    time_t time = mktime(&t);
 
-    return to_string(t->tm_year + 1900) + "-" + to_string(t->tm_mon + 1) + "-" + to_string(t->tm_mday);
+    return to_string(t.tm_year + 1900) + "-" + to_string(t.tm_mon + 1) + "-" + to_string(t.tm_mday);
 }
 int find_r2sh(string rBId, Json::Value r2shs)
 {
@@ -97,8 +97,9 @@ string get_format_00(int prev)
 }
 string get_penalty_date(string deadline)
 {
+    // cout<<"input deadline"<<deadline<<endl;
     time_t timer;
-    struct tm time_dead;
+    struct tm time_dead ={}; 
 
     time_dead.tm_year = stoi(deadline.substr(0, 4)) - 1900;
     time_dead.tm_mon = stoi(deadline.substr(5, 2)) - 1;
@@ -120,8 +121,8 @@ string get_penalty_date(string deadline)
         temp = (time_t)res;
 
         cout << temp << endl;
-        struct tm penaltyDate;
-        struct tm time_now;
+        struct tm penaltyDate={};
+        struct tm time_now={};
         localtime_r(&temp, &penaltyDate);
         localtime_r(&now_t, &time_now);
 
