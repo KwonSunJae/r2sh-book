@@ -456,7 +456,7 @@ public:
                 @ hotfix
                 - user 에서 유효한(데이터 파일에 존재하는) r2shId인지 check
                 */    
-                r2shIdSet.erase(root["r2shs"][i]["rId"].isInt());
+                r2shIdSet.erase(root["r2shs"][i]["rId"].asInt());
                 if (checkTab((root["r2shs"][i]["rUid"]).asString()) == false)
                     exit(EXIT_FAILURE);
                 /*
@@ -550,7 +550,7 @@ public:
                 exit(EXIT_FAILURE);
         }
     }
-};
+};  
 int main()
 {
     
