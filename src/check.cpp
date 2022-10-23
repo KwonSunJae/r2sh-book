@@ -143,7 +143,7 @@ public:
                     {
                         if (!root["users"][i]["uR2shs"][su].isInt())
                             exit(EXIT_FAILURE);
-                        r2shOfUserIdSet.insert(root["users"][i]["uR2shs"][su].isInt());
+                        r2shOfUserIdSet.insert(root["users"][i]["uR2shs"][su].asInt());
                     }
 
                     // cout<<"7 "<<endl;
