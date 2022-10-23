@@ -54,7 +54,7 @@ public:
 
     int checkDate(int year, int month, int day)
     {
-        if (month >= 13 || month < 0)
+        if (month >= 13 || month <= 0)
             return false;
         if ((month % 2 == 1)) // odd month
         {
@@ -364,7 +364,7 @@ public:
     }
     int checkDate(int year, int month, int day)
     {
-        if (month >= 13 || month < 0)
+        if (month >= 13 || month <= 0)
             return false;
         if ((month % 2 == 1)) // odd month
         {
