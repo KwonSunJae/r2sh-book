@@ -40,9 +40,10 @@ chmod 777 src/help.sh
 cat << EOF >> ~/.bashrc
 alias r2sh-book='bash ~/r2sh-book/main.sh "\$@"'
 EOF
-source ~/.bashrc
+cd ~
+source .bashrc
 echo "----- BUILD -----"
-cd src
+cd r2sh-book/src
 g++ -o ../build/info info.cpp jsoncpp.cpp -I. -DJSON_IS_AMALGAMATION
 g++ -o ../build/search search.cpp jsoncpp.cpp -I. -DJSON_IS_AMALGAMATION
 g++ -o ../build/loan loan.cpp jsoncpp.cpp -I. -DJSON_IS_AMALGAMATION
