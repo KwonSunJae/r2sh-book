@@ -22,7 +22,19 @@ public:
     {
         filedata = "../data/Users.json"; //대상 파일임
     }
+    void idChecker(Json::Value data)
+    {
+        string id = data.asString();
 
+        for (char c : id)
+        {
+            if (c < '0' || c > '9')
+            {
+
+                exit(EXIT_FAILURE);
+            }
+        }
+    }
     bool checkTab(string str)
     {
         int flag = 0;
@@ -42,7 +54,8 @@ public:
 
     int checkDate(int year, int month, int day)
     {
-        if (month >=13 && month < 0 ) return false;
+        if (month >= 13 && month < 0)
+            return false;
         if ((month % 2 == 1)) // odd month
         {
             if (month <= 7)
@@ -98,6 +111,7 @@ public:
                 // cout<<"big "<<endl;
                 if ((root["users"][i].isMember("uId")) && (root["users"][i].isMember("uName")) && (root["users"][i].isMember("uPenalty")) && (root["users"][i].isMember("uR2shs")))
                 {
+                    idChecker(root["users"][i]["uId"]);
                     if (!(checkTab((root["users"][i]["uId"]).asString()) == true))
                         exit(EXIT_FAILURE); // uId 개행문자 있으면
                     if (!(checkTab((root["users"][i]["uName"]).asString()) == true))
@@ -335,9 +349,23 @@ public:
                 return true;
         }
     }
+    void idChecker(Json::Value data)
+    {
+        string id = data.asString();
+
+        for (char c : id)
+        {
+            if (c < '0' || c > '9')
+            {
+
+                exit(EXIT_FAILURE);
+            }
+        }
+    }
     int checkDate(int year, int month, int day)
     {
-        if (month >=13 && month < 0) return false;
+        if (month >= 13 && month < 0)
+            return false;
         if ((month % 2 == 1)) // odd month
         {
             if (month <= 7)
@@ -399,6 +427,8 @@ public:
 
                 if ((root["r2shs"][i].isMember("rId")) && (root["r2shs"][i].isMember("rUid")) && (root["r2shs"][i].isMember("rBid")) && (root["r2shs"][i].isMember("rDate")) && (root["r2shs"][i].isMember("rDeadline")))
                 {
+                    idChecker(root["r2shs"][i]["rUid"]);
+                    idChecker(root["r2shs"][i]["rBid"]);
                 }
                 else
                     exit(EXIT_FAILURE);
