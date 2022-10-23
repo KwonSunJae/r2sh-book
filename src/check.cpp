@@ -54,7 +54,7 @@ public:
 
     int checkDate(int year, int month, int day)
     {
-        if (month >= 13 && month < 0)
+        if (month >= 13 || month < 0)
             return false;
         if ((month % 2 == 1)) // odd month
         {
@@ -364,7 +364,7 @@ public:
     }
     int checkDate(int year, int month, int day)
     {
-        if (month >= 13 && month < 0)
+        if (month >= 13 || month < 0)
             return false;
         if ((month % 2 == 1)) // odd month
         {
@@ -402,7 +402,7 @@ public:
                     return false;
             }
         }
-        return 1;
+        return true;
     }
     int Read()
     { // 함수 리턴을 객체로 하고 싶으면 원하는대로 수정하면됨. 파일 읽는 예제 코드임.
