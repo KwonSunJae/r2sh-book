@@ -6,6 +6,7 @@
 #include <unistd.h>
 #include <limits.h>
 #include <stdlib.h>
+#include <set>
 #include "json/json.h" //라이브러리 헤더파일
 using namespace std;
 
@@ -18,10 +19,16 @@ public:
     ifstream ifsBooksJson; // 파일 읽기
     ifstream ifsR2shsJson; // 파일 읽기
     ofstream ofs;          // 파일 쓰기
+    set<string> uIdSet;
+    set<int> r2shOfUserIdSet;
+
     JsonParserUser()
     {
         filedata = "../data/Users.json"; //대상 파일임
     }
+
+    set<string> getIdSet() { return uIdSet };
+    set<int> getR2shIdSet() { return r2shOfUserIdSet; }
     void idChecker(Json::Value data)
     {
         string id = data.asString();
@@ -136,6 +143,7 @@ public:
                     {
                         if (!root["users"][i]["uR2shs"][su].isInt())
                             exit(EXIT_FAILURE);
+                        r2shOfUserIdSet.insert(root["users"][i]["uR2shs"][su].isInt());
                     }
 
                     // cout<<"7 "<<endl;
@@ -172,6 +180,7 @@ public:
                     if (date.compare("0000-00-00") != 0 && !checkDate(y, m, d))
                         exit(EXIT_FAILURE);
 
+                    uIdSet.insert(root["users"][i]["uId"].asString());
                     continue;
                 }
                 exit(EXIT_FAILURE);
@@ -186,11 +195,13 @@ public:
     string filedata;
     ifstream ifsBooksJson; // 파일 읽기
     ofstream ofs;          // 파일 쓰기
+    set<string> bidSet;
     JsonParserBook()
     {
         filedata = "../data/Books.json"; //대상 파일임
     }
 
+    set<string> getIdSet() { return bidSet; }
     bool checkSpace(string str)
     {
         int flag = 0;
@@ -316,6 +327,7 @@ public:
             {
                 checkTab((root["books"][i]["bCategorys"][j]).asString());
             }
+            bidSet.insert(root["books"][i]["bId"].asString());
         }
     }
 };
@@ -327,10 +339,12 @@ public:
     string filedata;
     ifstream ifsR2shsJson; // 파일 읽기
     ofstream ofs;          // 파일 쓰기
+    
     JsonParserR2sh()
     {
         filedata = "../data/R2shs.json"; //대상 파일임
     }
+
     bool checkTab(string str)
     {
         int flag = 0;
@@ -404,7 +418,7 @@ public:
         }
         return true;
     }
-    int Read()
+    int Read(set<string> bIdSet, set<string> uIdSet, set<int> r2shIdSet)
     { // 함수 리턴을 객체로 하고 싶으면 원하는대로 수정하면됨. 파일 읽는 예제 코드임.
 
         ifsR2shsJson = ifstream(filedata);
@@ -437,11 +451,30 @@ public:
                     exit(EXIT_FAILURE);
                 if (checkTab((root["r2shs"][i]["rId"]).asString()) == false)
                     exit(EXIT_FAILURE);
+                
+                /*
+                @ hotfix
+                - user 에서 유효한(데이터 파일에 존재하는) r2shId인지 check
+                */    
+                r2shIdSet.erase(root["r2shs"][i]["rId"].isInt());
                 if (checkTab((root["r2shs"][i]["rUid"]).asString()) == false)
                     exit(EXIT_FAILURE);
+                /*
+                @ hotfix
+                - r2shs 에서 유효한(데이터 파일에 존재하는) uid인지 check
+                */
+                if(uIdSet.find(root["r2shs"][i]["rUid"].asString() == uIdSet.end()))
+                    exit(EXIT_FAILURE);
+
                 if (checkTab((root["r2shs"][i]["rBid"]).asString()) == false)
                     exit(EXIT_FAILURE);
-                // cout<<"Date "<<endl;
+
+                /*
+                @ hotfix
+                - r2shs 에서 유효한(데이터 파일에 존재하는) bid인지 check
+                */
+                if(bIdSet.find(root["r2shs"][i]["rBid"].asString() == bIdSet.end()))
+                    exit(EXIT_FAILURE);
                 if (!root["r2shs"][i]["rDate"].isString())
                     exit(EXIT_FAILURE);
                 string date = root["r2shs"][i]["rDate"].asString();
@@ -508,11 +541,19 @@ public:
                 if (date.compare("0000-00-00") != 0 && !checkDate(y, m, d))
                     exit(EXIT_FAILURE);
             }
+            
+            /*
+            @ hotfix
+            - r2shs 에서 유효한(데이터 파일에 존재하는) uid인지 check
+            */
+            if(!r2shIdSet.empty())
+                exit(EXIT_FAILURE);
         }
     }
 };
 int main()
 {
+    
     JsonParserUser JPuser = JsonParserUser();
     JsonParserBook JPbook = JsonParserBook();
     JsonParserR2sh JPr2sh = JsonParserR2sh();
@@ -522,14 +563,22 @@ int main()
     std::string filePath2 = "../data/Books.json";
     std::string filePath3 = "../data/R2shs.json";
 
+    set<string> bIdSet, uIdSet;
+    set<int> r2shIdSet;
     if ((access(filePath1.c_str(), F_OK) == 0) && (access(filePath2.c_str(), F_OK) == 0) && (access(filePath3.c_str(), F_OK) == 0)) //
     {
-        // std::cout << "FILE EXIST" << std::endl;
-        JPuser.Read();
-        // cout<<"jaemin"<<endl;
+        /* 
+        @ hotfix 10/24 00:27 
+        - 이제 check 순서 반드시 지켜야함
+        - Book -> User -> R2sh
+        */
         JPbook.Read();
-        // cout<<"subin"<<endl;
-        JPr2sh.Read();
+        bIdSet = JPbook.getIdSet();
+        JPuser.Read();
+        uIdSet = JPuser.getIdSet();
+        r2shIdSet = JPuser.getR2shIdSet();
+
+        JPr2sh.Read(bIdSet,uIdSet,r2shIdSet);
     }
     else
     {
