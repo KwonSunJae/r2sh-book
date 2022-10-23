@@ -50,8 +50,9 @@ class Book {
     void printLine() {
         cout << "bookName : [" << name << "], ";
         cout << "bookAuthor : [";
-        for (string author : authors) {
-            cout << author << ",";
+        for (size_t i = 0; i < authors.size(); i++){
+            if(i==authors.size()-1) cout <<authors.at(i);
+            else cout << authors.at(i) << ",";
         }
         cout << "], ";
         cout << "bookID : [" << id << "]\n";

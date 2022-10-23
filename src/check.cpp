@@ -265,6 +265,7 @@ public:
 
     void authorsChecker(Json::Value data)
     {
+        if (data.size() > 5) exit(EXIT_FAILURE);
         if (data.size() == 0)
             exit(EXIT_FAILURE);
         for (int i = 0; i < data.size(); i++)
@@ -277,6 +278,7 @@ public:
 
     void categorysChecker(Json::Value data)
     {
+        if (data.size() > 5) exit(EXIT_FAILURE);
         if (data.size() == 0)
             exit(EXIT_FAILURE);
         for (int i = 0; i < data.size(); i++)
