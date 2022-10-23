@@ -41,7 +41,7 @@ class BookRepository {
 
     static vector<int> findAllByBookName(vector<Book>* list, string bookName) {
         vector<int> res;
-        for (int i = 0; i < list->size(); i++){
+        for (int i = 0; i < list->size() && res.size() < 10; i++){
             if(list->at(i).getName().find(bookName)!=string::npos){
                 res.push_back(i);
             }
