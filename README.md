@@ -5,11 +5,19 @@
 ## Build
 root 계정에서는 실행 되지 않습니다.
 
+```bash
+~ $  cd ~ 
+~ $  git clone https://github.com/KwonSunJae/r2sh-book.git
+~ $  cd r2sh-book 
+~/r2sh-book$  chmod +x init.sh 
+~/r2sh-book$  source init.sh
+```
 
 ## 작동환경
-ubuntu 20.04.01 LTS  -확인완료
+ubuntu 20.04.01 LTS  <권장>
+ubuntu 18.04.01 LTS  <비권장 - 실행 확인 완료>
+ubuntu 22.04.01 LTS  <비권장 - 실행 확인 완료>
 
-그이외의 linux 환경 확인
 ## 작동방법
 
 ```
