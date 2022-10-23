@@ -27,7 +27,7 @@ public:
         filedata = "../data/Users.json"; //대상 파일임
     }
 
-    set<string> getIdSet() { return uIdSet };
+    set<string> getIdSet() { return uIdSet; }
     set<int> getR2shIdSet() { return r2shOfUserIdSet; }
     void idChecker(Json::Value data)
     {
@@ -463,7 +463,7 @@ public:
                 @ hotfix
                 - r2shs 에서 유효한(데이터 파일에 존재하는) uid인지 check
                 */
-                if(uIdSet.find(root["r2shs"][i]["rUid"].asString() == uIdSet.end()))
+                if(uIdSet.find(root["r2shs"][i]["rUid"].asString()) == uIdSet.end())
                     exit(EXIT_FAILURE);
 
                 if (checkTab((root["r2shs"][i]["rBid"]).asString()) == false)
@@ -473,7 +473,7 @@ public:
                 @ hotfix
                 - r2shs 에서 유효한(데이터 파일에 존재하는) bid인지 check
                 */
-                if(bIdSet.find(root["r2shs"][i]["rBid"].asString() == bIdSet.end()))
+                if(bIdSet.find(root["r2shs"][i]["rBid"].asString()) == bIdSet.end())
                     exit(EXIT_FAILURE);
                 if (!root["r2shs"][i]["rDate"].isString())
                     exit(EXIT_FAILURE);
