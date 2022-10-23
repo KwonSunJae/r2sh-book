@@ -2,14 +2,18 @@
 #include <fstream>
 #include "json/json.h"
 #include <string>
-#include <ctime>
 #include <stdio.h>
+#include <ctime>
 #include <time.h>
 
 #include "util/ExceptionManager.h"
 #include "util/BookRepository.h"
 
 using namespace std;
+string get_format_00(int);
+string get_today();
+string get_penalty_date(string);
+void return_book(string, Json::Value, vector<Book>);
 
 class JsonParser
 {
@@ -105,22 +109,29 @@ string get_penalty_date(string deadline)
 
     time_t dead_t = mktime(&time_dead);
     time_t now_t = time(NULL);
-    if (now_t > dead_t)
+    cout << "dead : " << dead_t << endl;
+    cout << "now  : " << now_t << endl;
+
+    if (now_t - dead_t > 0)
     {
-        time_t extra_t = now_t + now_t - dead_t;
-        struct tm *penaltyDate = localtime(&extra_t);
+        long long res = now_t + now_t - dead_t;
+        cout << res << endl;
+        time_t temp;
+        temp = (time_t)res;
 
-        string month = get_format_00(penaltyDate->tm_mon + 1);
-        string day = get_format_00(penaltyDate->tm_mday);
+        cout << temp << endl;
+        struct tm penaltyDate;
+        struct tm time_now;
+        localtime_r(&temp, &penaltyDate);
+        localtime_r(&now_t, &time_now);
 
-        struct tm *time_now=localtime(&now_t);
-        
-        
-        cout<<"현재시간"<<to_string(time_now->tm_year + 1900)<<to_string(time_now->tm_mon+1)<<to_string(time_now->tm_mday)<<endl;
-        cout<<"데드라인"<<deadline<<endl;
-        cout<<"패널티 date"<<to_string(penaltyDate->tm_year + 1900) + "-" + month + "-" + day<<endl;
+        cout << "now time" << to_string(time_now.tm_year + 1900) + "-" + get_format_00(time_now.tm_mon + 1) + "-" + get_format_00(time_now.tm_mday) << endl;
+        cout << "deadline" << deadline << endl;
+        cout << "penalty " << to_string(penaltyDate.tm_year + 1900) + "-" + get_format_00(penaltyDate.tm_mon + 1) + "-" + get_format_00(penaltyDate.tm_mday) << endl;
 
-        return to_string(penaltyDate->tm_year + 1900) + "-" + month + "-" + day;
+        string return_res = (to_string(penaltyDate.tm_year + 1900) + "-" + get_format_00(penaltyDate.tm_mon + 1) + "-" + get_format_00(penaltyDate.tm_mday));
+        cout << "returning : " << return_res << endl;
+        return return_res;
     }
     else
     {
@@ -129,6 +140,8 @@ string get_penalty_date(string deadline)
 }
 void return_book(string rBid, Json::Value r2shs, vector<Book> bookList)
 {
+
+    string res;
 
     // check rBid's length is 8
     if (rBid.length() != 8)
@@ -168,8 +181,8 @@ void return_book(string rBid, Json::Value r2shs, vector<Book> bookList)
         cout << "User is not exist" << endl;
         exit(EXIT_FAILURE);
     }
-
-    string res = get_penalty_date(r2shs[r2shIndex]["rDeadline"].asString());
+    res = get_penalty_date(r2shs[r2shIndex]["rDeadline"].asString());
+    cout << "dddddddd" << endl;
     if (res != "0000-00-00")
     {
         if (users[userIndex]["uPenalty"].asString() == "0000-00-00")
@@ -178,7 +191,8 @@ void return_book(string rBid, Json::Value r2shs, vector<Book> bookList)
         }
         else
         {
-            users[userIndex]["uPenalty"] = max(users[userIndex]["uPenalty"].asString(), res);
+            users[userIndex]["uPenalty"] = res;
+            // users[userIndex]["uPenalty"] = max(users[userIndex]["uPenalty"].asString(), res);
         }
         cout << "penalty occured.\n"
              << "loanUser: " << users[userIndex]["uName"] << "penalty date : ~" << users[userIndex]["uPenalty"] << endl;
