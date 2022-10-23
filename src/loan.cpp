@@ -145,7 +145,14 @@ int search(const Json::Value* v,string type,string key){
    int j = 0;
    Json::Value value = *v;
    for (const auto a : value) {
-      if (a.get(type, "Empty").asString().compare(key) ==0) return j;
+      if (a.get(type, "Empty").asString().compare(key) ==0){
+         if(type.compare("rBid")==0){
+            if(a.get("rDate","Empty").asString().compare("0000-00-00")!=0)
+            j++;
+            continue;
+         }
+            return j;
+      }
       j++;
       
    }
@@ -172,7 +179,7 @@ void loan(char* u, char*b) {
    JSONCPP_STRING uerrs;
    bool ok3 = parseFromStream(builder2, ujson, &uvalue, &uerrs);
    JSONCPP_STRING rerrs2;
-   int check_uid,check_bid,check_rid;
+   int check_uid,check_bid;
    string ti;
    string bid(b);
    string uid(u);
@@ -191,7 +198,7 @@ void loan(char* u, char*b) {
       check_time2.replace(6,1,"");
       if (check_time1>=stoi(check_time2)) {
          if ((check_bid = search(&bvalue["books"], "bId", bid)) != -1) {//bid체크
-            if ((check_rid=search(&rvalue["r2shs"],"rBid", bid)) == -1) {//book대여정보확인
+            if (search(&rvalue["r2shs"],"rBid", bid) == -1) {//book대여정보확인
             int k=0;
                for (const auto a : uvalue["users"][check_uid]["uR2shs"]) {
                   k++;

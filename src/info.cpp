@@ -107,11 +107,12 @@ public:
 };
 
 int main (int argc, char* argv[]){
-    string s(argv[2]);
+    
     if(argc != 3) {
         cout<<"Pleas Check your Commands."<<endl;
         return -1;
     }
+    string s(argv[2]);
     for(int i=0; i<s.length(); i++){
         if(s[i]>'9' && s[i]<'0'){
             cout<<"Please Check Your Data file."<<endl;

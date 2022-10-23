@@ -105,15 +105,20 @@ string get_penalty_date(string deadline)
 
     time_t dead_t = mktime(&time_dead);
     time_t now_t = time(NULL);
-
     if (now_t > dead_t)
     {
-        int penalty = (now_t - dead_t) / (60 * 60 * 24);
-        now_t = now_t + now_t - dead_t;
-        struct tm *penaltyDate = localtime(&now_t);
+        time_t extra_t = now_t + now_t - dead_t;
+        struct tm *penaltyDate = localtime(&extra_t);
 
         string month = get_format_00(penaltyDate->tm_mon + 1);
         string day = get_format_00(penaltyDate->tm_mday);
+
+        struct tm *time_now=localtime(&now_t);
+        
+        
+        cout<<"현재시간"<<to_string(time_now->tm_year + 1900)<<to_string(time_now->tm_mon+1)<<to_string(time_now->tm_mday)<<endl;
+        cout<<"데드라인"<<deadline<<endl;
+        cout<<"패널티 date"<<to_string(penaltyDate->tm_year + 1900) + "-" + month + "-" + day<<endl;
 
         return to_string(penaltyDate->tm_year + 1900) + "-" + month + "-" + day;
     }
