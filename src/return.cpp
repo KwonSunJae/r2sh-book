@@ -72,7 +72,7 @@ string get_today()
     time_t timer;
     struct tm t;
     timer = time(NULL);
-    localtime_r(&timer,&t);
+    localtime_r(&timer, &t);
     time_t time = mktime(&t);
 
     return to_string(t.tm_year + 1900) + "-" + to_string(t.tm_mon + 1) + "-" + to_string(t.tm_mday);
@@ -99,7 +99,7 @@ string get_penalty_date(string deadline)
 {
     // cout<<"input deadline"<<deadline<<endl;
     time_t timer;
-    struct tm time_dead ={}; 
+    struct tm time_dead = {};
 
     time_dead.tm_year = stoi(deadline.substr(0, 4)) - 1900;
     time_dead.tm_mon = stoi(deadline.substr(5, 2)) - 1;
@@ -110,29 +110,27 @@ string get_penalty_date(string deadline)
 
     time_t dead_t = mktime(&time_dead);
     time_t now_t = time(NULL);
-    cout << "dead : " << dead_t << endl;
-    cout << "now  : " << now_t << endl;
+    // cout << "dead : " << dead_t << endl;
+    // cout << "now  : " << now_t << endl;
 
     if (now_t - dead_t > 0)
     {
         long long res = now_t + now_t - dead_t;
-        cout << res << endl;
+        // cout << res << endl;
         time_t temp;
         temp = (time_t)res;
 
-        cout << temp << endl;
-        struct tm penaltyDate={};
-        struct tm time_now={};
+        // cout << temp << endl;
+        struct tm penaltyDate = {};
+        struct tm time_now = {};
         localtime_r(&temp, &penaltyDate);
         localtime_r(&now_t, &time_now);
 
-        cout << "now time" << to_string(time_now.tm_year + 1900) + "-" + get_format_00(time_now.tm_mon + 1) + "-" + get_format_00(time_now.tm_mday) << endl;
-        cout << "deadline" << deadline << endl;
-        cout << "penalty " << to_string(penaltyDate.tm_year + 1900) + "-" + get_format_00(penaltyDate.tm_mon + 1) + "-" + get_format_00(penaltyDate.tm_mday) << endl;
+        // cout << "now time" << to_string(time_now.tm_year + 1900) + "-" + get_format_00(time_now.tm_mon + 1) + "-" + get_format_00(time_now.tm_mday) << endl;
+        // cout << "deadline" << deadline << endl;
+        // cout << "penalty " << to_string(penaltyDate.tm_year + 1900) + "-" + get_format_00(penaltyDate.tm_mon + 1) + "-" + get_format_00(penaltyDate.tm_mday) << endl;
 
-        string return_res = (to_string(penaltyDate.tm_year + 1900) + "-" + get_format_00(penaltyDate.tm_mon + 1) + "-" + get_format_00(penaltyDate.tm_mday));
-        cout << "returning : " << return_res << endl;
-        return return_res;
+        return (to_string(penaltyDate.tm_year + 1900) + "-" + get_format_00(penaltyDate.tm_mon + 1) + "-" + get_format_00(penaltyDate.tm_mday));
     }
     else
     {
@@ -141,9 +139,7 @@ string get_penalty_date(string deadline)
 }
 void return_book(string rBid, Json::Value r2shs, vector<Book> bookList)
 {
-
     string res;
-
     // check rBid's length is 8
     if (rBid.length() != 8)
     {
@@ -183,7 +179,7 @@ void return_book(string rBid, Json::Value r2shs, vector<Book> bookList)
         exit(EXIT_FAILURE);
     }
     res = get_penalty_date(r2shs[r2shIndex]["rDeadline"].asString());
-    cout << "dddddddd" << endl;
+
     if (res != "0000-00-00")
     {
         if (users[userIndex]["uPenalty"].asString() == "0000-00-00")
@@ -192,8 +188,7 @@ void return_book(string rBid, Json::Value r2shs, vector<Book> bookList)
         }
         else
         {
-            users[userIndex]["uPenalty"] = res;
-            // users[userIndex]["uPenalty"] = max(users[userIndex]["uPenalty"].asString(), res);
+            users[userIndex]["uPenalty"] = max(users[userIndex]["uPenalty"].asString(), res);
         }
         cout << "penalty occured.\n"
              << "loanUser: " << users[userIndex]["uName"] << "penalty date : ~" << users[userIndex]["uPenalty"] << endl;
