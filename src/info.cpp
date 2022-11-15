@@ -5,6 +5,7 @@
 #include <vector>
 #include "json/json.h" //라이브러리 헤더파일
 #include "util/BookRepository.h"
+#include "util/ExceptionManager.h"
 using namespace std;
 
 class JsonParser
@@ -100,7 +101,7 @@ public:
         int bStat = isBookUnreturn(r2shs, bId);
 
         if (bStat == 1)
-            cout << "Loan availabl]" << endl;
+            cout << "rushed : [O]" << endl;
         else
             cout << "rushed : [X]" << endl;
 
@@ -214,6 +215,8 @@ int main(int argc, char *argv[])
     else
     {
         cout << s<<" is Wrong Commands" << endl;
+        ExceptionManager::printHelp();
+
         return -1;
     }
 
