@@ -213,7 +213,7 @@ int main(int argc, char *argv[])
     }
     else
     {
-        cout << "Please Check your Input. Input's length is 6(User ID) or 8(Book ID)." << endl;
+        cout << s<<" is Wrong Commands" << endl;
         return -1;
     }
 
