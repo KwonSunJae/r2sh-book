@@ -41,9 +41,22 @@ class BookRepository {
 
     static vector<int> findAllByBookName(vector<Book>* list, string bookName) {
         vector<int> res;
-        for (int i = 0; i < list->size(); i++){
+        for (int i = 0; i < list->size()&&res.size()<10; i++){
             if(list->at(i).getName().find(bookName)!=string::npos){
                 res.push_back(i);
+            }
+        }
+        return res;
+    }
+    static vector<int> findAllByCategory(vector<Book>* list, string bookName) {
+        vector<int> res;
+        for (int i = 0; i < list->size()&&res.size()<10; i++){
+            vector<string> cat=list->at(i).getcategorys(); 
+            for(int j=0;j<cat.size();j++){
+                if(cat.at(j).compare(bookName)==0){
+                    res.push_back(i);
+                    break;
+                } 
             }
         }
         return res;
