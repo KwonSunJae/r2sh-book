@@ -59,4 +59,5 @@ class Book {
 
     string getId() { return id; }
     string getName() { return name; }
+    vector<string>getcategorys(){return categorys;} 
 };
