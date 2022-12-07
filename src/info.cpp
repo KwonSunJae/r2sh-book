@@ -112,12 +112,9 @@ public:
 
         for (int i = 0; i < r2shs.size(); i++)
         {
-            if (r2shs[i]["rBid"] == bId)
+            if (r2shs[i]["rBid"] == bId && r2shs[i]["rDate"] == "0000-00-00")
             {
-                if (r2shs[i]["rDate"] == "0000-00-00")
-                {
-                    return 1;
-                }
+                return 1;
             }
         }
         return 0;
@@ -196,9 +193,9 @@ int main(int argc, char *argv[])
     string s(argv[2]);
     for (int i = 0; i < s.length(); i++)
     {
-        if (s[i] > '9' && s[i] < '0')
+        if (!isdigit(s[i]))
         {
-            cout << "Please Check Your Data file." << endl;
+            cout << "Please Check Your Input" << endl;
             return -1;
         }
     }
@@ -214,7 +211,7 @@ int main(int argc, char *argv[])
     }
     else
     {
-        cout << s<<" is Wrong Commands" << endl;
+        cout << s << " is Wrong Commands" << endl;
         ExceptionManager::printHelp();
 
         return -1;
