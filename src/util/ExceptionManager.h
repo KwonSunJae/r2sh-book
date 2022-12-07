@@ -17,7 +17,7 @@ const string helpMessage =
     "info <user-id> : show list of books borrowed by the user\n"
     "info <book-id>	: show you can borrow this book\n"
     "auth <username> : generate unique user-id according to username\n"
-    "help : show available commandz list\n";
+    "help : show available command list\n";
 
 class ExceptionManager
 {
