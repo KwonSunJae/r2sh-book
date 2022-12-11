@@ -148,6 +148,16 @@ void return_book(string rBid, Json::Value r2shs, vector<Book> bookList)
 
         exit(EXIT_FAILURE);
     }
+    for (int i = 0; i < rBid.length(); i++)
+    {
+        if (!isdigit(rBid[i]))
+        {
+            cout << "Invalid arguments" << endl;
+            ExceptionManager::printHelp();
+
+            exit(EXIT_FAILURE);
+        }
+    }
     int r2shIndex = find_r2sh(rBid, r2shs);
     if (r2shIndex == -1)
     {
@@ -233,7 +243,7 @@ int main(int argc, char **argv)
     };
     if (CMD.compare(argv[1]) != 0)
     {
-        cout << "r2sh-book : invalid command" << endl;
+        cout << "r2sh-book : Invalid command" << endl;
         exit(EXIT_FAILURE);
     }
     string bookR2shId = argv[2];
