@@ -12,6 +12,7 @@ return <book-id> : return book by bid
 info <user-id>	: show list of books borrowed by the user
 info <book-id>	: show you can borrow this book
 auth <username> : generate unique user-id according to username
+find <username> : find your userID by username
 help : show available command list
 ------------------------------------------------------------------------------
 "
