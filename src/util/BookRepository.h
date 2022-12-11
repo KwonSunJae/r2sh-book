@@ -48,12 +48,12 @@ class BookRepository {
         }
         return res;
     }
-    static vector<int> findAllByCategory(vector<Book>* list, string bookName) {
+    static vector<int> findAllByCategory(vector<Book>* list, string bookCategory) {
         vector<int> res;
         for (int i = 0; i < list->size()&&res.size()<10; i++){
             vector<string> cat=list->at(i).getcategorys(); 
             for(int j=0;j<cat.size();j++){
-                if(cat.at(j).compare(bookName)==0){
+                if(cat.at(j).compare(bookCategory)==0){
                     res.push_back(i);
                     break;
                 } 

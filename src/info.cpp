@@ -94,7 +94,7 @@ public:
         int result = BookRepository::findOneByBookId(&list, bId);
         if (result == -1)
         {
-            cout << "r2sh-book : No search result found\n";
+            cout << "r2sh-book : Book search result not found\n";
             exit(EXIT_FAILURE);
         }
         list.at(result).printOne();
@@ -112,12 +112,9 @@ public:
 
         for (int i = 0; i < r2shs.size(); i++)
         {
-            if (r2shs[i]["rBid"] == bId)
+            if (r2shs[i]["rBid"] == bId && r2shs[i]["rDate"] == "0000-00-00")
             {
-                if (r2shs[i]["rDate"] == "0000-00-00")
-                {
-                    return 1;
-                }
+                return 1;
             }
         }
         return 0;
@@ -190,15 +187,18 @@ int main(int argc, char *argv[])
 
     if (argc != 3)
     {
-        cout << "Pleas Check your Commands." << endl;
+        cout << "Invalid Number of Argument" << endl;
+        ExceptionManager::printHelp();
         return -1;
     }
     string s(argv[2]);
     for (int i = 0; i < s.length(); i++)
     {
-        if (s[i] > '9' && s[i] < '0')
+        if (!isdigit(s[i]))
         {
-            cout << "Please Check Your Data file." << endl;
+            cout << "Invalid arguments" << endl;
+            ExceptionManager::printHelp();
+
             return -1;
         }
     }
@@ -214,9 +214,8 @@ int main(int argc, char *argv[])
     }
     else
     {
-        cout << s<<" is Wrong Commands" << endl;
+        cout << "Invalid arguments" << endl;
         ExceptionManager::printHelp();
-
         return -1;
     }
 
