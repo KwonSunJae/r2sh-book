@@ -33,6 +33,9 @@ case "$1" in
                 help)
                            ~/r2sh-book/src/help.sh;
                         ;;
+                find)
+                           ~/r2sh-book/build/find "$@";
+                        ;;
                 *)
                         echo "$@" "is wrong commands!";
                            ~/r2sh-book/src/help.sh  "$@";
