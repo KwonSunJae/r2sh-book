@@ -126,8 +126,15 @@ class UserParser {
 
 
 int main(int argc, char* argv[]) {
-    if (argc != 3) exit(1);
+    if (argc != 3) {
+        cout << "r2sh-book:: Invalid Argument" << endl;
+        exit(EXIT_FAILURE);
+    };
     string username = argv[2];
+    if(username.length()<0 || username.length()>20) {
+        cout << "r2sh-book:: Please check your command." << endl;
+        exit(EXIT_FAILURE);
+    }
     UserParser up;
     up.Read(username);
 }
