@@ -51,7 +51,7 @@ g++ -o ../build/return return.cpp jsoncpp.cpp -I. -DJSON_IS_AMALGAMATION
 g++ -o ../build/auth auth.cpp jsoncpp.cpp -I. -DJSON_IS_AMALGAMATION
 g++ -o ../build/check check.cpp jsoncpp.cpp -I. -DJSON_IS_AMALGAMATION
 g++ -o ../build/show show.cpp jsoncpp.cpp -I. -DJSON_IS_AMALGAMATION
-g++ -o ../build/show show.cpp jsoncpp.cpp -I. -DJSON_IS_AMALGAMATION -std=c++17
+g++ -o ../build/find find.cpp jsoncpp.cpp -I. -DJSON_IS_AMALGAMATION
 
 cd ~/r2sh-book
 echo "----COMPLETE-----"
